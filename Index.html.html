@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Harsh Meena — Case File: Analyst</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,500&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#ECE7DA;
+    --paper-deep:#E3DCC9;
+    --ink:#1F2B38;
+    --ink-soft:#5B6773;
+    --ink-faint:#8A8F87;
+    --brick:#9B2E1F;
+    --teal:#2A5F5B;
+    --line:#C9C2AD;
+    --dark:#14181D;
+    --dark-2:#1D2229;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Source Serif 4', serif;
+    font-size:17px;
+    line-height:1.6;
+  }
+  ::selection{background:var(--brick);color:var(--paper);}
+
+  .wrap{max-width:760px;margin:0 auto;padding:0 28px;}
+
+  a{color:var(--ink);}
+
+  .mono{font-family:'IBM Plex Mono', monospace;}
+
+  /* ---------- Reduced motion ---------- */
+  @media (prefers-reduced-motion: reduce){
+    *{animation:none !important; transition:none !important;}
+  }
+
+  /* ---------- Top strip ---------- */
+  .topbar{
+    background:var(--dark);
+    color:#C9C2AD;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12px;
+    letter-spacing:0.06em;
+    padding:9px 0;
+  }
+  .topbar .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:6px;}
+  .topbar span{opacity:0.85;}
+  .topbar .status{color:#7FAE9E;}
+  .topbar .status::before{content:"● ";}
+
+  /* ---------- Cover / Hero ---------- */
+  .cover{
+    background:var(--dark);
+    color:var(--paper);
+    padding:64px 0 46px;
+    position:relative;
+    border-bottom:6px solid var(--brick);
+  }
+  .cover .kicker{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12.5px;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    color:#9AA5AC;
+    margin:0 0 18px;
+    display:flex;
+    align-items:center;
+    gap:10px;
+  }
+  .cover .kicker::after{
+    content:"";
+    flex:1;
+    height:1px;
+    background:#3A424B;
+  }
+  .cover h1{
+    font-family:'Fraunces', serif;
+    font-optical-sizing:auto;
+    font-weight:600;
+    font-size:clamp(40px,7vw,64px);
+    line-height:0.98;
+    margin:0 0 14px;
+    letter-spacing:-0.01em;
+  }
+  .cover .role-line{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:14.5px;
+    color:#C7A78F;
+    margin:0 0 30px;
+  }
+  .cover .role-line b{color:#E8D9CC;font-weight:600;}
+  .cover .thesis{
+    font-family:'Source Serif 4', serif;
+    font-size:19px;
+    line-height:1.65;
+    color:#D9D4C6;
+    max-width:600px;
+    margin:0 0 28px;
+  }
+  .cover .thesis em{
+    font-style:italic;
+    color:#EDE8DA;
+  }
+  .cover .meta-row{
+    display:flex;
+    flex-wrap:wrap;
+    gap:22px;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12.5px;
+    color:#8D97A0;
+    border-top:1px solid #333B44;
+    padding-top:18px;
+  }
+  .cover .meta-row a{color:#C7CDD2;text-decoration:none;border-bottom:1px solid #4A525A;}
+  .cover .meta-row a:hover{color:var(--paper);border-color:var(--brick);}
+
+  /* ---------- Section shell ---------- */
+  section{padding:52px 0;border-bottom:1px solid var(--line);}
+  section:last-of-type{border-bottom:none;}
+  .eyebrow{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12px;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    color:var(--brick);
+    margin:0 0 8px;
+  }
+  h2.section-title{
+    font-family:'Fraunces', serif;
+    font-weight:600;
+    font-size:29px;
+    margin:0 0 22px;
+    letter-spacing:-0.01em;
+  }
+
+  /* ---------- Why section ---------- */
+  .why-text p{margin:0 0 16px;font-size:17px;}
+  .why-text .lede{
+    font-family:'Fraunces', serif;
+    font-style:italic;
+    font-weight:500;
+    font-size:21px;
+    color:var(--ink);
+    border-left:3px solid var(--brick);
+    padding-left:18px;
+    margin:0 0 24px;
+  }
+  .credential-compare{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:0;
+    border:1px solid var(--line);
+    margin-top:26px;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:13px;
+  }
+  .credential-compare > div{padding:18px 20px;}
+  .credential-compare .col-a{border-right:1px solid var(--line);background:var(--paper-deep);}
+  .credential-compare h4{
+    margin:0 0 10px;
+    font-size:11px;
+    letter-spacing:0.1em;
+    text-transform:uppercase;
+    color:var(--ink-faint);
+    font-weight:500;
+  }
+  .credential-compare ul{margin:0;padding:0;list-style:none;}
+  .credential-compare li{padding:5px 0;color:var(--ink-soft);line-height:1.5;}
+  .credential-compare .col-b li{color:var(--ink);}
+  .credential-compare .col-b li::before{content:"✓ ";color:var(--teal);}
+
+  /* ---------- Case files (projects) ---------- */
+  .case{
+    border:1px solid var(--line);
+    background:var(--paper-deep);
+    margin-bottom:22px;
+    position:relative;
+  }
+  .case-head{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+    gap:16px;
+    padding:20px 22px 14px;
+    border-bottom:1px dashed var(--line);
+  }
+  .case-id{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:11px;
+    color:var(--ink-faint);
+    letter-spacing:0.08em;
+  }
+  .case-title{
+    font-family:'Fraunces', serif;
+    font-weight:600;
+    font-size:21px;
+    margin:4px 0 6px;
+    letter-spacing:-0.005em;
+  }
+  .case-stack{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:11.5px;
+    color:var(--teal);
+  }
+  .case-link{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:11.5px;
+    white-space:nowrap;
+    text-decoration:none;
+    color:var(--ink-soft);
+    border:1px solid var(--line);
+    padding:5px 10px;
+    border-radius:2px;
+  }
+  .case-link:hover{border-color:var(--brick);color:var(--brick);}
+  .case-body{padding:16px 22px 20px;}
+  .case-finding{
+    font-size:15.5px;
+    line-height:1.65;
+    margin:0 0 10px;
+    color:var(--ink);
+  }
+  .case-finding:last-child{margin-bottom:0;}
+
+  /* verification stamp */
+  .stamp{
+    position:relative;
+    display:inline-block;
+    font-family:'IBM Plex Mono', monospace;
+    font-weight:600;
+    color:var(--brick);
+    cursor:help;
+    border-bottom:1.5px dotted var(--brick);
+  }
+  .stamp .tip{
+    visibility:hidden;
+    opacity:0;
+    position:absolute;
+    left:50%;
+    bottom:calc(100% + 9px);
+    transform:translateX(-50%) translateY(4px);
+    background:var(--dark);
+    color:#D9D4C6;
+    font-family:'IBM Plex Mono', monospace;
+    font-weight:400;
+    font-size:11.5px;
+    line-height:1.5;
+    padding:10px 12px;
+    width:230px;
+    border-radius:3px;
+    border-left:3px solid var(--brick);
+    transition:opacity 0.15s ease, transform 0.15s ease;
+    z-index:5;
+    text-align:left;
+  }
+  .stamp .tip::before{
+    content:"VERIFIED —";
+    display:block;
+    color:#C7A78F;
+    font-size:10px;
+    letter-spacing:0.08em;
+    margin-bottom:4px;
+  }
+  .stamp:hover .tip, .stamp:focus .tip{
+    visibility:visible;
+    opacity:1;
+    transform:translateX(-50%) translateY(0);
+  }
+  .stamp:focus{outline:2px solid var(--brick);outline-offset:2px;}
+
+  /* ---------- Skills ledger ---------- */
+  .ledger{width:100%;border-collapse:collapse;font-size:15px;}
+  .ledger tr{border-bottom:1px solid var(--line);}
+  .ledger tr:last-child{border-bottom:none;}
+  .ledger td{padding:11px 4px;vertical-align:top;}
+  .ledger td.cat{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:11.5px;
+    letter-spacing:0.06em;
+    text-transform:uppercase;
+    color:var(--ink-faint);
+    width:170px;
+    padding-top:13px;
+  }
+  .ledger td.items{color:var(--ink);}
+
+  /* ---------- Timeline (education/certs) ---------- */
+  .tl-item{
+    display:grid;
+    grid-template-columns:110px 1fr;
+    gap:16px;
+    padding:14px 0;
+    border-bottom:1px solid var(--line);
+  }
+  .tl-item:last-child{border-bottom:none;}
+  .tl-date{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12px;
+    color:var(--ink-faint);
+    padding-top:2px;
+  }
+  .tl-title{font-weight:600;font-size:16px;margin:0 0 3px;}
+  .tl-sub{font-size:14px;color:var(--ink-soft);margin:0;}
+
+  /* ---------- Footer / contact ---------- */
+  .close{
+    background:var(--dark);
+    color:var(--paper);
+    padding:54px 0 40px;
+  }
+  .close .eyebrow{color:#C7A78F;}
+  .close h2{
+    font-family:'Fraunces', serif;
+    font-weight:600;
+    font-size:32px;
+    margin:0 0 16px;
+    color:var(--paper);
+  }
+  .close p{color:#B9BFC4;font-size:16px;max-width:520px;margin:0 0 26px;}
+  .contact-row{
+    display:flex;
+    flex-wrap:wrap;
+    gap:14px;
+  }
+  .contact-row a{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:13px;
+    color:var(--paper);
+    text-decoration:none;
+    border:1px solid #3A424B;
+    padding:10px 16px;
+    border-radius:2px;
+    transition:border-color 0.15s ease, color 0.15s ease;
+  }
+  .contact-row a:hover{border-color:var(--brick);color:#E8A48F;}
+  .close .sign{
+    margin-top:40px;
+    padding-top:20px;
+    border-top:1px solid #2A3038;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:11.5px;
+    color:#6B747B;
+  }
+
+  @media (max-width:600px){
+    .credential-compare{grid-template-columns:1fr;}
+    .credential-compare .col-a{border-right:none;border-bottom:1px solid var(--line);}
+    .case-head{flex-direction:column;}
+    .tl-item{grid-template-columns:1fr;gap:4px;}
+    body{font-size:16px;}
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="wrap">
+    <span>CASE FILE — ANALYST CANDIDATE</span>
+    <span class="status">OPEN TO WORK · IMMEDIATE JOINER</span>
+  </div>
+</div>
+
+<header class="cover">
+  <div class="wrap">
+    <p class="kicker">Record No. HM-2026 · Indore, India</p>
+    <h1>Harsh Meena</h1>
+    <p class="role-line">Entry-level <b>Data</b> / <b>Business</b> / <b>MIS</b> Analyst — every number below is sourced, not stated.</p>
+    <p class="thesis">I don't have a placement office or a brand-name college behind me. What I have is a set of analyses I can defend line by line — <em>the dataset, the method, the number, in that order</em>. This page is built the way I work: claim, then proof.</p>
+    <div class="meta-row">
+      <a href="mailto:harshmeena9977@gmail.com">harshmeena9977@gmail.com</a>
+      <a href="tel:+919977551380">+91 99775 51380</a>
+      <a href="https://www.linkedin.com/in/harsh-meena-analyst/" target="_blank" rel="noopener">LinkedIn ↗</a>
+      <a href="https://github.com/harshmeena9977-ops" target="_blank" rel="noopener">GitHub ↗</a>
+    </div>
+  </div>
+</header>
+
+<section id="why">
+  <div class="wrap">
+    <p class="eyebrow">Opening Statement</p>
+    <h2 class="section-title">Why this looks different from a resume site</h2>
+    <div class="why-text">
+      <p class="lede">Most fresher portfolios sell potential. This one shows work.</p>
+      <p>An analyst from a top program can lean on the institution's name to signal rigor. I can't do that — so I built rigor into the format instead. Every metric on this page that carries a dotted underline is a verification stamp: hover it, and you get the exact dataset and method behind the number. Nothing here is a marketing claim I can't walk you through in an interview.</p>
+      <p>That's the actual skill gap between a fresher portfolio built to look impressive and one built to survive a follow-up question. I'm optimizing for the second kind.</p>
+    </div>
+    <div class="credential-compare">
+      <div class="col-a">
+        <h4>What I don't have</h4>
+        <ul>
+          <li>Named-brand university</li>
+          <li>A prior analyst internship</li>
+          <li>Industry work experience</li>
+        </ul>
+      </div>
+      <div class="col-b">
+        <h4>What replaces it</h4>
+        <ul>
+          <li>4 self-sourced, end-to-end analyses on real public datasets</li>
+          <li>Every stat traceable to a notebook or dashboard, not asserted</li>
+          <li>SQL / Python / Power BI used the way a working analyst uses them — to answer a specific business question</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="cases">
+  <div class="wrap">
+    <p class="eyebrow">Evidence — 4 Filed Analyses</p>
+    <h2 class="section-title">Case files</h2>
+
+    <div class="case">
+      <div class="case-head">
+        <div>
+          <p class="case-id">CASE 01 · JAN–FEB 2026</p>
+          <h3 class="case-title">Telecom Customer Churn Analysis</h3>
+          <p class="case-stack">Python · SQL · Scikit-learn · Power BI</p>
+        </div>
+        <a class="case-link" href="https://github.com/harshmeena9977-ops/Telecom-Churn-Analysis" target="_blank" rel="noopener">View repo ↗</a>
+      </div>
+      <div class="case-body">
+        <p class="case-finding">Investigated <span class="stamp" tabindex="0">26.5% churn rate<span class="tip">7,043-row telecom customer dataset; churn flag aggregated across full customer base.</span></span> across the customer base, isolating month-to-month contracts at <span class="stamp" tabindex="0">43% churn<span class="tip">Churn rate filtered to Contract = "Month-to-month" segment vs. 1-year/2-year contracts.</span></span> and low-tenure customers at <span class="stamp" tabindex="0">2.5× higher risk<span class="tip">Churn rate for tenure &lt;12 months compared against churn rate for tenure ≥12 months.</span></span> as the two dominant drivers.</p>
+        <p class="case-finding">Built a Random Forest classifier to flag at-risk customers ahead of cancellation — <span class="stamp" tabindex="0">85.3% accuracy, 82.1% precision<span class="tip">Held-out test split; precision measured on the churn-positive class to limit false retention-offer spend.</span></span> — then designed an executive Power BI dashboard translating the segmentation into a retention target list.</p>
+      </div>
+    </div>
+
+    <div class="case">
+      <div class="case-head">
+        <div>
+          <p class="case-id">CASE 02 · JUL–AUG 2026</p>
+          <h3 class="case-title">Workforce Attrition &amp; Retention Analytics</h3>
+          <p class="case-stack">Power BI · DAX · Power Query</p>
+        </div>
+        <a class="case-link" href="https://github.com/harshmeena9977-ops/workforce-attrition-retention-analytics" target="_blank" rel="noopener">View repo ↗</a>
+      </div>
+      <div class="case-body">
+        <p class="case-finding">Analyzed 1,470 employee records against an overall <span class="stamp" tabindex="0">16.12% attrition rate<span class="tip">IBM HR Analytics dataset (Kaggle), 1,470 employees; attrition flag aggregated department-wide.</span></span>, with R&amp;D responsible for <span class="stamp" tabindex="0">56% of exits<span class="tip">Share of total attrited employees whose department = R&D, not R&D's own attrition rate.</span></span> and Laboratory Technicians as the highest-risk role.</p>
+        <p class="case-finding">Ran Key Influencers analysis inside a 5-page Power BI dashboard: overtime employees churn at <span class="stamp" tabindex="0">2.93× the base rate<span class="tip">DAX-driven Key Influencers visual comparing OverTime = Yes vs. No against attrition outcome.</span></span>, low-income employees at <span class="stamp" tabindex="0">2.60×<span class="tip">Bottom income quartile vs. remainder, using Key Influencers analysis on MonthlyIncome banding.</span></span>, and under-25 employees show <span class="stamp" tabindex="0">35.77% attrition<span class="tip">Attrition rate filtered to Age &lt; 25 segment, flagged as a distinct retention priority.</span></span> — flagged as the priority segment for HR intervention.</p>
+      </div>
+    </div>
+
+    <div class="case">
+      <div class="case-head">
+        <div>
+          <p class="case-id">CASE 03 · NOV–DEC 2025</p>
+          <h3 class="case-title">Global Superstore Sales Profitability Analysis</h3>
+          <p class="case-stack">SQL · Power BI · Excel</p>
+        </div>
+        <a class="case-link" href="https://github.com/harshmeena9977-ops/Global-Superstore-Sales-Analysis" target="_blank" rel="noopener">View repo ↗</a>
+      </div>
+      <div class="case-body">
+        <p class="case-finding">Cleaned and analyzed <span class="stamp" tabindex="0">10,000+ transactions<span class="tip">Global Superstore dataset spanning 4 regions and 17 product sub-categories.</span></span>, isolating 3 low-profit segments responsible for a <span class="stamp" tabindex="0">20% drag on overall profitability<span class="tip">Contribution-margin analysis per region/category cross-tab, aggregated to total profitability impact.</span></span>.</p>
+        <p class="case-finding">Replaced a manual month-end reporting cycle with an executive drill-down dashboard and automated monthly refresh, cutting reporting effort by <span class="stamp" tabindex="0">65%<span class="tip">Estimated from manual report build time (~3 days) vs. automated dashboard refresh (~4 hours) — same measurement basis as Case 01's reporting-cycle reduction.</span></span>.</p>
+      </div>
+    </div>
+
+    <div class="case">
+      <div class="case-head">
+        <div>
+          <p class="case-id">CASE 04 · MAR–APR 2026</p>
+          <h3 class="case-title">Yelp Restaurant Success Metrics Analysis</h3>
+          <p class="case-stack">Python · SQL · SQLite · Statistical Analysis</p>
+        </div>
+        <a class="case-link" href="https://github.com/harshmeena9977-ops/yelp-restaurant-success-metrics" target="_blank" rel="noopener">View repo ↗</a>
+      </div>
+      <div class="case-body">
+        <p class="case-finding">Processed <span class="stamp" tabindex="0">150K+ restaurant records and 2M+ reviews<span class="tip">Yelp Open Dataset, restaurant-category subset, joined against the full review table.</span></span> to find a <span class="stamp" tabindex="0">2.5× engagement gap<span class="tip">Average review volume for restaurants rated ≥3.5 stars vs. restaurants rated below that threshold.</span></span> between high- and low-rated restaurants.</p>
+        <p class="case-finding">Elite Yelp users — <span class="stamp" tabindex="0">4.5% of the user base<span class="tip">Users flagged Elite=True in the user table as a share of total distinct reviewers.</span></span> — generated <span class="stamp" tabindex="0">44% of all reviews<span class="tip">Review count authored by Elite-flagged users divided by total review count in the dataset.</span></span>, surfaced via correlation and geographic segmentation as the highest-leverage engagement group.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section id="skills">
+  <div class="wrap">
+    <p class="eyebrow">Toolkit — As Used, Not As Listed</p>
+    <h2 class="section-title">Working skillset</h2>
+    <table class="ledger">
+      <tr>
+        <td class="cat">Querying</td>
+        <td class="items">SQL — joins, CTEs, window functions, subqueries · MySQL · PostgreSQL</td>
+      </tr>
+      <tr>
+        <td class="cat">Analysis</td>
+        <td class="items">Python (Pandas, NumPy, Scikit-learn) · statistical analysis · classification modeling</td>
+      </tr>
+      <tr>
+        <td class="cat">Reporting / BI</td>
+        <td class="items">Power BI (DAX, Power Query, Key Influencers) · executive dashboard design · automated refresh pipelines</td>
+      </tr>
+      <tr>
+        <td class="cat">Spreadsheet</td>
+        <td class="items">Advanced Excel — pivot tables, XLOOKUP, data cleaning &amp; validation</td>
+      </tr>
+      <tr>
+        <td class="cat">Business-side</td>
+        <td class="items">Requirement framing · trend &amp; root-cause analysis · stakeholder-ready reporting</td>
+      </tr>
+    </table>
+  </div>
+</section>
+
+<section id="record">
+  <div class="wrap">
+    <p class="eyebrow">Background</p>
+    <h2 class="section-title">Education &amp; certification record</h2>
+
+    <div class="tl-item">
+      <p class="tl-date mono">2021–2025</p>
+      <div>
+        <p class="tl-title">B.Tech, Computer Science</p>
+        <p class="tl-sub">Shivajirao Kadam Institute of Technology &amp; Management, Indore (RGPV) — CGPA 6.92/10</p>
+      </div>
+    </div>
+    <div class="tl-item">
+      <p class="tl-date mono">2026</p>
+      <div>
+        <p class="tl-title">SQL (Advanced) — HackerRank</p>
+        <p class="tl-sub">Certified proficiency in advanced querying</p>
+      </div>
+    </div>
+    <div class="tl-item">
+      <p class="tl-date mono">2026</p>
+      <div>
+        <p class="tl-title">Python for Data Science — IBM</p>
+        <p class="tl-sub">Applied Python fundamentals for data work</p>
+      </div>
+    </div>
+    <div class="tl-item">
+      <p class="tl-date mono">2026</p>
+      <div>
+        <p class="tl-title">Prepare and Visualize Data with Power BI — Microsoft Learn</p>
+        <p class="tl-sub">Power Query, data modeling, report design</p>
+      </div>
+    </div>
+    <div class="tl-item">
+      <p class="tl-date mono">2026</p>
+      <div>
+        <p class="tl-title">Data Analytics Job Simulation — Deloitte Australia</p>
+        <p class="tl-sub">Forage virtual internship programme</p>
+      </div>
+    </div>
+    <div class="tl-item">
+      <p class="tl-date mono">2026</p>
+      <div>
+        <p class="tl-title">Data Science Job Simulation — BCG</p>
+        <p class="tl-sub">Forage virtual internship programme</p>
+      </div>
+    </div>
+    <div class="tl-item">
+      <p class="tl-date mono">2026</p>
+      <div>
+        <p class="tl-title">Data Analytics Job Simulation — Quantium</p>
+        <p class="tl-sub">Forage virtual internship programme</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="close">
+  <div class="wrap">
+    <p class="eyebrow">Next Step</p>
+    <h2>Let's talk about a role.</h2>
+    <p>I'm looking for an entry-level Data Analyst, Business Analyst, or MIS Analyst role — based in Indore/Ujjain, open to relocating anywhere in India. Immediate joiner.</p>
+    <div class="contact-row">
+      <a href="mailto:harshmeena9977@gmail.com">Email →</a>
+      <a href="tel:+919977551380">Call / WhatsApp →</a>
+      <a href="https://www.linkedin.com/in/harsh-meena-analyst/" target="_blank" rel="noopener">LinkedIn →</a>
+      <a href="https://github.com/harshmeena9977-ops" target="_blank" rel="noopener">GitHub →</a>
+    </div>
+    <p class="sign">Record HM-2026 — every figure on this page is sourced from the linked repositories and is available for walkthrough on request.</p>
+  </div>
+</footer>
+
+</body>
+</html>
