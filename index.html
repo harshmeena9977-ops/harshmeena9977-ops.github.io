@@ -1,718 +1,2178 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Harsh Meena — Analyst Portfolio</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,500&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-<style>
-  :root{
-    --paper:#ECE7DA;
-    --paper-deep:#E3DCC9;
-    --ink:#1F2B38;
-    --ink-soft:#5B6773;
-    --ink-faint:#8A8F87;
-    --brick:#9B2E1F;
-    --teal:#2A5F5B;
-    --lime:#8FA84E;
-    --line:#C9C2AD;
-    --dark:#14181D;
-  }
-  *{box-sizing:border-box;}
-  html{scroll-behavior:smooth;}
-  body{
-    margin:0;
-    background:var(--paper);
-    color:var(--ink);
-    font-family:'Source Serif 4', serif;
-    font-size:17px;
-    line-height:1.6;
-    overflow-x:hidden;
-  }
-  ::selection{background:var(--brick);color:var(--paper);}
-  .wrap{max-width:780px;margin:0 auto;padding:0 28px;}
-  a{color:var(--ink);}
-  .mono{font-family:'IBM Plex Mono', monospace;}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  @media (prefers-reduced-motion: reduce){
-    *{animation:none !important; transition:none !important;}
-  }
+  <title>Harsh Meena — Data & Business Analyst</title>
+  <meta name="description" content="Harsh Meena — Data, Business and MIS Analyst portfolio. SQL, Python, Power BI, DAX and Excel projects across customer retention, workforce analytics, sales and hospitality.">
+  <meta name="author" content="Harsh Meena">
+  <meta name="theme-color" content="#14181D">
 
-  /* ---------- Scroll reveal ---------- */
-  .reveal{
-    opacity:0;
-    transform:translateY(18px);
-    transition:opacity 0.6s ease, transform 0.6s ease;
-  }
-  .reveal.in{opacity:1;transform:translateY(0);}
+  <meta property="og:title" content="Harsh Meena — Data & Business Analyst">
+  <meta property="og:description" content="Turning messy business data into decisions people can act on.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://harshmeena9977-ops.github.io">
 
-  /* ---------- Top strip ---------- */
-  .topbar{
-    background:var(--dark);
-    color:#C9C2AD;
-    font-family:'IBM Plex Mono', monospace;
-    font-size:12px;
-    letter-spacing:0.06em;
-    padding:9px 0;
-    position:sticky;
-    top:0;
-    z-index:50;
-  }
-  .topbar .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:6px;}
-  .topbar .status{color:#9FD68A;}
-  .topbar .status .dot{
-    display:inline-block;width:7px;height:7px;border-radius:50%;
-    background:#9FD68A;margin-right:6px;
-    animation:pulse 1.8s ease-in-out infinite;
-  }
-  @keyframes pulse{
-    0%,100%{opacity:1;box-shadow:0 0 0 0 rgba(159,214,138,0.5);}
-    50%{opacity:0.6;box-shadow:0 0 0 5px rgba(159,214,138,0);}
-  }
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-  /* ---------- Hero ---------- */
-  .cover{
-    background:var(--dark);
-    color:var(--paper);
-    padding:70px 0 50px;
-    position:relative;
-    border-bottom:5px solid var(--brick);
-    overflow:hidden;
-  }
-  .cover::before{
-    content:"";
-    position:absolute;
-    top:-120px;right:-120px;
-    width:340px;height:340px;
-    border-radius:50%;
-    background:radial-gradient(circle, rgba(155,46,31,0.35) 0%, rgba(155,46,31,0) 70%);
-    pointer-events:none;
-  }
-  .cover .kicker{
-    font-family:'IBM Plex Mono', monospace;
-    font-size:12.5px;
-    letter-spacing:0.14em;
-    text-transform:uppercase;
-    color:#9AA5AC;
-    margin:0 0 18px;
-    display:flex;
-    align-items:center;
-    gap:10px;
-  }
-  .cover .kicker::after{content:"";flex:1;height:1px;background:#3A424B;}
-  .cover h1{
-    font-family:'Fraunces', serif;
-    font-weight:700;
-    font-size:clamp(42px,8vw,68px);
-    line-height:0.97;
-    margin:0 0 14px;
-    letter-spacing:-0.01em;
-    position:relative;
-  }
-  .cover h1 .dot-accent{color:var(--brick);}
-  .cover .role-line{
-    font-family:'IBM Plex Mono', monospace;
-    font-size:14.5px;
-    color:#C7A78F;
-    margin:0 0 26px;
-  }
-  .cover .role-line b{color:#E8D9CC;font-weight:600;}
-  .cover .thesis{
-    font-family:'Source Serif 4', serif;
-    font-size:19px;
-    line-height:1.65;
-    color:#D9D4C6;
-    max-width:600px;
-    margin:0 0 34px;
-  }
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 
-  /* animated social row */
-  .social-row{display:flex;flex-wrap:wrap;gap:12px;}
-  .social-btn{
-    display:inline-flex;
-    align-items:center;
-    gap:8px;
-    font-family:'IBM Plex Mono', monospace;
-    font-size:12.5px;
-    color:var(--paper);
-    text-decoration:none;
-    border:1px solid #3A424B;
-    padding:10px 16px;
-    border-radius:22px;
-    position:relative;
-    overflow:hidden;
-    transition:transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
-  }
-  .social-btn svg{width:14px;height:14px;flex-shrink:0;transition:transform 0.25s ease;}
-  .social-btn::before{
-    content:"";
-    position:absolute;
-    inset:0;
-    background:var(--brick);
-    transform:translateX(-101%);
-    transition:transform 0.25s ease;
-    z-index:0;
-  }
-  .social-btn span, .social-btn svg{position:relative;z-index:1;}
-  .social-btn:hover{transform:translateY(-2px);border-color:var(--brick);}
-  .social-btn:hover::before{transform:translateX(0);}
-  .social-btn:hover svg{transform:scale(1.15) rotate(-4deg);}
+  <style>
+    :root {
+      --paper: #F1EDE3;
+      --paper-2: #E7E0D0;
+      --paper-3: #DCD3C0;
 
-  /* ---------- Section shell ---------- */
-  section{padding:56px 0;border-bottom:1px solid var(--line);}
-  section:last-of-type{border-bottom:none;}
-  .eyebrow{
-    font-family:'IBM Plex Mono', monospace;
-    font-size:12px;
-    letter-spacing:0.14em;
-    text-transform:uppercase;
-    color:var(--brick);
-    margin:0 0 8px;
-    display:flex;align-items:center;gap:8px;
-  }
-  .eyebrow .num{color:var(--ink-faint);}
-  h2.section-title{
-    font-family:'Fraunces', serif;
-    font-weight:600;
-    font-size:29px;
-    margin:0 0 22px;
-    letter-spacing:-0.01em;
-  }
+      --ink: #17212B;
+      --ink-2: #34414D;
+      --muted: #6D756F;
+      --faint: #969A91;
 
-  /* ---------- Why ---------- */
-  .why-text p{margin:0 0 16px;font-size:17px;}
-  .why-text .lede{
-    font-family:'Fraunces', serif;
-    font-style:italic;
-    font-weight:500;
-    font-size:22px;
-    color:var(--ink);
-    border-left:3px solid var(--brick);
-    padding-left:18px;
-    margin:0 0 24px;
-  }
-  .tag-row{display:flex;flex-wrap:wrap;gap:9px;margin-top:22px;}
-  .tag-pill{
-    font-family:'IBM Plex Mono', monospace;
-    font-size:12px;
-    color:var(--teal);
-    border:1px solid var(--teal);
-    padding:6px 13px;
-    border-radius:16px;
-    background:rgba(42,95,91,0.06);
-    transition:background 0.2s ease, transform 0.2s ease;
-  }
-  .tag-pill:hover{background:var(--teal);color:var(--paper);transform:translateY(-2px);}
+      --dark: #12171C;
+      --dark-2: #1B2229;
+      --dark-line: #303942;
 
-  /* ---------- Case files ---------- */
-  .case{
-    border:1px solid var(--line);
-    background:var(--paper-deep);
-    margin-bottom:22px;
-    position:relative;
-    transition:box-shadow 0.25s ease, transform 0.25s ease;
-  }
-  .case:hover{box-shadow:6px 6px 0 var(--brick);transform:translate(-3px,-3px);}
-  .case-head{
-    display:flex;justify-content:space-between;align-items:flex-start;gap:16px;
-    padding:20px 22px 14px;border-bottom:1px dashed var(--line);
-  }
-  .case-id{font-family:'IBM Plex Mono', monospace;font-size:11px;color:var(--ink-faint);letter-spacing:0.08em;}
-  .case-title{font-family:'Fraunces', serif;font-weight:600;font-size:21px;margin:4px 0 6px;letter-spacing:-0.005em;}
-  .case-stack{font-family:'IBM Plex Mono', monospace;font-size:11.5px;color:var(--teal);}
-  .case-link{
-    font-family:'IBM Plex Mono', monospace;font-size:11.5px;white-space:nowrap;text-decoration:none;
-    color:var(--ink-soft);border:1px solid var(--line);padding:5px 10px;border-radius:14px;
-    transition:all 0.2s ease;
-  }
-  .case-link:hover{border-color:var(--brick);color:var(--paper);background:var(--brick);}
-  .case-body{padding:16px 22px 20px;}
-  .case-finding{font-size:15.5px;line-height:1.65;margin:0 0 10px;color:var(--ink);}
-  .case-finding:last-child{margin-bottom:0;}
+      --brick: #A93626;
+      --brick-dark: #84291E;
+      --teal: #28615D;
+      --lime: #91A84F;
+      --cream: #F5F0E5;
 
-  .stamp{
-    position:relative;display:inline-block;font-family:'IBM Plex Mono', monospace;
-    font-weight:600;color:var(--brick);cursor:help;border-bottom:1.5px dotted var(--brick);
-  }
-  .stamp .tip{
-    visibility:hidden;opacity:0;position:absolute;left:50%;bottom:calc(100% + 9px);
-    transform:translateX(-50%) translateY(4px);background:var(--dark);color:#D9D4C6;
-    font-family:'IBM Plex Mono', monospace;font-weight:400;font-size:11.5px;line-height:1.5;
-    padding:10px 12px;width:230px;border-radius:6px;border-left:3px solid var(--brick);
-    transition:opacity 0.15s ease, transform 0.15s ease;z-index:5;text-align:left;
-  }
-  .stamp .tip::before{content:"VERIFIED —";display:block;color:#C7A78F;font-size:10px;letter-spacing:0.08em;margin-bottom:4px;}
-  .stamp:hover .tip, .stamp:focus .tip{visibility:visible;opacity:1;transform:translateX(-50%) translateY(0);}
-  .stamp:focus{outline:2px solid var(--brick);outline-offset:2px;}
+      --line: #CFC6B3;
 
-  /* ---------- Skills ---------- */
-  .skill-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
-  .skill-block{
-    border:1px solid var(--line);padding:16px 18px;background:var(--paper-deep);
-    transition:transform 0.2s ease, border-color 0.2s ease;
-  }
-  .skill-block:hover{transform:translateY(-3px);border-color:var(--teal);}
-  .skill-block h4{
-    margin:0 0 8px;font-family:'IBM Plex Mono', monospace;font-size:11px;
-    letter-spacing:0.08em;text-transform:uppercase;color:var(--ink-faint);font-weight:500;
-  }
-  .skill-block p{margin:0;font-size:14.5px;color:var(--ink);line-height:1.55;}
+      --radius: 5px;
+      --max: 1120px;
 
-  /* ---------- Certifications ---------- */
-  .cert-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
-  .cert-card{
-    display:flex;align-items:center;justify-content:space-between;gap:10px;
-    border:1px solid var(--line);background:var(--paper-deep);
-    padding:16px 18px;text-decoration:none;color:var(--ink);
-    transition:all 0.2s ease;position:relative;
-  }
-  .cert-card:hover{border-color:var(--lime);background:var(--paper);box-shadow:4px 4px 0 var(--lime);transform:translate(-2px,-2px);}
-  .cert-name{font-weight:600;font-size:14.5px;margin:0 0 4px;}
-  .cert-issuer{font-family:'IBM Plex Mono', monospace;font-size:11px;color:var(--ink-faint);}
-  .cert-arrow{font-size:18px;color:var(--lime);transition:transform 0.2s ease;flex-shrink:0;}
-  .cert-card:hover .cert-arrow{transform:translateX(4px) translateY(-4px);}
+      --shadow: 0 20px 50px rgba(23, 33, 43, .08);
+    }
 
-  /* ---------- Footer ---------- */
-  .close{background:var(--dark);color:var(--paper);padding:58px 0 42px;position:relative;overflow:hidden;}
-  .close::before{
-    content:"";position:absolute;bottom:-150px;left:-100px;width:340px;height:340px;border-radius:50%;
-    background:radial-gradient(circle, rgba(143,168,78,0.25) 0%, rgba(143,168,78,0) 70%);
-  }
-  .close .eyebrow{color:#C7A78F;}
-  .close h2{font-family:'Fraunces', serif;font-weight:700;font-size:34px;margin:0 0 16px;color:var(--paper);}
-  .close p{color:#B9BFC4;font-size:16px;max-width:520px;margin:0 0 30px;}
-  .close .sign{
-    margin-top:44px;padding-top:20px;border-top:1px solid #2A3038;
-    font-family:'IBM Plex Mono', monospace;font-size:11.5px;color:#6B747B;
-  }
+    * {
+      box-sizing: border-box;
+    }
 
-  /* ---------- Interactive skill/domain explorer ---------- */
-  .explore-grid{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:0;}
-  .explore-pill{
-    display:flex;align-items:center;gap:8px;
-    font-family:'IBM Plex Mono', monospace;font-size:13.5px;font-weight:500;
-    color:var(--ink);background:var(--paper-deep);border:1.5px solid var(--line);
-    padding:11px 18px;border-radius:24px;cursor:pointer;
-    transition:all 0.2s ease;
-  }
-  .explore-pill .arrow-ic{
-    width:12px;height:12px;transition:transform 0.25s ease;flex-shrink:0;
-    stroke:var(--ink-faint);
-  }
-  .explore-pill:hover{border-color:var(--teal);transform:translateY(-2px);}
-  .explore-pill.active{background:var(--dark);color:var(--paper);border-color:var(--dark);}
-  .explore-pill.active .arrow-ic{transform:rotate(90deg);stroke:var(--paper);}
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 90px;
+    }
 
-  .explore-hint{
-    font-family:'IBM Plex Mono', monospace;font-size:11.5px;color:var(--ink-faint);
-    margin:10px 0 18px;
-  }
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: "DM Sans", sans-serif;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
 
-  .explore-panel{
-    max-height:0;overflow:hidden;opacity:0;
-    transition:max-height 0.4s ease, opacity 0.3s ease, margin 0.4s ease;
-    margin-top:0;
-  }
-  .explore-panel.open{max-height:900px;opacity:1;margin-top:20px;}
+    ::selection {
+      background: var(--brick);
+      color: white;
+    }
 
-  .panel-inner{
-    border:1.5px solid var(--dark);background:var(--paper-deep);
-    padding:22px 24px;position:relative;
-  }
-  .panel-why{
-    font-family:'Fraunces', serif;font-style:italic;font-size:16.5px;
-    color:var(--ink);line-height:1.6;margin:0 0 18px;
-    border-left:2.5px solid var(--brick);padding-left:14px;
-  }
-  .panel-why b{font-style:normal;color:var(--brick);}
-  .panel-projects-label{
-    font-family:'IBM Plex Mono', monospace;font-size:10.5px;letter-spacing:0.1em;
-    text-transform:uppercase;color:var(--ink-faint);margin:0 0 12px;
-  }
-  .panel-projects{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
-  .mini-proj{
-    display:flex;gap:12px;align-items:center;
-    background:var(--paper);border:1px solid var(--line);
-    padding:12px;text-decoration:none;color:var(--ink);
-    border-radius:4px;transition:all 0.2s ease;
-  }
-  .mini-proj:hover{border-color:var(--brick);transform:translateX(3px);box-shadow:3px 3px 0 var(--brick);}
-  .mini-proj-ic{
-    width:38px;height:38px;flex-shrink:0;border-radius:6px;
-    background:var(--dark);display:flex;align-items:center;justify-content:center;
-  }
-  .mini-proj-ic svg{width:18px;height:18px;stroke:var(--lime);}
-  .mini-proj-title{font-weight:600;font-size:13px;margin:0 0 2px;line-height:1.3;}
-  .mini-proj-tag{font-family:'IBM Plex Mono', monospace;font-size:10.5px;color:var(--teal);}
+    a {
+      color: inherit;
+    }
 
-  @media (max-width:600px){
-    .skill-grid, .cert-grid, .panel-projects{grid-template-columns:1fr;}
-    .case-head{flex-direction:column;}
-    body{font-size:16px;}
-  }
-</style>
+    button,
+    a {
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .container {
+      width: min(var(--max), calc(100% - 48px));
+      margin-inline: auto;
+    }
+
+    .mono {
+      font-family: "IBM Plex Mono", monospace;
+    }
+
+    .serif {
+      font-family: "Fraunces", serif;
+    }
+
+    /* =========================
+       TOP STATUS
+    ========================= */
+
+    .status-bar {
+      background: var(--dark);
+      color: #AEB5BA;
+      border-bottom: 1px solid var(--dark-line);
+      font: 11px "IBM Plex Mono", monospace;
+      letter-spacing: .07em;
+    }
+
+    .status-inner {
+      min-height: 34px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .availability {
+      color: #A7D98E;
+    }
+
+    .availability-dot {
+      display: inline-block;
+      width: 7px;
+      height: 7px;
+      margin-right: 7px;
+      border-radius: 50%;
+      background: #A7D98E;
+      box-shadow: 0 0 0 4px rgba(167,217,142,.08);
+    }
+
+    /* =========================
+       NAVIGATION
+    ========================= */
+
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(241,237,227,.94);
+      border-bottom: 1px solid var(--line);
+      backdrop-filter: blur(14px);
+    }
+
+    .nav-inner {
+      height: 66px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 30px;
+    }
+
+    .brand {
+      text-decoration: none;
+      font: 600 15px "IBM Plex Mono", monospace;
+      letter-spacing: -.02em;
+    }
+
+    .brand span {
+      color: var(--brick);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--muted);
+      font: 500 12px "IBM Plex Mono", monospace;
+      transition: color .2s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--brick);
+    }
+
+    .nav-cta {
+      border: 1px solid var(--ink);
+      padding: 8px 13px;
+      color: var(--ink) !important;
+      transition: .2s ease;
+    }
+
+    .nav-cta:hover {
+      color: white !important;
+      background: var(--ink);
+    }
+
+    .menu-button {
+      display: none;
+      border: 0;
+      background: transparent;
+      cursor: pointer;
+      color: var(--ink);
+    }
+
+    /* =========================
+       HERO
+    ========================= */
+
+    .hero {
+      background:
+        radial-gradient(circle at 85% 20%, rgba(169,54,38,.16), transparent 27%),
+        var(--dark);
+      color: var(--cream);
+      position: relative;
+      overflow: hidden;
+      border-bottom: 5px solid var(--brick);
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      width: 520px;
+      height: 520px;
+      right: -220px;
+      bottom: -320px;
+      border: 1px solid rgba(255,255,255,.06);
+      border-radius: 50%;
+      box-shadow:
+        0 0 0 80px rgba(255,255,255,.015),
+        0 0 0 160px rgba(255,255,255,.01);
+      pointer-events: none;
+    }
+
+    .hero-inner {
+      padding: 90px 0 82px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-kicker {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: #9DA7AE;
+      font: 11px "IBM Plex Mono", monospace;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      margin-bottom: 25px;
+    }
+
+    .hero-kicker::after {
+      content: "";
+      height: 1px;
+      width: 90px;
+      background: var(--dark-line);
+    }
+
+    .hero h1 {
+      max-width: 850px;
+      margin: 0;
+      font: 700 clamp(54px, 8vw, 100px)/.91 "Fraunces", serif;
+      letter-spacing: -.045em;
+    }
+
+    .hero h1 span {
+      color: var(--brick);
+    }
+
+    .hero-subtitle {
+      margin: 25px 0 0;
+      max-width: 720px;
+      color: #D0CBC0;
+      font-size: clamp(19px, 2.2vw, 24px);
+      line-height: 1.5;
+    }
+
+    .hero-subtitle strong {
+      color: white;
+      font-weight: 600;
+    }
+
+    .hero-position {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 28px;
+      color: #C9A890;
+      font: 12px "IBM Plex Mono", monospace;
+    }
+
+    .hero-position::before {
+      content: "";
+      width: 6px;
+      height: 6px;
+      background: var(--lime);
+      border-radius: 50%;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 34px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 46px;
+      padding: 0 18px;
+      border: 1px solid transparent;
+      text-decoration: none;
+      font: 600 11px "IBM Plex Mono", monospace;
+      letter-spacing: .02em;
+      transition: .22s ease;
+    }
+
+    .button-primary {
+      background: var(--brick);
+      color: white;
+    }
+
+    .button-primary:hover {
+      background: #C14532;
+      transform: translateY(-2px);
+    }
+
+    .button-secondary {
+      color: var(--cream);
+      border-color: #46505A;
+    }
+
+    .button-secondary:hover {
+      border-color: #9CA5AB;
+      transform: translateY(-2px);
+    }
+
+    /* =========================
+       SNAPSHOT
+    ========================= */
+
+    .snapshot {
+      background: var(--paper-2);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .snapshot-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    .stat {
+      padding: 25px 24px;
+      border-right: 1px solid var(--line);
+    }
+
+    .stat:last-child {
+      border-right: 0;
+    }
+
+    .stat-number {
+      font: 600 28px "Fraunces", serif;
+      letter-spacing: -.02em;
+    }
+
+    .stat-label {
+      margin-top: 3px;
+      color: var(--muted);
+      font: 10px "IBM Plex Mono", monospace;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    /* =========================
+       GENERAL SECTIONS
+    ========================= */
+
+    section.section {
+      padding: 105px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .section-heading {
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      gap: 50px;
+      margin-bottom: 55px;
+    }
+
+    .section-index {
+      color: var(--brick);
+      font: 11px "IBM Plex Mono", monospace;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+
+    .section-index span {
+      color: var(--faint);
+    }
+
+    .section-title {
+      margin: 0;
+      max-width: 760px;
+      font: 600 clamp(35px, 5vw, 55px)/1.05 "Fraunces", serif;
+      letter-spacing: -.035em;
+    }
+
+    .section-intro {
+      max-width: 680px;
+      margin: 18px 0 0;
+      color: var(--muted);
+      font-size: 16px;
+    }
+
+    /* =========================
+       SELECTED WORK
+    ========================= */
+
+    .project-list {
+      display: grid;
+      gap: 18px;
+    }
+
+    .project {
+      background: var(--paper-2);
+      border: 1px solid var(--line);
+      position: relative;
+      overflow: hidden;
+      transition: transform .25s ease, box-shadow .25s ease;
+    }
+
+    .project:hover {
+      transform: translateY(-5px);
+      box-shadow: 8px 8px 0 var(--brick);
+    }
+
+    .project-top {
+      display: grid;
+      grid-template-columns: 100px 1fr auto;
+      gap: 28px;
+      align-items: start;
+      padding: 30px;
+    }
+
+    .project-number {
+      color: var(--faint);
+      font: 11px "IBM Plex Mono", monospace;
+    }
+
+    .project-type {
+      margin-top: 5px;
+      color: var(--teal);
+      font: 10px "IBM Plex Mono", monospace;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    .project-title {
+      margin: 0;
+      font: 600 29px/1.1 "Fraunces", serif;
+      letter-spacing: -.02em;
+    }
+
+    .project-stack {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+      margin-top: 13px;
+    }
+
+    .tech {
+      padding: 4px 8px;
+      border: 1px solid #BEB5A4;
+      color: var(--ink-2);
+      font: 9.5px "IBM Plex Mono", monospace;
+      background: rgba(255,255,255,.16);
+    }
+
+    .project-link {
+      white-space: nowrap;
+      text-decoration: none;
+      border-bottom: 1px solid var(--ink);
+      padding-bottom: 2px;
+      font: 11px "IBM Plex Mono", monospace;
+    }
+
+    .project-link:hover {
+      color: var(--brick);
+      border-color: var(--brick);
+    }
+
+    .project-content {
+      display: grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap: 35px;
+      padding: 0 30px 30px 158px;
+    }
+
+    .project-description {
+      margin: 0;
+      color: var(--ink-2);
+      font-size: 15px;
+      line-height: 1.7;
+    }
+
+    .project-result {
+      border-left: 2px solid var(--brick);
+      padding-left: 18px;
+    }
+
+    .result-label {
+      color: var(--faint);
+      font: 10px "IBM Plex Mono", monospace;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      margin-bottom: 5px;
+    }
+
+    .result-text {
+      margin: 0;
+      font: 500 17px/1.45 "Fraunces", serif;
+    }
+
+    /* =========================
+       ANALYTICS EVIDENCE
+    ========================= */
+
+    .evidence {
+      background: var(--dark);
+      color: var(--cream);
+      border-bottom: 1px solid var(--dark-line);
+    }
+
+    .evidence .section-index {
+      color: #C9A890;
+    }
+
+    .evidence .section-index span {
+      color: #6B747B;
+    }
+
+    .evidence .section-title {
+      color: var(--cream);
+    }
+
+    .evidence-intro {
+      color: #AEB5BA;
+    }
+
+    .evidence-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: var(--dark-line);
+      border: 1px solid var(--dark-line);
+    }
+
+    .evidence-card {
+      background: var(--dark);
+      padding: 28px;
+      min-height: 205px;
+    }
+
+    .evidence-value {
+      color: var(--lime);
+      font: 600 39px "Fraunces", serif;
+      letter-spacing: -.03em;
+    }
+
+    .evidence-title {
+      margin: 9px 0 8px;
+      font: 600 16px "DM Sans", sans-serif;
+    }
+
+    .evidence-copy {
+      margin: 0;
+      color: #969FA5;
+      font-size: 13px;
+      line-height: 1.6;
+    }
+
+    /* =========================
+       PROCESS
+    ========================= */
+
+    .process {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      border: 1px solid var(--line);
+    }
+
+    .process-item {
+      padding: 25px 20px;
+      min-height: 190px;
+      border-right: 1px solid var(--line);
+      background: var(--paper-2);
+    }
+
+    .process-item:last-child {
+      border-right: 0;
+    }
+
+    .process-number {
+      color: var(--brick);
+      font: 11px "IBM Plex Mono", monospace;
+    }
+
+    .process-title {
+      margin: 32px 0 8px;
+      font: 600 19px "Fraunces", serif;
+    }
+
+    .process-copy {
+      margin: 0;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.55;
+    }
+
+    /* =========================
+       SKILLS
+    ========================= */
+
+    .skills-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+
+    .skill-card {
+      padding: 28px;
+      border: 1px solid var(--line);
+      background: var(--paper-2);
+      transition: .2s ease;
+    }
+
+    .skill-card:hover {
+      border-color: var(--teal);
+      transform: translateY(-3px);
+    }
+
+    .skill-card-header {
+      display: flex;
+      justify-content: space-between;
+      gap: 15px;
+      align-items: center;
+    }
+
+    .skill-name {
+      margin: 0;
+      font: 600 25px "Fraunces", serif;
+    }
+
+    .skill-code {
+      color: var(--teal);
+      font: 10px "IBM Plex Mono", monospace;
+    }
+
+    .skill-description {
+      margin: 13px 0 17px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .skill-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .skill-tag {
+      color: var(--ink-2);
+      background: var(--paper);
+      border: 1px solid var(--line);
+      padding: 5px 8px;
+      font: 9.5px "IBM Plex Mono", monospace;
+    }
+
+    /* =========================
+       DOMAINS
+    ========================= */
+
+    .domain-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+    }
+
+    .domain {
+      min-height: 190px;
+      padding: 22px;
+      border: 1px solid var(--line);
+      background: var(--paper-2);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: .22s ease;
+    }
+
+    .domain:hover {
+      background: var(--dark);
+      color: var(--cream);
+      transform: translateY(-4px);
+    }
+
+    .domain-number {
+      color: var(--brick);
+      font: 10px "IBM Plex Mono", monospace;
+    }
+
+    .domain:hover .domain-number {
+      color: var(--lime);
+    }
+
+    .domain-title {
+      margin: 35px 0 6px;
+      font: 600 21px "Fraunces", serif;
+    }
+
+    .domain-copy {
+      margin: 0;
+      color: var(--muted);
+      font-size: 11.5px;
+      line-height: 1.55;
+    }
+
+    .domain:hover .domain-copy {
+      color: #AEB5BA;
+    }
+
+    /* =========================
+       CERTIFICATIONS
+    ========================= */
+
+    .cert-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    .cert {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      padding: 22px;
+      border: 1px solid var(--line);
+      background: var(--paper-2);
+      text-decoration: none;
+      transition: .2s ease;
+    }
+
+    .cert:hover {
+      border-color: var(--lime);
+      transform: translateY(-3px);
+      box-shadow: 5px 5px 0 var(--lime);
+    }
+
+    .cert-name {
+      margin: 0 0 4px;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .cert-issuer {
+      margin: 0;
+      color: var(--faint);
+      font: 10px "IBM Plex Mono", monospace;
+    }
+
+    .cert-arrow {
+      color: var(--lime);
+      font-size: 18px;
+    }
+
+    /* =========================
+       CONTACT
+    ========================= */
+
+    .contact {
+      background:
+        radial-gradient(circle at 80% 20%, rgba(169,54,38,.18), transparent 30%),
+        var(--dark);
+      color: var(--cream);
+      border: 0 !important;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .contact-content {
+      max-width: 800px;
+    }
+
+    .contact .section-index {
+      color: #C9A890;
+    }
+
+    .contact-title {
+      margin: 20px 0;
+      font: 700 clamp(45px, 7vw, 78px)/.95 "Fraunces", serif;
+      letter-spacing: -.04em;
+    }
+
+    .contact-copy {
+      max-width: 620px;
+      color: #B6BDC1;
+      font-size: 16px;
+    }
+
+    .contact-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 30px;
+    }
+
+    .contact-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 16px;
+    }
+
+    .contact-link {
+      color: #B6BDC1;
+      text-decoration: none;
+      border-bottom: 1px solid #404850;
+      padding-bottom: 2px;
+      font: 10px "IBM Plex Mono", monospace;
+      transition: .2s ease;
+    }
+
+    .contact-link:hover {
+      color: white;
+      border-color: white;
+    }
+
+    .footer-line {
+      margin-top: 80px;
+      padding-top: 20px;
+      border-top: 1px solid var(--dark-line);
+      color: #667078;
+      font: 10px "IBM Plex Mono", monospace;
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    /* =========================
+       REVEAL
+    ========================= */
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity .7s ease, transform .7s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* =========================
+       RESPONSIVE
+    ========================= */
+
+    @media (max-width: 900px) {
+      .section-heading {
+        grid-template-columns: 150px 1fr;
+        gap: 25px;
+      }
+
+      .project-top {
+        grid-template-columns: 70px 1fr;
+      }
+
+      .project-link {
+        grid-column: 2;
+        justify-self: start;
+      }
+
+      .project-content {
+        padding-left: 123px;
+      }
+
+      .process {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .process-item:nth-child(3) {
+        border-right: 0;
+      }
+
+      .process-item:nth-child(-n+3) {
+        border-bottom: 1px solid var(--line);
+      }
+
+      .domain-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 700px) {
+      .container {
+        width: min(100% - 32px, var(--max));
+      }
+
+      .status-inner {
+        min-height: 38px;
+        font-size: 9px;
+      }
+
+      .nav-inner {
+        height: 60px;
+      }
+
+      .menu-button {
+        display: block;
+      }
+
+      .nav-links {
+        display: none;
+        position: absolute;
+        left: 16px;
+        right: 16px;
+        top: 66px;
+        padding: 15px;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        background: var(--paper);
+        border: 1px solid var(--line);
+        box-shadow: var(--shadow);
+      }
+
+      .nav-links.open {
+        display: flex;
+      }
+
+      .nav-links a {
+        padding: 13px 5px;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .nav-links a:last-child {
+        border-bottom: 0;
+      }
+
+      .hero-inner {
+        padding: 65px 0 60px;
+      }
+
+      .hero h1 {
+        font-size: clamp(53px, 16vw, 78px);
+      }
+
+      .hero-subtitle {
+        font-size: 18px;
+      }
+
+      .snapshot-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .stat:nth-child(2) {
+        border-right: 0;
+      }
+
+      .stat:nth-child(-n+2) {
+        border-bottom: 1px solid var(--line);
+      }
+
+      section.section {
+        padding: 70px 0;
+      }
+
+      .section-heading {
+        display: block;
+        margin-bottom: 35px;
+      }
+
+      .section-title {
+        margin-top: 12px;
+      }
+
+      .project-top {
+        display: block;
+        padding: 23px;
+      }
+
+      .project-number {
+        margin-bottom: 10px;
+      }
+
+      .project-link {
+        display: inline-block;
+        margin-top: 18px;
+      }
+
+      .project-content {
+        display: block;
+        padding: 0 23px 25px;
+      }
+
+      .project-result {
+        margin-top: 22px;
+      }
+
+      .evidence-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .process {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .process-item {
+        border-right: 1px solid var(--line) !important;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .process-item:nth-child(2n) {
+        border-right: 0 !important;
+      }
+
+      .process-item:last-child {
+        grid-column: 1 / -1;
+        border-right: 0 !important;
+      }
+
+      .skills-layout,
+      .cert-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .domain-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .footer-line {
+        flex-direction: column;
+      }
+    }
+
+    @media (max-width: 430px) {
+      .domain-grid,
+      .process {
+        grid-template-columns: 1fr;
+      }
+
+      .process-item,
+      .process-item:nth-child(2n) {
+        border-right: 0 !important;
+      }
+
+      .process-item:last-child {
+        grid-column: auto;
+      }
+
+      .hero-actions,
+      .contact-actions {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .button {
+        width: 100%;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        animation: none !important;
+        transition: none !important;
+      }
+
+      .reveal {
+        opacity: 1;
+        transform: none;
+      }
+    }
+  </style>
 </head>
+
 <body>
 
-<div class="topbar">
-  <div class="wrap">
-    <span>HARSH MEENA · ANALYST PORTFOLIO</span>
-    <span class="status"><span class="dot"></span>OPEN TO WORK · IMMEDIATE JOINER</span>
-  </div>
-</div>
+  <!-- =========================
+       STATUS
+  ========================= -->
 
-<header class="cover">
-  <div class="wrap">
-    <p class="kicker">Indore, India</p>
-    <h1>Harsh Meena<span class="dot-accent">.</span></h1>
-    <p class="role-line">Entry-level <b>Data</b> / <b>Business</b> / <b>MIS</b> Analyst</p>
-    <p class="thesis">SQL, Python, and Power BI, put to work on real datasets — not toy exercises. Every number on this page can be walked through end to end, not just claimed.</p>
-    <div class="social-row">
-      <a class="social-btn" href="mailto:harshmeena9977@gmail.com">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 6 10-6"/></svg>
-        <span>Email</span>
-      </a>
-      <a class="social-btn" href="https://wa.me/919977551380" target="_blank" rel="noopener">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21l1.65-4.95A9 9 0 1 1 8.05 19.35Z"/><path d="M8.5 9.5c0 3.5 3 6.5 6.5 6.5"/></svg>
-        <span>WhatsApp</span>
-      </a>
-      <a class="social-btn" href="https://www.linkedin.com/in/harsh-meena-analyst/" target="_blank" rel="noopener">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/><path d="M10 9h4v2a4 4 0 0 1 8 0v9h-4v-8a2 2 0 0 0-4 0v8h-4z"/></svg>
-        <span>LinkedIn</span>
-      </a>
-      <a class="social-btn" href="https://github.com/harshmeena9977-ops" target="_blank" rel="noopener">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-        <span>GitHub</span>
-      </a>
-      <a class="social-btn" href="https://harshmeena9977-ops.github.io" target="_blank" rel="noopener">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 0 1 0 20 15 15 0 0 1 0-20Z"/></svg>
-        <span>Portfolio</span>
-      </a>
+  <div class="status-bar">
+    <div class="container status-inner">
+      <span>HARSH MEENA · ANALYST PORTFOLIO</span>
+      <span class="availability">
+        <span class="availability-dot"></span>
+        OPEN TO WORK · IMMEDIATE JOINER
+      </span>
     </div>
   </div>
-</header>
 
-<section id="why" class="reveal">
-  <div class="wrap">
-    <p class="eyebrow"><span class="num">01 /</span> Who I Am</p>
-    <h2 class="section-title">An analyst who shows the work</h2>
-    <div class="why-text">
-      <p class="lede">Every claim on this page is built to survive a follow-up question.</p>
-      <p>I taught myself SQL, Python, and Power BI, then used them the way a working analyst does — on real, messy, public datasets, not toy exercises. Every metric here that carries a dotted underline is backed by a verification note: hover it and you'll see the exact dataset and method behind the number.</p>
-      <p>Fast learner, methodical builder, ready to plug straight into a data or reporting team from day one.</p>
+  <!-- =========================
+       NAV
+  ========================= -->
+
+  <nav class="nav">
+    <div class="container nav-inner">
+
+      <a href="#top" class="brand">
+        HM<span>.</span>
+      </a>
+
+      <button class="menu-button" id="menuButton" aria-label="Open navigation">
+        ☰
+      </button>
+
+      <div class="nav-links" id="navLinks">
+        <a href="#work">Work</a>
+        <a href="#approach">Approach</a>
+        <a href="#skills">Skills</a>
+        <a href="#credentials">Credentials</a>
+        <a href="#contact" class="nav-cta">Let's talk ↗</a>
+      </div>
+
     </div>
-    <div class="tag-row">
-      <span class="tag-pill">SQL</span>
-      <span class="tag-pill">Python</span>
-      <span class="tag-pill">Power BI</span>
-      <span class="tag-pill">DAX</span>
-      <span class="tag-pill">Excel</span>
-      <span class="tag-pill">Statistical Analysis</span>
-    </div>
-  </div>
-</section>
+  </nav>
 
-<section id="cases" class="reveal">
-  <div class="wrap">
-    <p class="eyebrow"><span class="num">02 /</span> Proof of Work</p>
-    <h2 class="section-title">Projects</h2>
+  <main id="top">
 
-    <div class="case">
-      <div class="case-head">
-        <div>
-          <p class="case-id">01 · JAN–FEB 2026</p>
-          <h3 class="case-title">Telecom Customer Churn Analysis</h3>
-          <p class="case-stack">Python · SQL · Scikit-learn · Power BI</p>
+    <!-- =========================
+         HERO
+    ========================= -->
+
+    <header class="hero">
+      <div class="container hero-inner">
+
+        <div class="hero-kicker">
+          Indore, India · Data / Business / MIS
         </div>
-        <a class="case-link" href="https://github.com/harshmeena9977-ops/Telecom-Churn-Analysis" target="_blank" rel="noopener">Repo ↗</a>
-      </div>
-      <div class="case-body">
-        <p class="case-finding">Investigated <span class="stamp" tabindex="0">26.5% churn rate<span class="tip">7,043-row telecom customer dataset; churn flag aggregated across full customer base.</span></span>, isolating month-to-month contracts at <span class="stamp" tabindex="0">43% churn<span class="tip">Churn rate filtered to Contract = "Month-to-month" vs. 1-year/2-year contracts.</span></span> and low-tenure customers at <span class="stamp" tabindex="0">2.5× higher risk<span class="tip">Churn rate for tenure &lt;12 months vs. tenure ≥12 months.</span></span> as the two dominant drivers.</p>
-        <p class="case-finding">Built a Random Forest classifier to flag at-risk customers — <span class="stamp" tabindex="0">85.3% accuracy, 82.1% precision<span class="tip">Held-out test split; precision measured on the churn-positive class.</span></span> — then designed an executive Power BI dashboard translating segmentation into a retention target list.</p>
-      </div>
-    </div>
 
-    <div class="case">
-      <div class="case-head">
-        <div>
-          <p class="case-id">02 · JUL–AUG 2026</p>
-          <h3 class="case-title">Workforce Attrition &amp; Retention Analytics</h3>
-          <p class="case-stack">Power BI · DAX · Power Query</p>
+        <h1>
+          Data that leads<br>
+          to <span>better decisions.</span>
+        </h1>
+
+        <p class="hero-subtitle">
+          I'm <strong>Harsh Meena</strong>, an analyst who turns messy datasets
+          into clear business insights using SQL, Python, Power BI, DAX and Excel.
+        </p>
+
+        <div class="hero-position">
+          Entry-level analyst · Open to roles across India
         </div>
-        <a class="case-link" href="https://github.com/harshmeena9977-ops/workforce-attrition-retention-analytics" target="_blank" rel="noopener">Repo ↗</a>
-      </div>
-      <div class="case-body">
-        <p class="case-finding">Analyzed 1,470 employee records against a <span class="stamp" tabindex="0">16.12% attrition rate<span class="tip">IBM HR Analytics dataset (Kaggle), 1,470 employees.</span></span>, with R&amp;D responsible for <span class="stamp" tabindex="0">56% of exits<span class="tip">Share of total attrited employees whose department = R&D.</span></span> and Laboratory Technicians as the highest-risk role.</p>
-        <p class="case-finding">Key Influencers analysis inside a 5-page dashboard showed overtime employees churn at <span class="stamp" tabindex="0">2.93×<span class="tip">OverTime = Yes vs. No, compared against attrition outcome.</span></span> the base rate, low-income employees at <span class="stamp" tabindex="0">2.60×<span class="tip">Bottom income quartile vs. remainder.</span></span>, and under-25 employees at <span class="stamp" tabindex="0">35.77% attrition<span class="tip">Attrition rate filtered to Age &lt; 25 segment.</span></span> — flagged as the priority segment.</p>
-      </div>
-    </div>
 
-    <div class="case">
-      <div class="case-head">
-        <div>
-          <p class="case-id">03 · NOV–DEC 2025</p>
-          <h3 class="case-title">Global Superstore Sales Profitability Analysis</h3>
-          <p class="case-stack">SQL · Power BI · Excel</p>
+        <div class="hero-actions">
+          <a href="#work" class="button button-primary">
+            VIEW SELECTED WORK ↘
+          </a>
+
+          <a href="https://github.com/harshmeena9977-ops"
+             target="_blank"
+             rel="noopener"
+             class="button button-secondary">
+            GITHUB ↗
+          </a>
+
+          <!--
+            Add your resume file to the GitHub repository as:
+            resume.pdf
+
+            Then this button will work automatically.
+          -->
+          <a href="resume.pdf"
+             class="button button-secondary"
+             target="_blank"
+             rel="noopener">
+            RESUME ↗
+          </a>
         </div>
-        <a class="case-link" href="https://github.com/harshmeena9977-ops/Global-Superstore-Sales-Analysis" target="_blank" rel="noopener">Repo ↗</a>
-      </div>
-      <div class="case-body">
-        <p class="case-finding">Cleaned and analyzed <span class="stamp" tabindex="0">10,000+ transactions<span class="tip">Global Superstore dataset spanning 4 regions and 17 product sub-categories.</span></span>, isolating 3 low-profit segments responsible for a <span class="stamp" tabindex="0">20% drag on profitability<span class="tip">Contribution-margin analysis per region/category cross-tab.</span></span>.</p>
-        <p class="case-finding">Replaced manual month-end reporting with an automated executive dashboard, cutting reporting effort by <span class="stamp" tabindex="0">65%<span class="tip">Manual report build (~3 days) vs. automated dashboard refresh (~4 hours).</span></span>.</p>
-      </div>
-    </div>
 
-    <div class="case">
-      <div class="case-head">
-        <div>
-          <p class="case-id">04 · MAR–APR 2026</p>
-          <h3 class="case-title">Yelp Restaurant Success Metrics Analysis</h3>
-          <p class="case-stack">Python · SQL · SQLite · Statistical Analysis</p>
+      </div>
+    </header>
+
+
+    <!-- =========================
+         SNAPSHOT
+    ========================= -->
+
+    <section class="snapshot">
+      <div class="container snapshot-grid">
+
+        <div class="stat">
+          <div class="stat-number">04</div>
+          <div class="stat-label">Analytics projects</div>
         </div>
-        <a class="case-link" href="https://github.com/harshmeena9977-ops/yelp-restaurant-success-metrics" target="_blank" rel="noopener">Repo ↗</a>
+
+        <div class="stat">
+          <div class="stat-number">SQL</div>
+          <div class="stat-label">Data querying</div>
+        </div>
+
+        <div class="stat">
+          <div class="stat-number">Python</div>
+          <div class="stat-label">Analysis & modeling</div>
+        </div>
+
+        <div class="stat">
+          <div class="stat-number">BI</div>
+          <div class="stat-label">Power BI & DAX</div>
+        </div>
+
       </div>
-      <div class="case-body">
-        <p class="case-finding">Processed <span class="stamp" tabindex="0">150K+ restaurant records and 2M+ reviews<span class="tip">Yelp Open Dataset, restaurant-category subset joined against reviews.</span></span> to find a <span class="stamp" tabindex="0">2.5× engagement gap<span class="tip">Avg. review volume for restaurants rated ≥3.5 stars vs. below.</span></span> between high- and low-rated restaurants.</p>
-        <p class="case-finding">Elite Yelp users — <span class="stamp" tabindex="0">4.5% of the user base<span class="tip">Users flagged Elite=True as a share of total distinct reviewers.</span></span> — generated <span class="stamp" tabindex="0">44% of all reviews<span class="tip">Review count by Elite-flagged users ÷ total review count.</span></span>, surfaced as the highest-leverage engagement group.</p>
+    </section>
+
+
+    <!-- =========================
+         SELECTED WORK
+    ========================= -->
+
+    <section class="section reveal" id="work">
+
+      <div class="container">
+
+        <div class="section-heading">
+          <div class="section-index">
+            01 / <span>Proof of work</span>
+          </div>
+
+          <div>
+            <h2 class="section-title">
+              Projects built around business questions.
+            </h2>
+
+            <p class="section-intro">
+              Each project starts with a practical question, moves through
+              data preparation and analysis, and ends with an insight that
+              a business stakeholder can actually use.
+            </p>
+          </div>
+        </div>
+
+
+        <div class="project-list">
+
+          <!-- PROJECT 01 -->
+
+          <article class="project">
+
+            <div class="project-top">
+
+              <div>
+                <div class="project-number">01</div>
+                <div class="project-type">Customer retention</div>
+              </div>
+
+              <div>
+                <h3 class="project-title">
+                  Telecom Customer Churn Analysis
+                </h3>
+
+                <div class="project-stack">
+                  <span class="tech">Python</span>
+                  <span class="tech">SQL</span>
+                  <span class="tech">Scikit-learn</span>
+                  <span class="tech">Power BI</span>
+                </div>
+              </div>
+
+              <a
+                href="https://github.com/harshmeena9977-ops/Telecom-Churn-Analysis"
+                target="_blank"
+                rel="noopener"
+                class="project-link">
+                VIEW REPO ↗
+              </a>
+
+            </div>
+
+            <div class="project-content">
+
+              <p class="project-description">
+                Investigated customer churn across a 7,043-row telecom
+                dataset, segmented customers by contract and tenure,
+                and built a Random Forest model to identify customers
+                with elevated churn risk.
+              </p>
+
+              <div class="project-result">
+                <div class="result-label">Key finding</div>
+                <p class="result-text">
+                  Month-to-month customers showed 43% churn,
+                  making contract type a major retention signal.
+                </p>
+              </div>
+
+            </div>
+
+          </article>
+
+
+          <!-- PROJECT 02 -->
+
+          <article class="project">
+
+            <div class="project-top">
+
+              <div>
+                <div class="project-number">02</div>
+                <div class="project-type">Workforce analytics</div>
+              </div>
+
+              <div>
+                <h3 class="project-title">
+                  Workforce Attrition & Retention
+                </h3>
+
+                <div class="project-stack">
+                  <span class="tech">Power BI</span>
+                  <span class="tech">DAX</span>
+                  <span class="tech">Power Query</span>
+                </div>
+              </div>
+
+              <a
+                href="https://github.com/harshmeena9977-ops/workforce-attrition-retention-analytics"
+                target="_blank"
+                rel="noopener"
+                class="project-link">
+                VIEW REPO ↗
+              </a>
+
+            </div>
+
+            <div class="project-content">
+
+              <p class="project-description">
+                Built a five-page Power BI workforce analytics dashboard
+                across 1,470 employee records, using DAX measures,
+                segmentation and Key Influencers analysis to investigate
+                employee attrition.
+              </p>
+
+              <div class="project-result">
+                <div class="result-label">Key finding</div>
+                <p class="result-text">
+                  Employees working overtime showed 2.93× the
+                  attrition rate of the comparison group.
+                </p>
+              </div>
+
+            </div>
+
+          </article>
+
+
+          <!-- PROJECT 03 -->
+
+          <article class="project">
+
+            <div class="project-top">
+
+              <div>
+                <div class="project-number">03</div>
+                <div class="project-type">Sales profitability</div>
+              </div>
+
+              <div>
+                <h3 class="project-title">
+                  Global Superstore Profitability
+                </h3>
+
+                <div class="project-stack">
+                  <span class="tech">SQL</span>
+                  <span class="tech">Power BI</span>
+                  <span class="tech">Excel</span>
+                </div>
+              </div>
+
+              <a
+                href="https://github.com/harshmeena9977-ops/Global-Superstore-Sales-Analysis"
+                target="_blank"
+                rel="noopener"
+                class="project-link">
+                VIEW REPO ↗
+              </a>
+
+            </div>
+
+            <div class="project-content">
+
+              <p class="project-description">
+                Cleaned and analyzed 10,000+ transactions across regions
+                and product categories, then translated profitability
+                patterns into an executive reporting dashboard.
+              </p>
+
+              <div class="project-result">
+                <div class="result-label">Key finding</div>
+                <p class="result-text">
+                  Three low-profit segments were isolated as major
+                  contributors to the profitability drag.
+                </p>
+              </div>
+
+            </div>
+
+          </article>
+
+
+          <!-- PROJECT 04 -->
+
+          <article class="project">
+
+            <div class="project-top">
+
+              <div>
+                <div class="project-number">04</div>
+                <div class="project-type">Consumer analytics</div>
+              </div>
+
+              <div>
+                <h3 class="project-title">
+                  Yelp Restaurant Success Metrics
+                </h3>
+
+                <div class="project-stack">
+                  <span class="tech">Python</span>
+                  <span class="tech">SQL</span>
+                  <span class="tech">SQLite</span>
+                  <span class="tech">Statistics</span>
+                </div>
+              </div>
+
+              <a
+                href="https://github.com/harshmeena9977-ops/yelp-restaurant-success-metrics"
+                target="_blank"
+                rel="noopener"
+                class="project-link">
+                VIEW REPO ↗
+              </a>
+
+            </div>
+
+            <div class="project-content">
+
+              <p class="project-description">
+                Processed 150K+ restaurant records and 2M+ reviews
+                to examine rating, review engagement and user behavior,
+                adapting the analyst toolkit to a consumer-facing dataset.
+              </p>
+
+              <div class="project-result">
+                <div class="result-label">Key finding</div>
+                <p class="result-text">
+                  Elite reviewers represented 4.5% of users while
+                  generating 44% of total reviews.
+                </p>
+              </div>
+
+            </div>
+
+          </article>
+
+        </div>
+
       </div>
-    </div>
-  </div>
-</section>
 
-<section id="skills" class="reveal">
-  <div class="wrap">
-    <p class="eyebrow"><span class="num">03 /</span> Toolkit</p>
-    <h2 class="section-title">Working skillset</h2>
-    <p class="explore-hint">Click a skill to see exactly where and why it was used →</p>
+    </section>
 
-    <div class="explore-grid" id="skillGrid">
-      <div class="explore-pill" data-skill="sql">
-        <svg class="arrow-ic" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round"><path d="M6 4l10 8-10 8"/></svg>
-        SQL
+
+    <!-- =========================
+         EVIDENCE
+    ========================= -->
+
+    <section class="section evidence reveal">
+
+      <div class="container">
+
+        <div class="section-heading">
+
+          <div class="section-index">
+            02 / <span>Selected evidence</span>
+          </div>
+
+          <div>
+            <h2 class="section-title">
+              Numbers worth asking about.
+            </h2>
+
+            <p class="section-intro evidence-intro">
+              These are not decorative metrics. Each figure comes from
+              the datasets and analytical work documented in the linked
+              repositories.
+            </p>
+          </div>
+
+        </div>
+
+
+        <div class="evidence-grid">
+
+          <div class="evidence-card">
+            <div class="evidence-value">26.5%</div>
+            <h3 class="evidence-title">Telecom churn</h3>
+            <p class="evidence-copy">
+              Overall churn rate across 7,043 telecom customers,
+              used as the baseline for segmentation.
+            </p>
+          </div>
+
+          <div class="evidence-card">
+            <div class="evidence-value">85.3%</div>
+            <h3 class="evidence-title">Model accuracy</h3>
+            <p class="evidence-copy">
+              Random Forest test-set accuracy for the telecom
+              churn classification project.
+            </p>
+          </div>
+
+          <div class="evidence-card">
+            <div class="evidence-value">16.12%</div>
+            <h3 class="evidence-title">Workforce attrition</h3>
+            <p class="evidence-copy">
+              Attrition rate across the 1,470-employee HR
+              analytics dataset.
+            </p>
+          </div>
+
+          <div class="evidence-card">
+            <div class="evidence-value">2.93×</div>
+            <h3 class="evidence-title">Overtime risk</h3>
+            <p class="evidence-copy">
+              Relative attrition rate observed for employees
+              working overtime.
+            </p>
+          </div>
+
+          <div class="evidence-card">
+            <div class="evidence-value">150K+</div>
+            <h3 class="evidence-title">Restaurant records</h3>
+            <p class="evidence-copy">
+              Restaurant records processed in the Yelp
+              consumer analytics project.
+            </p>
+          </div>
+
+          <div class="evidence-card">
+            <div class="evidence-value">2M+</div>
+            <h3 class="evidence-title">Reviews analyzed</h3>
+            <p class="evidence-copy">
+              Reviews used to examine engagement and
+              restaurant-rating relationships.
+            </p>
+          </div>
+
+        </div>
+
       </div>
-      <div class="explore-pill" data-skill="python">
-        <svg class="arrow-ic" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round"><path d="M6 4l10 8-10 8"/></svg>
-        Python
+
+    </section>
+
+
+    <!-- =========================
+         APPROACH
+    ========================= -->
+
+    <section class="section reveal" id="approach">
+
+      <div class="container">
+
+        <div class="section-heading">
+
+          <div class="section-index">
+            03 / <span>Method</span>
+          </div>
+
+          <div>
+            <h2 class="section-title">
+              How I approach an analyst problem.
+            </h2>
+
+            <p class="section-intro">
+              The tools matter. The thinking between them matters more.
+            </p>
+          </div>
+
+        </div>
+
+
+        <div class="process">
+
+          <div class="process-item">
+            <div class="process-number">01</div>
+            <h3 class="process-title">Frame</h3>
+            <p class="process-copy">
+              Define the business question and decide
+              what a useful answer actually looks like.
+            </p>
+          </div>
+
+          <div class="process-item">
+            <div class="process-number">02</div>
+            <h3 class="process-title">Query</h3>
+            <p class="process-copy">
+              Inspect, clean and query the underlying
+              data before drawing conclusions.
+            </p>
+          </div>
+
+          <div class="process-item">
+            <div class="process-number">03</div>
+            <h3 class="process-title">Analyze</h3>
+            <p class="process-copy">
+              Segment the data, test patterns and
+              distinguish signal from noise.
+            </p>
+          </div>
+
+          <div class="process-item">
+            <div class="process-number">04</div>
+            <h3 class="process-title">Visualize</h3>
+            <p class="process-copy">
+              Build dashboards and visuals that make
+              the important patterns easy to see.
+            </p>
+          </div>
+
+          <div class="process-item">
+            <div class="process-number">05</div>
+            <h3 class="process-title">Recommend</h3>
+            <p class="process-copy">
+              Turn the analysis into a clear business
+              implication or next action.
+            </p>
+          </div>
+
+        </div>
+
       </div>
-      <div class="explore-pill" data-skill="powerbi">
-        <svg class="arrow-ic" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round"><path d="M6 4l10 8-10 8"/></svg>
-        Power BI
+
+    </section>
+
+
+    <!-- =========================
+         SKILLS
+    ========================= -->
+
+    <section class="section reveal" id="skills">
+
+      <div class="container">
+
+        <div class="section-heading">
+
+          <div class="section-index">
+            04 / <span>Toolkit</span>
+          </div>
+
+          <div>
+            <h2 class="section-title">
+              Tools I use to move from raw data to insight.
+            </h2>
+          </div>
+
+        </div>
+
+
+        <div class="skills-layout">
+
+          <div class="skill-card">
+            <div class="skill-card-header">
+              <h3 class="skill-name">SQL</h3>
+              <span class="skill-code">01 / CORE</span>
+            </div>
+
+            <p class="skill-description">
+              Querying, joining and aggregating data to answer
+              business questions before visualization.
+            </p>
+
+            <div class="skill-tags">
+              <span class="skill-tag">JOINS</span>
+              <span class="skill-tag">CTEs</span>
+              <span class="skill-tag">WINDOW FUNCTIONS</span>
+              <span class="skill-tag">AGGREGATIONS</span>
+              <span class="skill-tag">SUBQUERIES</span>
+              <span class="skill-tag">SQLITE</span>
+            </div>
+          </div>
+
+
+          <div class="skill-card">
+            <div class="skill-card-header">
+              <h3 class="skill-name">Python</h3>
+              <span class="skill-code">02 / ANALYSIS</span>
+            </div>
+
+            <p class="skill-description">
+              Cleaning, exploratory analysis, statistical work,
+              segmentation and predictive modeling.
+            </p>
+
+            <div class="skill-tags">
+              <span class="skill-tag">PANDAS</span>
+              <span class="skill-tag">NUMPY</span>
+              <span class="skill-tag">SCIKIT-LEARN</span>
+              <span class="skill-tag">EDA</span>
+              <span class="skill-tag">STATISTICS</span>
+            </div>
+          </div>
+
+
+          <div class="skill-card">
+            <div class="skill-card-header">
+              <h3 class="skill-name">Power BI</h3>
+              <span class="skill-code">03 / BI</span>
+            </div>
+
+            <p class="skill-description">
+              Building stakeholder-facing dashboards that turn
+              analysis into something decision-makers can use.
+            </p>
+
+            <div class="skill-tags">
+              <span class="skill-tag">DAX</span>
+              <span class="skill-tag">POWER QUERY</span>
+              <span class="skill-tag">KEY INFLUENCERS</span>
+              <span class="skill-tag">DATA MODELING</span>
+              <span class="skill-tag">DASHBOARDS</span>
+            </div>
+          </div>
+
+
+          <div class="skill-card">
+            <div class="skill-card-header">
+              <h3 class="skill-name">Excel</h3>
+              <span class="skill-code">04 / REPORTING</span>
+            </div>
+
+            <p class="skill-description">
+              Fast validation, cleaning, pivot analysis and
+              practical reporting workflows.
+            </p>
+
+            <div class="skill-tags">
+              <span class="skill-tag">PIVOTS</span>
+              <span class="skill-tag">LOOKUPS</span>
+              <span class="skill-tag">CLEANING</span>
+              <span class="skill-tag">VALIDATION</span>
+              <span class="skill-tag">REPORTING</span>
+            </div>
+          </div>
+
+        </div>
+
       </div>
-      <div class="explore-pill" data-skill="excel">
-        <svg class="arrow-ic" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round"><path d="M6 4l10 8-10 8"/></svg>
-        Excel
+
+    </section>
+
+
+    <!-- =========================
+         DOMAINS
+    ========================= -->
+
+    <section class="section reveal">
+
+      <div class="container">
+
+        <div class="section-heading">
+
+          <div class="section-index">
+            05 / <span>Domain range</span>
+          </div>
+
+          <div>
+            <h2 class="section-title">
+              Different industries. Same analytical discipline.
+            </h2>
+
+            <p class="section-intro">
+              I enjoy working where the data changes but the fundamental
+              analyst workflow stays familiar.
+            </p>
+          </div>
+
+        </div>
+
+
+        <div class="domain-grid">
+
+          <div class="domain">
+            <div class="domain-number">01</div>
+
+            <div>
+              <h3 class="domain-title">
+                Telecom
+              </h3>
+
+              <p class="domain-copy">
+                Churn, customer segmentation and retention risk.
+              </p>
+            </div>
+          </div>
+
+
+          <div class="domain">
+            <div class="domain-number">02</div>
+
+            <div>
+              <h3 class="domain-title">
+                Workforce
+              </h3>
+
+              <p class="domain-copy">
+                Attrition, employee segments and retention analytics.
+              </p>
+            </div>
+          </div>
+
+
+          <div class="domain">
+            <div class="domain-number">03</div>
+
+            <div>
+              <h3 class="domain-title">
+                Retail
+              </h3>
+
+              <p class="domain-copy">
+                Sales, profitability, category and regional analysis.
+              </p>
+            </div>
+          </div>
+
+
+          <div class="domain">
+            <div class="domain-number">04</div>
+
+            <div>
+              <h3 class="domain-title">
+                Hospitality
+              </h3>
+
+              <p class="domain-copy">
+                Reviews, ratings and customer engagement behavior.
+              </p>
+            </div>
+          </div>
+
+        </div>
+
       </div>
-    </div>
 
-    <div class="explore-panel" id="skillPanel">
-      <div class="panel-inner" id="skillPanelContent"></div>
-    </div>
-  </div>
-</section>
+    </section>
 
-<section id="domains" class="reveal">
-  <div class="wrap">
-    <p class="eyebrow"><span class="num">04 /</span> Domain Range</p>
-    <h2 class="section-title">Not locked to one industry</h2>
-    <p class="explore-hint">Core skill stays the same — click a domain to see it applied →</p>
 
-    <div class="explore-grid" id="domainGrid">
-      <div class="explore-pill" data-domain="telecom">
-        <svg class="arrow-ic" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round"><path d="M6 4l10 8-10 8"/></svg>
-        Telecom &amp; Retention
+    <!-- =========================
+         CERTIFICATIONS
+    ========================= -->
+
+    <section class="section reveal" id="credentials">
+
+      <div class="container">
+
+        <div class="section-heading">
+
+          <div class="section-index">
+            06 / <span>Credentials</span>
+          </div>
+
+          <div>
+            <h2 class="section-title">
+              Verified learning beyond the projects.
+            </h2>
+
+            <p class="section-intro">
+              Certifications and job simulations supporting the
+              practical work shown above.
+            </p>
+          </div>
+
+        </div>
+
+
+        <div class="cert-grid">
+
+          <a
+            class="cert"
+            href="https://www.life-global.org/certificate/72e28548-6e40-4508-91c0-0630681bf2f0"
+            target="_blank"
+            rel="noopener">
+
+            <div>
+              <p class="cert-name">
+                Data Analytics Job Simulation
+              </p>
+
+              <p class="cert-issuer">
+                DELOITTE AUSTRALIA
+              </p>
+            </div>
+
+            <span class="cert-arrow">↗</span>
+
+          </a>
+
+
+          <a
+            class="cert"
+            href="https://www.hackerrank.com/certificates/iframe/60d72739f0f5"
+            target="_blank"
+            rel="noopener">
+
+            <div>
+              <p class="cert-name">
+                SQL (Advanced)
+              </p>
+
+              <p class="cert-issuer">
+                HACKERRANK
+              </p>
+            </div>
+
+            <span class="cert-arrow">↗</span>
+
+          </a>
+
+
+          <a
+            class="cert"
+            href="https://courses.cognitiveclass.ai/certificates/80afd09939d44ad6a5b0efc8e2b5d7d2"
+            target="_blank"
+            rel="noopener">
+
+            <div>
+              <p class="cert-name">
+                Python 101 for Data Science
+              </p>
+
+              <p class="cert-issuer">
+                IBM / COGNITIVE CLASS
+              </p>
+            </div>
+
+            <span class="cert-arrow">↗</span>
+
+          </a>
+
+
+          <a
+            class="cert"
+            href="https://www.theforage.com/completion-certificates/32A6DqtsbF7LbKdcq/NkaC7knWtjSbi6aYv_32A6DqtsbF7LbKdcq_badDiGPj3EZPG6Ze4_1785174934941_completion_certificate.pdf"
+            target="_blank"
+            rel="noopener">
+
+            <div>
+              <p class="cert-name">
+                Data Science Job Simulation
+              </p>
+
+              <p class="cert-issuer">
+                BCG · FORAGE
+              </p>
+            </div>
+
+            <span class="cert-arrow">↗</span>
+
+          </a>
+
+
+          <a
+            class="cert"
+            href="https://www.theforage.com/completion-certificates/SKZxezskWgmFjRvj9/Tcz8gTtprzAS4xSoK_SKZxezskWgmFjRvj9_badDiGPj3EZPG6Ze4_1784571574212_completion_certificate.pdf"
+            target="_blank"
+            rel="noopener">
+
+            <div>
+              <p class="cert-name">
+                Data Analytics Job Simulation
+              </p>
+
+              <p class="cert-issuer">
+                QUANTIUM · FORAGE
+              </p>
+            </div>
+
+            <span class="cert-arrow">↗</span>
+
+          </a>
+
+
+          <a
+            class="cert"
+            href="https://www.theforage.com/completion-certificates/ifobHAoMjQs9s6bKS/gMTdCXwDdLYoXZ3wG_ifobHAoMjQs9s6bKS_badDiGPj3EZPG6Ze4_1765703821293_completion_certificate.pdf"
+            target="_blank"
+            rel="noopener">
+
+            <div>
+              <p class="cert-name">
+                GenAI Powered Data Analytics
+              </p>
+
+              <p class="cert-issuer">
+                TATA · FORAGE
+              </p>
+            </div>
+
+            <span class="cert-arrow">↗</span>
+
+          </a>
+
+        </div>
+
       </div>
-      <div class="explore-pill" data-domain="hr">
-        <svg class="arrow-ic" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round"><path d="M6 4l10 8-10 8"/></svg>
-        HR &amp; Workforce
+
+    </section>
+
+
+    <!-- =========================
+         CONTACT
+    ========================= -->
+
+    <section class="section contact reveal" id="contact">
+
+      <div class="container">
+
+        <div class="contact-content">
+
+          <div class="section-index">
+            07 / <span>Get in touch</span>
+          </div>
+
+          <h2 class="contact-title">
+            Have a data problem?
+            Let's talk.
+          </h2>
+
+          <p class="contact-copy">
+            I'm currently looking for an entry-level Data Analyst,
+            Business Analyst or MIS Analyst opportunity. Based in
+            Indore/Ujjain and open to relocating anywhere in India.
+          </p>
+
+
+          <div class="contact-actions">
+
+            <a
+              href="mailto:harshmeena9977@gmail.com"
+              class="button button-primary">
+              EMAIL ME ↗
+            </a>
+
+            <a
+              href="https://wa.me/919977551380"
+              target="_blank"
+              rel="noopener"
+              class="button button-secondary">
+              WHATSAPP ↗
+            </a>
+
+          </div>
+
+
+          <div class="contact-links">
+
+            <a
+              href="https://www.linkedin.com/in/harsh-meena-analyst/"
+              target="_blank"
+              rel="noopener"
+              class="contact-link">
+              LINKEDIN ↗
+            </a>
+
+            <a
+              href="https://github.com/harshmeena9977-ops"
+              target="_blank"
+              rel="noopener"
+              class="contact-link">
+              GITHUB ↗
+            </a>
+
+            <a
+              href="https://harshmeena9977-ops.github.io"
+              target="_blank"
+              rel="noopener"
+              class="contact-link">
+              PORTFOLIO ↗
+            </a>
+
+          </div>
+
+        </div>
+
+
+        <div class="footer-line">
+
+          <span>
+            © <span id="year"></span> HARSH MEENA
+          </span>
+
+          <span>
+            BUILT FOR DATA · BUSINESS · MIS ANALYTICS
+          </span>
+
+        </div>
+
       </div>
-      <div class="explore-pill" data-domain="retail">
-        <svg class="arrow-ic" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round"><path d="M6 4l10 8-10 8"/></svg>
-        Retail &amp; Sales
-      </div>
-      <div class="explore-pill" data-domain="hospitality">
-        <svg class="arrow-ic" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round"><path d="M6 4l10 8-10 8"/></svg>
-        Food &amp; Hospitality
-      </div>
-    </div>
 
-    <div class="explore-panel" id="domainPanel">
-      <div class="panel-inner" id="domainPanelContent"></div>
-    </div>
-  </div>
-</section>
+    </section>
 
-<section id="certs" class="reveal">
-  <div class="wrap">
-    <p class="eyebrow"><span class="num">05 /</span> Verified Credentials</p>
-    <h2 class="section-title">Certifications</h2>
-    <div class="cert-grid">
-      <a class="cert-card" href="https://www.life-global.org/certificate/72e28548-6e40-4508-91c0-0630681bf2f0" target="_blank" rel="noopener">
-        <div><p class="cert-name">Data Analytics Job Simulation</p><p class="cert-issuer">Deloitte Australia</p></div>
-        <span class="cert-arrow">↗</span>
-      </a>
-      <a class="cert-card" href="https://www.hackerrank.com/certificates/iframe/60d72739f0f5" target="_blank" rel="noopener">
-        <div><p class="cert-name">SQL (Advanced)</p><p class="cert-issuer">HackerRank</p></div>
-        <span class="cert-arrow">↗</span>
-      </a>
-      <a class="cert-card" href="https://courses.cognitiveclass.ai/certificates/80afd09939d44ad6a5b0efc8e2b5d7d2" target="_blank" rel="noopener">
-        <div><p class="cert-name">Python 101 for Data Science</p><p class="cert-issuer">IBM / Cognitive Class</p></div>
-        <span class="cert-arrow">↗</span>
-      </a>
-      <a class="cert-card" href="https://www.theforage.com/completion-certificates/32A6DqtsbF7LbKdcq/NkaC7knWtjSbi6aYv_32A6DqtsbF7LbKdcq_badDiGPj3EZPG6Ze4_1785174934941_completion_certificate.pdf" target="_blank" rel="noopener">
-        <div><p class="cert-name">Data Science Job Simulation</p><p class="cert-issuer">BCG · Forage</p></div>
-        <span class="cert-arrow">↗</span>
-      </a>
-      <a class="cert-card" href="https://www.theforage.com/completion-certificates/SKZxezskWgmFjRvj9/Tcz8gTtprzAS4xSoK_SKZxezskWgmFjRvj9_badDiGPj3EZPG6Ze4_1784571574212_completion_certificate.pdf" target="_blank" rel="noopener">
-        <div><p class="cert-name">Data Analytics Job Simulation</p><p class="cert-issuer">Quantium · Forage</p></div>
-        <span class="cert-arrow">↗</span>
-      </a>
-      <a class="cert-card" href="https://www.theforage.com/completion-certificates/ifobHAoMjQs9s6bKS/gMTdCXwDdLYoXZ3wG_ifobHAoMjQs9s6bKS_badDiGPj3EZPG6Ze4_1765703821293_completion_certificate.pdf" target="_blank" rel="noopener">
-        <div><p class="cert-name">GenAI Powered Data Analytics</p><p class="cert-issuer">Tata · Forage</p></div>
-        <span class="cert-arrow">↗</span>
-      </a>
-    </div>
-  </div>
-</section>
+  </main>
 
-<footer class="close">
-  <div class="wrap">
-    <p class="eyebrow"><span class="num">06 /</span> Get In Touch</p>
-    <h2>Let's talk about a role.</h2>
-    <p>Looking for an entry-level Data Analyst, Business Analyst, or MIS Analyst role — based in Indore/Ujjain, open to relocating anywhere in India. Immediate joiner.</p>
-    <div class="social-row">
-      <a class="social-btn" href="mailto:harshmeena9977@gmail.com">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 6 10-6"/></svg>
-        <span>Email</span>
-      </a>
-      <a class="social-btn" href="https://wa.me/919977551380" target="_blank" rel="noopener">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21l1.65-4.95A9 9 0 1 1 8.05 19.35Z"/><path d="M8.5 9.5c0 3.5 3 6.5 6.5 6.5"/></svg>
-        <span>WhatsApp</span>
-      </a>
-      <a class="social-btn" href="https://www.linkedin.com/in/harsh-meena-analyst/" target="_blank" rel="noopener">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/><path d="M10 9h4v2a4 4 0 0 1 8 0v9h-4v-8a2 2 0 0 0-4 0v8h-4z"/></svg>
-        <span>LinkedIn</span>
-      </a>
-      <a class="social-btn" href="https://github.com/harshmeena9977-ops" target="_blank" rel="noopener">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-        <span>GitHub</span>
-      </a>
-    </div>
-    <p class="sign">Every figure on this page is sourced from the linked repositories — happy to walk through the methodology on request.</p>
-  </div>
-</footer>
 
-<script>
-  const items = document.querySelectorAll('.reveal');
-  const io = new IntersectionObserver((entries)=>{
-    entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
-  }, {threshold:0.12});
-  items.forEach(i=>io.observe(i));
+  <!-- =========================
+       JAVASCRIPT
+  ========================= -->
 
-  const projIcon = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M8 12h8M8 8h8M8 16h5"/></svg>';
+  <script>
 
-  const skillData = {
-    sql: {
-      why: '<b>Why SQL:</b> every project starts by asking a question of raw, relational data — SQL is how that question gets answered before Python or Power BI ever touch it.',
-      projects: [
-        {title:'Telecom Customer Churn', tag:'Joins · CTEs · Window Functions — segmenting churn cohorts', url:'https://github.com/harshmeena9977-ops/Telecom-Churn-Analysis'},
-        {title:'Yelp Restaurant Metrics', tag:'SQLite queries — joining 150K+ businesses to 2M+ reviews', url:'https://github.com/harshmeena9977-ops/yelp-restaurant-success-metrics'},
-        {title:'Global Superstore Sales', tag:'Aggregation & subqueries — regional profitability cuts', url:'https://github.com/harshmeena9977-ops/Global-Superstore-Sales-Analysis'}
-      ]
-    },
-    python: {
-      why: '<b>Why Python:</b> used once a question needs more than a query — cleaning messy fields, building a predictive model, or running a statistical test SQL alone can\'t do.',
-      projects: [
-        {title:'Telecom Customer Churn', tag:'Pandas cleaning + Scikit-learn Random Forest classifier (85.3% acc.)', url:'https://github.com/harshmeena9977-ops/Telecom-Churn-Analysis'},
-        {title:'Yelp Restaurant Metrics', tag:'Pandas + correlation & geographic segmentation analysis', url:'https://github.com/harshmeena9977-ops/yelp-restaurant-success-metrics'}
-      ]
-    },
-    powerbi: {
-      why: '<b>Why Power BI:</b> the last mile — turning an analysis a stakeholder can\'t read into a dashboard they can act on without needing to ask a follow-up question.',
-      projects: [
-        {title:'Workforce Attrition & Retention', tag:'DAX measures + Key Influencers visual — 5-page dashboard', url:'https://github.com/harshmeena9977-ops/workforce-attrition-retention-analytics'},
-        {title:'Global Superstore Sales', tag:'Executive drill-down dashboard, automated monthly refresh', url:'https://github.com/harshmeena9977-ops/Global-Superstore-Sales-Analysis'},
-        {title:'Telecom Customer Churn', tag:'Churn segmentation dashboard for retention targeting', url:'https://github.com/harshmeena9977-ops/Telecom-Churn-Analysis'}
-      ]
-    },
-    excel: {
-      why: '<b>Why Excel:</b> still the fastest tool for quick validation, pivot-level sanity checks, and cleaning data before it enters a bigger pipeline — every analyst needs this reflex.',
-      projects: [
-        {title:'Global Superstore Sales', tag:'Data cleaning & validation across 10,000+ transactions', url:'https://github.com/harshmeena9977-ops/Global-Superstore-Sales-Analysis'},
-        {title:'Workforce Attrition & Retention', tag:'Power Query prep before DAX modeling', url:'https://github.com/harshmeena9977-ops/workforce-attrition-retention-analytics'}
-      ]
-    }
-  };
+    /* Mobile navigation */
 
-  const domainData = {
-    telecom: {
-      why: '<b>Telecom & Retention:</b> subscription-style businesses live and die by churn — I\'ve built the segmentation and prediction layer that tells a retention team exactly who to target.',
-      projects: [
-        {title:'Telecom Customer Churn Analysis', tag:'7,043 customers · 26.5% churn rate · 85.3% model accuracy', url:'https://github.com/harshmeena9977-ops/Telecom-Churn-Analysis'}
-      ]
-    },
-    hr: {
-      why: '<b>HR & Workforce:</b> people-data is business data — attrition, overtime, and income patterns predict cost the same way churn predicts revenue loss.',
-      projects: [
-        {title:'Workforce Attrition & Retention Analytics', tag:'1,470 employees · 16.12% attrition · Key Influencers dashboard', url:'https://github.com/harshmeena9977-ops/workforce-attrition-retention-analytics'}
-      ]
-    },
-    retail: {
-      why: '<b>Retail & Sales:</b> region/category profitability cuts are the most common ask for any Business or MIS Analyst role — I\'ve done it end to end, not just in theory.',
-      projects: [
-        {title:'Global Superstore Sales Profitability', tag:'10,000+ transactions · 4 regions · 20% profitability drag isolated', url:'https://github.com/harshmeena9977-ops/Global-Superstore-Sales-Analysis'}
-      ]
-    },
-    hospitality: {
-      why: '<b>Food & Hospitality:</b> review and engagement data behaves differently from transactional data — this project shows I can adapt the same toolkit to a consumer-sentiment problem.',
-      projects: [
-        {title:'Yelp Restaurant Success Metrics', tag:'150K+ restaurants · 2M+ reviews · engagement segmentation', url:'https://github.com/harshmeena9977-ops/yelp-restaurant-success-metrics'}
-      ]
-    }
-  };
+    const menuButton = document.getElementById("menuButton");
+    const navLinks = document.getElementById("navLinks");
 
-  function renderPanel(data, contentEl, panelEl){
-    const projHtml = data.projects.map(p => `
-      <a class="mini-proj" href="${p.url}" target="_blank" rel="noopener">
-        <span class="mini-proj-ic">${projIcon}</span>
-        <span>
-          <p class="mini-proj-title">${p.title}</p>
-          <p class="mini-proj-tag">${p.tag}</p>
-        </span>
-      </a>`).join('');
-    contentEl.innerHTML = `
-      <p class="panel-why">${data.why}</p>
-      <p class="panel-projects-label">Used in</p>
-      <div class="panel-projects">${projHtml}</div>`;
-    panelEl.classList.add('open');
-  }
+    menuButton.addEventListener("click", () => {
+      navLinks.classList.toggle("open");
 
-  function setupExplorer(gridId, panelId, contentId, dataAttr, dataset){
-    const grid = document.getElementById(gridId);
-    const panel = document.getElementById(panelId);
-    const content = document.getElementById(contentId);
-    let activeKey = null;
-    grid.querySelectorAll('.explore-pill').forEach(pill => {
-      pill.addEventListener('click', () => {
-        const key = pill.getAttribute(dataAttr);
-        if(activeKey === key){
-          panel.classList.remove('open');
-          pill.classList.remove('active');
-          activeKey = null;
-          return;
-        }
-        grid.querySelectorAll('.explore-pill').forEach(p => p.classList.remove('active'));
-        pill.classList.add('active');
-        renderPanel(dataset[key], content, panel);
-        activeKey = key;
+      menuButton.setAttribute(
+        "aria-expanded",
+        navLinks.classList.contains("open")
+      );
+    });
+
+
+    /* Close mobile menu after navigation */
+
+    navLinks.querySelectorAll("a").forEach(link => {
+      link.addEventListener("click", () => {
+        navLinks.classList.remove("open");
       });
     });
-  }
 
-  setupExplorer('skillGrid', 'skillPanel', 'skillPanelContent', 'data-skill', skillData);
-  setupExplorer('domainGrid', 'domainPanel', 'domainPanelContent', 'data-domain', domainData);
-</script>
+
+    /* Scroll reveal */
+
+    const revealElements = document.querySelectorAll(".reveal");
+
+    const observer = new IntersectionObserver(
+      entries => {
+
+        entries.forEach(entry => {
+
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+            observer.unobserve(entry.target);
+          }
+
+        });
+
+      },
+      {
+        threshold: 0.12
+      }
+    );
+
+    revealElements.forEach(element => {
+      observer.observe(element);
+    });
+
+
+    /* Current year */
+
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
+
+  </script>
 
 </body>
 </html>
