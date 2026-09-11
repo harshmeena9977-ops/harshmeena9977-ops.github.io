@@ -7,708 +7,175 @@
     <meta name="description" content="Premium Data Analyst Portfolio. SQL, Python, Power BI, Excel. Real datasets, verified projects, immediate joiner. Indore, India.">
     <meta property="og:title" content="Harsh Meena — Data Analyst Portfolio">
     <meta property="og:description" content="Turning messy data into decisions people can use.">
-    <meta property="og:image" content="https://harshmeena9977-ops.github.io/og-image.png">
     <meta property="og:url" content="https://harshmeena9977-ops.github.io">
     
-    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    
-    <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
     
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
+        * {margin: 0; padding: 0; box-sizing: border-box;}
         :root {
-            --bg: #07090e;
-            --card: #111827;
-            --card-secondary: #0f172a;
-            --text: #f8fafc;
-            --muted: #94a3b8;
-            --indigo: #6366f1;
-            --violet: #8b5cf6;
-            --cyan: #22d3ee;
-            --accent: #ec4899;
-        }
-
-        body {
-            background-color: var(--bg);
-            color: var(--text);
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            overflow-x: hidden;
-        }
-
-        /* Premium grid background */
-        body::before {
-            content: '';
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: 
-                radial-gradient(circle at 20% 50%, rgba(99, 102, 241, 0.08) 0%, transparent 50%),
-                radial-gradient(circle at 80% 80%, rgba(139, 92, 246, 0.08) 0%, transparent 50%);
-            pointer-events: none;
-            z-index: 0;
-        }
-
-        main {
-            position: relative;
-            z-index: 1;
-        }
-
-        /* Smooth scrolling */
-        html {
-            scroll-behavior: smooth;
-        }
-
-        /* Typography */
-        h1, h2, h3 {
-            font-weight: 600;
-            letter-spacing: -0.02em;
-        }
-
-        h1 {
-            font-size: clamp(2.5rem, 8vw, 4rem);
-            line-height: 1.2;
-        }
-
-        h2 {
-            font-size: clamp(1.875rem, 5vw, 2.25rem);
-            line-height: 1.3;
-        }
-
-        /* Navbar styles */
-        .navbar {
-            position: fixed;
-            top: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: calc(100% - 32px);
-            max-width: 1200px;
-            background: rgba(17, 24, 39, 0.7);
-            backdrop-filter: blur(12px);
-            border: 1px solid rgba(148, 163, 184, 0.1);
-            border-radius: 24px;
-            padding: 12px 28px;
-            z-index: 1000;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .nav-brand {
-            font-weight: 600;
-            font-size: 0.95rem;
-            letter-spacing: 0.05em;
-            text-transform: uppercase;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .nav-dot {
-            width: 8px;
-            height: 8px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
-            animation: pulse 2s infinite;
-        }
-
-        @keyframes pulse {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.4; }
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 8px;
-            list-style: none;
-        }
-
-        .nav-link {
-            padding: 8px 16px;
-            font-size: 0.85rem;
-            color: var(--muted);
-            text-decoration: none;
-            border-radius: 8px;
-            transition: all 0.3s ease;
-            cursor: pointer;
-        }
-
-        .nav-link:hover {
-            color: var(--text);
-            background: rgba(99, 102, 241, 0.1);
-        }
-
-        .nav-link.active {
-            color: var(--indigo);
-            background: rgba(99, 102, 241, 0.15);
-        }
-
-        /* Hero section */
-        .hero {
-            padding-top: 140px;
-            padding-bottom: 80px;
-            min-height: 100vh;
-        }
-
-        .hero-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 24px;
-        }
-
-        .hero-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
-            align-items: center;
-        }
-
-        .hero-content h1 {
-            margin-bottom: 24px;
-            background: linear-gradient(135deg, #f8fafc 0%, #cbd5e1 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .hero-badge {
-            display: inline-block;
-            padding: 8px 16px;
-            background: rgba(99, 102, 241, 0.1);
-            border: 1px solid rgba(99, 102, 241, 0.3);
-            border-radius: 8px;
-            font-size: 0.85rem;
-            color: var(--indigo);
-            margin-bottom: 24px;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-        }
-
-        .hero-subtitle {
-            font-size: 1.1rem;
-            color: var(--muted);
-            line-height: 1.8;
-            margin-bottom: 32px;
-        }
-
-        .hero-meta {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 24px;
-            margin-bottom: 32px;
-            padding-bottom: 32px;
-            border-bottom: 1px solid rgba(148, 163, 184, 0.1);
-        }
-
-        .meta-item {
-            font-size: 0.9rem;
-        }
-
-        .meta-label {
-            color: var(--muted);
-            font-size: 0.8rem;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            margin-bottom: 6px;
-        }
-
-        .meta-value {
-            font-weight: 600;
-            color: var(--text);
-        }
-
-        .hero-skills {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 12px;
-            margin-bottom: 32px;
-        }
-
-        .skill-chip {
-            padding: 8px 14px;
-            background: rgba(148, 163, 184, 0.1);
-            border: 1px solid rgba(148, 163, 184, 0.2);
-            border-radius: 6px;
-            font-size: 0.85rem;
-            color: var(--text);
-            font-weight: 500;
-        }
-
-        .hero-ctas {
-            display: flex;
-            gap: 16px;
-            flex-wrap: wrap;
-        }
-
-        .cta-btn {
-            padding: 12px 24px;
-            background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
-            color: white;
-            border: none;
-            border-radius: 8px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            text-decoration: none;
-        }
-
-        .cta-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 12px 24px rgba(99, 102, 241, 0.3);
-        }
-
-        .cta-btn:focus-visible {
-            outline: 2px solid var(--cyan);
-            outline-offset: 4px;
-        }
-
-        .cta-btn-secondary {
-            background: transparent;
-            border: 1px solid rgba(148, 163, 184, 0.3);
-            color: var(--text);
-        }
-
-        .cta-btn-secondary:hover {
-            background: rgba(99, 102, 241, 0.1);
-            border-color: rgba(99, 102, 241, 0.5);
-        }
-
-        /* Terminal */
-        .terminal {
-            background: var(--card-secondary);
-            border: 1px solid rgba(99, 102, 241, 0.2);
-            border-radius: 16px;
-            padding: 24px;
-            font-family: 'Courier New', monospace;
-            font-size: 0.9rem;
-            overflow: hidden;
-            position: relative;
-            height: 320px;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .terminal-header {
-            display: flex;
-            gap: 8px;
-            margin-bottom: 16px;
-            padding-bottom: 16px;
-            border-bottom: 1px solid rgba(148, 163, 184, 0.1);
-        }
-
-        .terminal-dot {
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-        }
-
-        .terminal-dot.red { background: #ff5f57; }
-        .terminal-dot.yellow { background: #febc2e; }
-        .terminal-dot.green { background: #28c840; }
-
-        .terminal-content {
-            flex: 1;
-            overflow-y: auto;
-            color: var(--cyan);
-        }
-
-        .terminal-line {
-            margin: 8px 0;
-            line-height: 1.6;
-        }
-
-        .terminal-prompt {
-            color: var(--indigo);
-        }
-
-        .terminal-output {
-            color: var(--text);
-            margin-top: 4px;
-        }
-
-        .cursor {
-            display: inline-block;
-            width: 2px;
-            height: 1em;
-            background: var(--cyan);
-            animation: blink 1s infinite;
-            margin-left: 4px;
-        }
-
-        @keyframes blink {
-            0%, 49% { opacity: 1; }
-            50%, 100% { opacity: 0; }
-        }
-
-        /* Metrics Ticker */
-        .metrics-ticker-section {
-            padding: 60px 0;
-            overflow: hidden;
-            background: linear-gradient(90deg, 
-                rgba(99, 102, 241, 0.05) 0%, 
-                rgba(139, 92, 246, 0.05) 50%, 
-                rgba(99, 102, 241, 0.05) 100%);
-            border-top: 1px solid rgba(148, 163, 184, 0.1);
-            border-bottom: 1px solid rgba(148, 163, 184, 0.1);
-        }
-
-        .metrics-ticker {
-            display: flex;
-            gap: 40px;
-            animation: scroll 30s linear infinite;
-            width: fit-content;
-            padding: 0 20px;
-        }
-
-        .metrics-ticker:hover {
-            animation-play-state: paused;
-        }
-
-        @keyframes scroll {
-            0% {
-                transform: translateX(0);
-            }
-            100% {
-                transform: translateX(calc(-50% - 20px));
-            }
-        }
-
-        .metric-item {
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
-            min-width: max-content;
-            padding: 16px 24px;
-            background: rgba(17, 24, 39, 0.5);
-            border: 1px solid rgba(99, 102, 241, 0.2);
-            border-radius: 12px;
-        }
-
-        .metric-value {
-            font-size: 1.5rem;
-            font-weight: 700;
-            background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .metric-label {
-            font-size: 0.85rem;
-            color: var(--muted);
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-        }
-
-        /* Featured Projects Section */
-        .projects-section {
-            padding: 80px 0;
-            border-top: 1px solid rgba(148, 163, 184, 0.1);
-            background: linear-gradient(180deg, 
-                rgba(99, 102, 241, 0.02) 0%, 
-                transparent 100%);
-        }
-
-        .projects-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 24px;
-        }
-
-        .projects-header {
-            margin-bottom: 60px;
-        }
-
-        .projects-header h2 {
-            margin-bottom: 16px;
-            background: linear-gradient(135deg, #f8fafc 0%, #cbd5e1 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .projects-header p {
-            color: var(--muted);
-            font-size: 1.05rem;
-            line-height: 1.7;
-        }
-
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 32px;
-        }
-
-        .project-card {
-            position: relative;
-            background: rgba(17, 24, 39, 0.5);
-            border: 1px solid rgba(99, 102, 241, 0.2);
-            border-radius: 20px;
-            overflow: hidden;
-            padding: 24px;
-            transition: all 0.3s ease;
-            cursor: pointer;
-        }
-
-        .project-card:hover {
-            border-color: rgba(99, 102, 241, 0.5);
-            transform: translateY(-6px);
-            box-shadow: 0 20px 40px rgba(99, 102, 241, 0.1);
-        }
-
-        /* Hover spotlight effect */
-        .project-card::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(99, 102, 241, 0.1) 0%, transparent 70%);
-            opacity: 0;
-            transition: opacity 0.3s ease;
-            pointer-events: none;
-        }
-
-        .project-card:hover::before {
-            opacity: 1;
-        }
-
-        /* Project card content */
-        .project-image-wrapper {
-            position: relative;
-            height: 240px;
-            background: var(--card-secondary);
-            border: 1px solid rgba(148, 163, 184, 0.1);
-            border-radius: 12px;
-            overflow: hidden;
-            margin-bottom: 20px;
-            cursor: pointer;
-        }
-
-        .project-image {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.4s ease;
-        }
-
-        .project-image-wrapper:hover .project-image {
-            transform: scale(1.05);
-        }
-
-        .project-placeholder {
-            width: 100%;
-            height: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: linear-gradient(135deg, rgba(99, 102, 241, 0.1) 0%, rgba(139, 92, 246, 0.1) 100%);
-            color: var(--muted);
-            font-size: 0.9rem;
-            text-align: center;
-            padding: 20px;
-        }
-
-        .project-badge {
-            display: inline-block;
-            padding: 6px 12px;
-            background: rgba(99, 102, 241, 0.15);
-            border: 1px solid rgba(99, 102, 241, 0.3);
-            border-radius: 6px;
-            font-size: 0.75rem;
-            color: var(--indigo);
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            margin-bottom: 16px;
-        }
-
-        .project-title {
-            font-size: 1.4rem;
-            font-weight: 600;
-            margin-bottom: 8px;
-            color: var(--text);
-        }
-
-        .project-question {
-            font-size: 1.1rem;
-            font-weight: 600;
-            margin-bottom: 16px;
-            background: linear-gradient(135deg, #22d3ee 0%, #6366f1 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .project-info {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 16px;
-            margin-bottom: 20px;
-            padding: 16px 0;
-            border-top: 1px solid rgba(148, 163, 184, 0.1);
-            border-bottom: 1px solid rgba(148, 163, 184, 0.1);
-        }
-
-        .info-block {
-            display: flex;
-            flex-direction: column;
-            gap: 6px;
-        }
-
-        .info-label {
-            font-size: 0.8rem;
-            color: var(--muted);
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-        }
-
-        .info-value {
-            font-size: 0.95rem;
-            font-weight: 500;
-            color: var(--text);
-            line-height: 1.5;
-        }
-
-        .project-decision {
-            font-size: 0.95rem;
-            color: var(--muted);
-            margin-bottom: 16px;
-            padding: 12px;
-            background: rgba(99, 102, 241, 0.08);
-            border-left: 3px solid var(--indigo);
-            border-radius: 4px;
-        }
-
-        .project-tech-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-            margin-bottom: 16px;
-        }
-
-        .tech-tag {
-            padding: 6px 12px;
-            background: rgba(148, 163, 184, 0.1);
-            border: 1px solid rgba(148, 163, 184, 0.2);
-            border-radius: 6px;
-            font-size: 0.8rem;
-            color: var(--text);
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-        }
-
-        .project-cta {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            padding: 10px 16px;
-            background: rgba(99, 102, 241, 0.15);
-            border: 1px solid rgba(99, 102, 241, 0.3);
-            border-radius: 8px;
-            color: var(--indigo);
-            text-decoration: none;
-            font-size: 0.9rem;
-            font-weight: 600;
-            transition: all 0.3s ease;
-        }
-
-        .project-cta:hover {
-            background: rgba(99, 102, 241, 0.25);
-            border-color: rgba(99, 102, 241, 0.5);
-            transform: translateX(4px);
-        }
-
+            --bg: #07090e; --card: #111827; --card-secondary: #0f172a;
+            --text: #f8fafc; --muted: #94a3b8; --indigo: #6366f1;
+            --violet: #8b5cf6; --cyan: #22d3ee; --accent: #ec4899;
+        }
+        body {background-color: var(--bg); color: var(--text); font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; overflow-x: hidden;}
+        body::before {content: ''; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-image: radial-gradient(circle at 20% 50%, rgba(99, 102, 241, 0.08) 0%, transparent 50%), radial-gradient(circle at 80% 80%, rgba(139, 92, 246, 0.08) 0%, transparent 50%); pointer-events: none; z-index: 0;}
+        main {position: relative; z-index: 1;}
+        html {scroll-behavior: smooth;}
+        h1, h2, h3 {font-weight: 600; letter-spacing: -0.02em;}
+        h1 {font-size: clamp(2.5rem, 8vw, 4rem); line-height: 1.2;}
+        h2 {font-size: clamp(1.875rem, 5vw, 2.25rem); line-height: 1.3;}
+        
+        .navbar {position: fixed; top: 20px; left: 50%; transform: translateX(-50%); width: calc(100% - 32px); max-width: 1200px; background: rgba(17, 24, 39, 0.7); backdrop-filter: blur(12px); border: 1px solid rgba(148, 163, 184, 0.1); border-radius: 24px; padding: 12px 28px; z-index: 1000; display: flex; justify-content: space-between; align-items: center;}
+        .nav-brand {font-weight: 600; font-size: 0.95rem; letter-spacing: 0.05em; text-transform: uppercase; display: flex; align-items: center; gap: 10px;}
+        .nav-dot {width: 8px; height: 8px; border-radius: 50%; background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%); animation: pulse 2s infinite;}
+        @keyframes pulse {0%, 100% { opacity: 1; } 50% { opacity: 0.4; }}
+        .nav-links {display: flex; gap: 8px; list-style: none;}
+        .nav-link {padding: 8px 16px; font-size: 0.85rem; color: var(--muted); text-decoration: none; border-radius: 8px; transition: all 0.3s ease; cursor: pointer;}
+        .nav-link:hover {color: var(--text); background: rgba(99, 102, 241, 0.1);}
+        .nav-link.active {color: var(--indigo); background: rgba(99, 102, 241, 0.15);}
+        
+        .hero {padding-top: 140px; padding-bottom: 80px; min-height: 100vh;}
+        .hero-container {max-width: 1200px; margin: 0 auto; padding: 0 24px;}
+        .hero-grid {display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center;}
+        .hero-content h1 {margin-bottom: 24px; background: linear-gradient(135deg, #f8fafc 0%, #cbd5e1 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;}
+        .hero-badge {display: inline-block; padding: 8px 16px; background: rgba(99, 102, 241, 0.1); border: 1px solid rgba(99, 102, 241, 0.3); border-radius: 8px; font-size: 0.85rem; color: var(--indigo); margin-bottom: 24px; text-transform: uppercase; letter-spacing: 0.05em;}
+        .hero-subtitle {font-size: 1.1rem; color: var(--muted); line-height: 1.8; margin-bottom: 32px;}
+        .hero-meta {display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 32px; padding-bottom: 32px; border-bottom: 1px solid rgba(148, 163, 184, 0.1);}
+        .meta-label {color: var(--muted); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 6px;}
+        .meta-value {font-weight: 600; color: var(--text);}
+        .hero-skills {display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 32px;}
+        .skill-chip {padding: 8px 14px; background: rgba(148, 163, 184, 0.1); border: 1px solid rgba(148, 163, 184, 0.2); border-radius: 6px; font-size: 0.85rem; color: var(--text); font-weight: 500;}
+        .hero-ctas {display: flex; gap: 16px; flex-wrap: wrap;}
+        .cta-btn {padding: 12px 24px; background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%); color: white; border: none; border-radius: 8px; font-weight: 600; cursor: pointer; transition: all 0.3s ease; display: inline-flex; align-items: center; gap: 10px; text-decoration: none;}
+        .cta-btn:hover {transform: translateY(-2px); box-shadow: 0 12px 24px rgba(99, 102, 241, 0.3);}
+        .cta-btn-secondary {background: transparent; border: 1px solid rgba(148, 163, 184, 0.3); color: var(--text);}
+        .cta-btn-secondary:hover {background: rgba(99, 102, 241, 0.1); border-color: rgba(99, 102, 241, 0.5);}
+        
+        .terminal {background: var(--card-secondary); border: 1px solid rgba(99, 102, 241, 0.2); border-radius: 16px; padding: 24px; font-family: 'Courier New', monospace; font-size: 0.9rem; overflow: hidden; position: relative; height: 320px; display: flex; flex-direction: column;}
+        .terminal-header {display: flex; gap: 8px; margin-bottom: 16px; padding-bottom: 16px; border-bottom: 1px solid rgba(148, 163, 184, 0.1);}
+        .terminal-dot {width: 12px; height: 12px; border-radius: 50%;}
+        .terminal-dot.red { background: #ff5f57; } .terminal-dot.yellow { background: #febc2e; } .terminal-dot.green { background: #28c840; }
+        .terminal-content {flex: 1; overflow-y: auto; color: var(--cyan);}
+        .terminal-line {margin: 8px 0; line-height: 1.6;}
+        .terminal-prompt {color: var(--indigo);}
+        .terminal-output {color: var(--text); margin-top: 4px;}
+        .cursor {display: inline-block; width: 2px; height: 1em; background: var(--cyan); animation: blink 1s infinite; margin-left: 4px;}
+        @keyframes blink {0%, 49% { opacity: 1; } 50%, 100% { opacity: 0; }}
+        
+        .metrics-ticker-section {padding: 60px 0; overflow: hidden; background: linear-gradient(90deg, rgba(99, 102, 241, 0.05) 0%, rgba(139, 92, 246, 0.05) 50%, rgba(99, 102, 241, 0.05) 100%); border-top: 1px solid rgba(148, 163, 184, 0.1); border-bottom: 1px solid rgba(148, 163, 184, 0.1);}
+        .metrics-ticker {display: flex; gap: 40px; animation: scroll 30s linear infinite; width: fit-content; padding: 0 20px;}
+        .metrics-ticker:hover {animation-play-state: paused;}
+        @keyframes scroll {0% {transform: translateX(0);} 100% {transform: translateX(calc(-50% - 20px));}}
+        .metric-item {display: flex; flex-direction: column; gap: 8px; min-width: max-content; padding: 16px 24px; background: rgba(17, 24, 39, 0.5); border: 1px solid rgba(99, 102, 241, 0.2); border-radius: 12px;}
+        .metric-value {font-size: 1.5rem; font-weight: 700; background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;}
+        .metric-label {font-size: 0.85rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.05em;}
+        
+        /* Projects Section */
+        .projects-section {padding: 80px 0; border-top: 1px solid rgba(148, 163, 184, 0.1); background: linear-gradient(180deg, rgba(99, 102, 241, 0.02) 0%, transparent 100%);}
+        .projects-container {max-width: 1200px; margin: 0 auto; padding: 0 24px;}
+        .projects-header {margin-bottom: 60px;}
+        .projects-header h2 {margin-bottom: 16px; background: linear-gradient(135deg, #f8fafc 0%, #cbd5e1 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;}
+        .projects-header p {color: var(--muted); font-size: 1.05rem; line-height: 1.7;}
+        .projects-grid {display: grid; grid-template-columns: repeat(2, 1fr); gap: 32px;}
+        .project-card {position: relative; background: rgba(17, 24, 39, 0.5); border: 1px solid rgba(99, 102, 241, 0.2); border-radius: 20px; overflow: hidden; padding: 24px; transition: all 0.3s ease; cursor: pointer;}
+        .project-card:hover {border-color: rgba(99, 102, 241, 0.5); transform: translateY(-6px); box-shadow: 0 20px 40px rgba(99, 102, 241, 0.1);}
+        .project-image-wrapper {position: relative; height: 240px; background: var(--card-secondary); border: 1px solid rgba(148, 163, 184, 0.1); border-radius: 12px; overflow: hidden; margin-bottom: 20px; cursor: pointer;}
+        .project-image {width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease;}
+        .project-image-wrapper:hover .project-image {transform: scale(1.05);}
+        .project-placeholder {width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; background: linear-gradient(135deg, rgba(99, 102, 241, 0.1) 0%, rgba(139, 92, 246, 0.1) 100%); color: var(--muted); font-size: 0.9rem; text-align: center; padding: 20px;}
+        .project-badge {display: inline-block; padding: 6px 12px; background: rgba(99, 102, 241, 0.15); border: 1px solid rgba(99, 102, 241, 0.3); border-radius: 6px; font-size: 0.75rem; color: var(--indigo); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 16px;}
+        .project-title {font-size: 1.4rem; font-weight: 600; margin-bottom: 8px; color: var(--text);}
+        .project-question {font-size: 1.1rem; font-weight: 600; margin-bottom: 16px; background: linear-gradient(135deg, #22d3ee 0%, #6366f1 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;}
+        .project-info {display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 20px; padding: 16px 0; border-top: 1px solid rgba(148, 163, 184, 0.1); border-bottom: 1px solid rgba(148, 163, 184, 0.1);}
+        .info-block {display: flex; flex-direction: column; gap: 6px;}
+        .info-label {font-size: 0.8rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.05em;}
+        .info-value {font-size: 0.95rem; font-weight: 500; color: var(--text); line-height: 1.5;}
+        .project-decision {font-size: 0.95rem; color: var(--muted); margin-bottom: 16px; padding: 12px; background: rgba(99, 102, 241, 0.08); border-left: 3px solid var(--indigo); border-radius: 4px;}
+        .project-tech-tags {display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 16px;}
+        .tech-tag {padding: 6px 12px; background: rgba(148, 163, 184, 0.1); border: 1px solid rgba(148, 163, 184, 0.2); border-radius: 6px; font-size: 0.8rem; color: var(--text); text-transform: uppercase; letter-spacing: 0.05em;}
+        .project-cta {display: inline-flex; align-items: center; gap: 8px; padding: 10px 16px; background: rgba(99, 102, 241, 0.15); border: 1px solid rgba(99, 102, 241, 0.3); border-radius: 8px; color: var(--indigo); text-decoration: none; font-size: 0.9rem; font-weight: 600; transition: all 0.3s ease;}
+        .project-cta:hover {background: rgba(99, 102, 241, 0.25); border-color: rgba(99, 102, 241, 0.5); transform: translateX(4px);}
+        
+        /* Data Storytelling Section */
+        .storytelling-section {padding: 80px 0; border-top: 1px solid rgba(148, 163, 184, 0.1);}
+        .storytelling-container {max-width: 1200px; margin: 0 auto; padding: 0 24px;}
+        .storytelling-header {text-align: center; margin-bottom: 60px; max-width: 800px; margin-left: auto; margin-right: auto;}
+        .storytelling-header h2 {margin-bottom: 16px; background: linear-gradient(135deg, #22d3ee 0%, #6366f1 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;}
+        .storytelling-header p {color: var(--muted); font-size: 1.05rem; line-height: 1.8;}
+        .storytelling-grid {display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px;}
+        .story-card {background: rgba(17, 24, 39, 0.5); border: 1px solid rgba(99, 102, 241, 0.2); border-radius: 16px; padding: 32px; transition: all 0.3s ease;}
+        .story-card:hover {border-color: rgba(99, 102, 241, 0.5); transform: translateY(-4px); box-shadow: 0 12px 32px rgba(99, 102, 241, 0.08);}
+        .story-number {font-size: 2.5rem; font-weight: 700; background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: 16px;}
+        .story-label {font-size: 0.85rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 12px; font-weight: 600;}
+        .story-title {font-size: 1.2rem; font-weight: 600; margin-bottom: 16px; color: var(--text);}
+        .story-content {font-size: 0.95rem; color: var(--muted); line-height: 1.7;}
+        .story-highlight {color: var(--cyan); font-weight: 600;}
+        
+        /* Pipeline Section */
+        .pipeline-section {padding: 80px 0; border-top: 1px solid rgba(148, 163, 184, 0.1); background: linear-gradient(180deg, transparent 0%, rgba(99, 102, 241, 0.03) 100%);}
+        .pipeline-container {max-width: 1200px; margin: 0 auto; padding: 0 24px;}
+        .pipeline-header {text-align: center; margin-bottom: 60px;}
+        .pipeline-header h2 {margin-bottom: 12px;}
+        .pipeline-header p {color: var(--muted); font-size: 0.95rem;}
+        .pipeline-flow {display: grid; grid-template-columns: repeat(6, 1fr); gap: 16px; align-items: center;}
+        .pipeline-node {background: rgba(17, 24, 39, 0.5); border: 1px solid rgba(99, 102, 241, 0.2); border-radius: 12px; padding: 24px; text-align: center; position: relative; transition: all 0.3s ease;}
+        .pipeline-node:hover {border-color: rgba(99, 102, 241, 0.8); background: rgba(99, 102, 241, 0.05); transform: scale(1.05);}
+        .pipeline-node-number {font-size: 0.8rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 8px; font-weight: 600;}
+        .pipeline-node-title {font-size: 1.1rem; font-weight: 600; color: var(--text);}
+        .pipeline-node-description {font-size: 0.75rem; color: var(--muted); margin-top: 8px; line-height: 1.5;}
+        .pipeline-arrow {position: absolute; right: -20px; top: 50%; transform: translateY(-50%); width: 16px; height: 2px; background: linear-gradient(90deg, rgba(99, 102, 241, 0.5) 0%, transparent 100%); display: none;}
+        @media (min-width: 769px) { .pipeline-arrow { display: block; } }
+        .pipeline-node:last-child .pipeline-arrow { display: none; }
+        
+        /* Skills Section */
+        .skills-section {padding: 80px 0; border-top: 1px solid rgba(148, 163, 184, 0.1);}
+        .skills-container {max-width: 1200px; margin: 0 auto; padding: 0 24px;}
+        .skills-header {margin-bottom: 60px;}
+        .skills-header h2 {margin-bottom: 12px;}
+        .skills-grid {display: grid; grid-template-columns: repeat(2, 1fr); gap: 28px;}
+        .skill-card {background: rgba(17, 24, 39, 0.5); border: 1px solid rgba(99, 102, 241, 0.2); border-radius: 16px; padding: 32px; transition: all 0.3s ease;}
+        .skill-card:hover {border-color: rgba(99, 102, 241, 0.5); transform: translateY(-4px); box-shadow: 0 12px 32px rgba(99, 102, 241, 0.08);}
+        .skill-card-title {font-size: 1.3rem; font-weight: 600; margin-bottom: 12px; background: linear-gradient(135deg, #22d3ee 0%, #6366f1 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;}
+        .skill-card-description {font-size: 0.95rem; color: var(--muted); margin-bottom: 20px; line-height: 1.7;}
+        .skill-list {display: flex; flex-wrap: wrap; gap: 10px;}
+        .skill-item {padding: 8px 12px; background: rgba(99, 102, 241, 0.1); border: 1px solid rgba(99, 102, 241, 0.2); border-radius: 6px; font-size: 0.85rem; color: var(--text);}
+        
+        /* Recruiter Card */
+        .recruiter-section {padding: 80px 0; border-top: 1px solid rgba(148, 163, 184, 0.1);}
+        .recruiter-container {max-width: 900px; margin: 0 auto; padding: 0 24px;}
+        .recruiter-header {text-align: center; margin-bottom: 40px;}
+        .recruiter-card {background: rgba(17, 24, 39, 0.7); border: 2px solid rgba(99, 102, 241, 0.3); border-radius: 20px; padding: 48px; backdrop-filter: blur(8px);}
+        .recruiter-grid {display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; margin-bottom: 32px; padding-bottom: 32px; border-bottom: 1px solid rgba(148, 163, 184, 0.1);}
+        .recruiter-item h3 {font-size: 0.85rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 8px; font-weight: 600;}
+        .recruiter-item p {font-size: 1.1rem; color: var(--text); font-weight: 600; line-height: 1.5;}
+        .recruiter-summary {font-size: 1rem; color: var(--muted); line-height: 1.8; margin-bottom: 32px;}
+        .recruiter-actions {display: flex; gap: 16px; flex-wrap: wrap; justify-content: center;}
+        .action-btn {padding: 12px 24px; background: rgba(99, 102, 241, 0.15); border: 1px solid rgba(99, 102, 241, 0.3); border-radius: 8px; color: var(--indigo); text-decoration: none; font-size: 0.9rem; font-weight: 600; transition: all 0.3s ease; display: inline-flex; align-items: center; gap: 8px;}
+        .action-btn:hover {background: rgba(99, 102, 241, 0.25); border-color: rgba(99, 102, 241, 0.5); transform: translateY(-2px);}
+        
         /* Responsive */
         @media (max-width: 768px) {
-            .navbar {
-                top: 12px;
-                width: calc(100% - 16px);
-                padding: 10px 16px;
-            }
-
-            .nav-links {
-                display: none;
-            }
-
-            .hero-grid {
-                grid-template-columns: 1fr;
-                gap: 40px;
-            }
-
-            .terminal {
-                height: 250px;
-            }
-
-            .hero {
-                padding-top: 100px;
-                padding-bottom: 60px;
-            }
-
-            .metrics-ticker {
-                gap: 20px;
-            }
-
-            .metric-item {
-                padding: 12px 16px;
-            }
-
-            .metric-value {
-                font-size: 1.2rem;
-            }
-
-            .metric-label {
-                font-size: 0.75rem;
-            }
-
-            .projects-grid {
-                grid-template-columns: 1fr;
-                gap: 24px;
-            }
-
-            .projects-section {
-                padding: 60px 0;
-            }
-
-            .project-info {
-                grid-template-columns: 1fr;
-            }
+            .navbar {top: 12px; width: calc(100% - 16px); padding: 10px 16px;}
+            .nav-links {display: none;}
+            .hero-grid, .projects-grid, .storytelling-grid, .skills-grid, .recruiter-grid {grid-template-columns: 1fr;}
+            .terminal {height: 250px;}
+            .hero {padding-top: 100px; padding-bottom: 60px;}
+            .project-info, .recruiter-grid {grid-template-columns: 1fr;}
+            .projects-section, .storytelling-section, .pipeline-section, .skills-section, .recruiter-section {padding: 60px 0;}
+            .pipeline-flow {grid-template-columns: 1fr;}
         }
-
-        /* Accessibility */
-        :focus-visible {
-            outline: 2px solid var(--indigo);
-            outline-offset: 4px;
-        }
-
-        /* Reduced motion */
+        
+        :focus-visible {outline: 2px solid var(--indigo); outline-offset: 4px;}
         @media (prefers-reduced-motion: reduce) {
-            * {
-                animation-duration: 0.01ms !important;
-                animation-iteration-count: 1 !important;
-                transition-duration: 0.01ms !important;
-            }
+            * {animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important;}
         }
     </style>
 </head>
 <body>
-    <!-- Navigation -->
     <nav class="navbar" role="navigation" aria-label="Main navigation">
-        <div class="nav-brand">
-            <div class="nav-dot"></div>
-            <span>HARSH MEENA</span>
-        </div>
+        <div class="nav-brand"><div class="nav-dot"></div><span>HARSH MEENA</span></div>
         <ul class="nav-links">
             <li><a href="#projects" class="nav-link">Projects</a></li>
             <li><a href="#storytelling" class="nav-link">Storytelling</a></li>
@@ -719,70 +186,30 @@
     </nav>
 
     <main>
-        <!-- Hero Section -->
+        <!-- HERO -->
         <section class="hero">
             <div class="hero-container">
                 <div class="hero-grid">
-                    <!-- Left Content -->
                     <div>
-                        <div class="hero-badge">
-                            ● AVAILABLE FOR ANALYST ROLES
-                        </div>
+                        <div class="hero-badge">● AVAILABLE FOR ANALYST ROLES</div>
                         <h1>Turning messy data into decisions people can use.</h1>
-                        <p class="hero-subtitle">
-                            Entry-level Data / Business / MIS Analyst based in Indore, India. 
-                            I solve business problems using SQL, Python, Power BI, and Excel across real public datasets.
-                        </p>
-
+                        <p class="hero-subtitle">Entry-level Data / Business / MIS Analyst based in Indore, India. I solve business problems using SQL, Python, Power BI, and Excel across real public datasets.</p>
                         <div class="hero-meta">
-                            <div class="meta-item">
-                                <div class="meta-label">Location</div>
-                                <div class="meta-value">Indore, India</div>
-                            </div>
-                            <div class="meta-item">
-                                <div class="meta-label">Availability</div>
-                                <div class="meta-value">Immediate Joiner</div>
-                            </div>
+                            <div><div class="meta-label">Location</div><div class="meta-value">Indore, India</div></div>
+                            <div><div class="meta-label">Availability</div><div class="meta-value">Immediate Joiner</div></div>
                         </div>
-
                         <div class="hero-skills">
-                            <div class="skill-chip">SQL</div>
-                            <div class="skill-chip">PYTHON</div>
-                            <div class="skill-chip">POWER BI</div>
-                            <div class="skill-chip">EXCEL</div>
-                            <div class="skill-chip">BUSINESS ANALYTICS</div>
+                            <div class="skill-chip">SQL</div><div class="skill-chip">PYTHON</div><div class="skill-chip">POWER BI</div><div class="skill-chip">EXCEL</div><div class="skill-chip">BUSINESS ANALYTICS</div>
                         </div>
-
                         <div class="hero-ctas">
-                            <a href="#projects" class="cta-btn">
-                                Explore Analytics
-                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M5 12h14M12 5l7 7-7 7"/>
-                                </svg>
-                            </a>
-                            <a href="/resume.pdf" class="cta-btn cta-btn-secondary">
-                                Download Resume
-                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/>
-                                </svg>
-                            </a>
+                            <a href="#projects" class="cta-btn">Explore Analytics <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+                            <a href="/resume.pdf" class="cta-btn cta-btn-secondary">Download Resume <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg></a>
                         </div>
                     </div>
-
-                    <!-- Right Terminal -->
                     <div class="terminal">
-                        <div class="terminal-header">
-                            <div class="terminal-dot red"></div>
-                            <div class="terminal-dot yellow"></div>
-                            <div class="terminal-dot green"></div>
-                        </div>
+                        <div class="terminal-header"><div class="terminal-dot red"></div><div class="terminal-dot yellow"></div><div class="terminal-dot green"></div></div>
                         <div class="terminal-content" id="terminalContent">
-                            <div class="terminal-line">
-                                <span class="terminal-prompt">analyst@portfolio</span>
-                                <span class="terminal-prompt">:~$</span>
-                                <span id="terminalText"></span>
-                                <span class="cursor"></span>
-                            </div>
+                            <div class="terminal-line"><span class="terminal-prompt">analyst@portfolio</span><span class="terminal-prompt">:~$</span><span id="terminalText"></span><span class="cursor"></span></div>
                             <div id="terminalOutput"></div>
                         </div>
                     </div>
@@ -790,251 +217,61 @@
             </div>
         </section>
 
-        <!-- Metrics Ticker -->
+        <!-- METRICS TICKER -->
         <section class="metrics-ticker-section">
-            <div class="metrics-ticker" id="metricsTicker">
-                <!-- Will be populated by JavaScript -->
+            <div class="metrics-ticker" id="metricsTicker"></div>
+        </section>
+
+        <!-- FEATURED PROJECTS -->
+        <section class="projects-section" id="projects">
+            <div class="projects-container">
+                <div class="projects-header"><h2>Featured Projects</h2><p>Six verified analytics investigations across real public datasets. Question → Signal → Decision.</p></div>
+                <div class="projects-grid" id="projectsGrid"></div>
             </div>
         </section>
 
-        <!-- Featured Projects Section -->
-        <section class="projects-section" id="projects">
-            <div class="projects-container">
-                <div class="projects-header">
-                    <h2>Featured Projects</h2>
-                    <p>Six verified analytics investigations across real public datasets. Question → Signal → Decision.</p>
+        <!-- DATA STORYTELLING -->
+        <section class="storytelling-section" id="storytelling">
+            <div class="storytelling-container">
+                <div class="storytelling-header">
+                    <h2>Data Storytelling Isn't About Charts</h2>
+                    <p>It's about decisions. Every project starts with a question, follows the evidence, and ends with a decision somebody can act on.</p>
                 </div>
+                <div class="storytelling-grid" id="storytellingGrid"></div>
+            </div>
+        </section>
 
-                <div class="projects-grid">
-                    <!-- Project 1: Telecom Churn -->
-                    <div class="project-card">
-                        <div class="project-image-wrapper">
-                            <img class="project-image" src="https://raw.githubusercontent.com/harshmeena9977-ops/Telecom-Churn-Analysis/50bccc6207d9f3ac2be3361e91ff2a7900427967/outputs/executive_summary.png.png" alt="Telecom Churn Dashboard" loading="lazy">
-                        </div>
-                        <div class="project-badge">CASE 01 · TELECOM</div>
-                        <h3 class="project-title">Churn Analysis</h3>
-                        <p class="project-question">Why are customers leaving?</p>
-                        
-                        <div class="project-info">
-                            <div class="info-block">
-                                <span class="info-label">Signal</span>
-                                <span class="info-value">43% month-to-month churn</span>
-                            </div>
-                            <div class="info-block">
-                                <span class="info-label">Method</span>
-                                <span class="info-value">SQL → Python → ML</span>
-                            </div>
-                        </div>
+        <!-- PIPELINE -->
+        <section class="pipeline-section">
+            <div class="pipeline-container">
+                <div class="pipeline-header">
+                    <h2>The Analysis Workflow</h2>
+                    <p>Every investigation follows this structured approach</p>
+                </div>
+                <div class="pipeline-flow" id="pipelineFlow"></div>
+            </div>
+        </section>
 
-                        <div class="project-decision">
-                            <strong>Decision:</strong> Target month-to-month and low-tenure customers with retention programs.
-                        </div>
+        <!-- SKILLS MATRIX -->
+        <section class="skills-section" id="skills">
+            <div class="skills-container">
+                <div class="skills-header"><h2>Skills Matrix</h2></div>
+                <div class="skills-grid" id="skillsGrid"></div>
+            </div>
+        </section>
 
-                        <div class="project-tech-tags">
-                            <span class="tech-tag">SQL</span>
-                            <span class="tech-tag">Python</span>
-                            <span class="tech-tag">Power BI</span>
-                            <span class="tech-tag">ML</span>
-                        </div>
-
-                        <a href="https://github.com/harshmeena9977-ops/Telecom-Churn-Analysis" target="_blank" rel="noopener" class="project-cta">
-                            View Repository
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M7 17L17 7M17 7H7M17 7V17"/>
-                            </svg>
-                        </a>
-                    </div>
-
-                    <!-- Project 2: Workforce Attrition -->
-                    <div class="project-card">
-                        <div class="project-image-wrapper">
-                            <img class="project-image" src="https://raw.githubusercontent.com/harshmeena9977-ops/workforce-attrition-retention-analytics/89a5639d5ecc279f2c219a6e105715e92ff1cbbd/screenshots/executive-insights.png" alt="Workforce Attrition Dashboard" loading="lazy">
-                        </div>
-                        <div class="project-badge">CASE 02 · HR</div>
-                        <h3 class="project-title">Attrition Analysis</h3>
-                        <p class="project-question">Where is attrition becoming expensive?</p>
-                        
-                        <div class="project-info">
-                            <div class="info-block">
-                                <span class="info-label">Signal</span>
-                                <span class="info-value">2.93× overtime risk</span>
-                            </div>
-                            <div class="info-block">
-                                <span class="info-label">Method</span>
-                                <span class="info-value">Power BI → DAX</span>
-                            </div>
-                        </div>
-
-                        <div class="project-decision">
-                            <strong>Decision:</strong> Focus retention on younger employees working overtime.
-                        </div>
-
-                        <div class="project-tech-tags">
-                            <span class="tech-tag">Power BI</span>
-                            <span class="tech-tag">DAX</span>
-                            <span class="tech-tag">Excel</span>
-                        </div>
-
-                        <a href="https://github.com/harshmeena9977-ops/workforce-attrition-retention-analytics" target="_blank" rel="noopener" class="project-cta">
-                            View Repository
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M7 17L17 7M17 7H7M17 7V17"/>
-                            </svg>
-                        </a>
-                    </div>
-
-                    <!-- Project 3: Global Superstore -->
-                    <div class="project-card">
-                        <div class="project-image-wrapper">
-                            <img class="project-image" src="https://raw.githubusercontent.com/harshmeena9977-ops/Global-Superstore-Sales-Analysis/c2950c8664245e1497b0c0bb4f06e06e5fdad5d2/outputs/Overview.png.png" alt="Global Superstore Dashboard" loading="lazy">
-                        </div>
-                        <div class="project-badge">CASE 03 · RETAIL</div>
-                        <h3 class="project-title">Profitability Analysis</h3>
-                        <p class="project-question">Where is revenue failing to become profit?</p>
-                        
-                        <div class="project-info">
-                            <div class="info-block">
-                                <span class="info-label">Signal</span>
-                                <span class="info-value">20% profitability drag</span>
-                            </div>
-                            <div class="info-block">
-                                <span class="info-label">Method</span>
-                                <span class="info-value">SQL → Excel → BI</span>
-                            </div>
-                        </div>
-
-                        <div class="project-decision">
-                            <strong>Decision:</strong> Investigate low-profit regional category combinations.
-                        </div>
-
-                        <div class="project-tech-tags">
-                            <span class="tech-tag">SQL</span>
-                            <span class="tech-tag">Excel</span>
-                            <span class="tech-tag">Power BI</span>
-                        </div>
-
-                        <a href="https://github.com/harshmeena9977-ops/Global-Superstore-Sales-Analysis" target="_blank" rel="noopener" class="project-cta">
-                            View Repository
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M7 17L17 7M17 7H7M17 7V17"/>
-                            </svg>
-                        </a>
-                    </div>
-
-                    <!-- Project 4: Yelp Analytics -->
-                    <div class="project-card">
-                        <div class="project-image-wrapper">
-                            <div class="project-placeholder">
-                                Dashboard Preview Coming<br>See Full Analysis in Repo
-                            </div>
-                        </div>
-                        <div class="project-badge">CASE 04 · HOSPITALITY</div>
-                        <h3 class="project-title">Engagement Analysis</h3>
-                        <p class="project-question">What separates successful restaurants?</p>
-                        
-                        <div class="project-info">
-                            <div class="info-block">
-                                <span class="info-label">Signal</span>
-                                <span class="info-value">2.5× engagement gap</span>
-                            </div>
-                            <div class="info-block">
-                                <span class="info-label">Method</span>
-                                <span class="info-value">SQL → Python → Stats</span>
-                            </div>
-                        </div>
-
-                        <div class="project-decision">
-                            <strong>Decision:</strong> Engage high-influence reviewers and improve response rates.
-                        </div>
-
-                        <div class="project-tech-tags">
-                            <span class="tech-tag">SQL</span>
-                            <span class="tech-tag">Python</span>
-                            <span class="tech-tag">Statistical Analysis</span>
-                        </div>
-
-                        <a href="https://github.com/harshmeena9977-ops/Yelp-Data-Analysis" target="_blank" rel="noopener" class="project-cta">
-                            View Repository
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M7 17L17 7M17 7H7M17 7V17"/>
-                            </svg>
-                        </a>
-                    </div>
-
-                    <!-- Project 5: Samsung Supply Chain -->
-                    <div class="project-card">
-                        <div class="project-image-wrapper">
-                            <img class="project-image" src="https://raw.githubusercontent.com/harshmeena9977-ops/Samsung-Supply-Chain-Analytics-Dashboard/f9034558a96fc017853ae02bdbeb333d4dc6bbf3/Dashboard%20Images/Overview.png" alt="Samsung Supply Chain Dashboard" loading="lazy">
-                        </div>
-                        <div class="project-badge">CASE 05 · SUPPLY CHAIN</div>
-                        <h3 class="project-title">Supply Chain Analytics</h3>
-                        <p class="project-question">How efficient is the supply chain?</p>
-                        
-                        <div class="project-info">
-                            <div class="info-block">
-                                <span class="info-label">Signal</span>
-                                <span class="info-value">Multiple KPIs tracked</span>
-                            </div>
-                            <div class="info-block">
-                                <span class="info-label">Method</span>
-                                <span class="info-value">SQL → Power BI</span>
-                            </div>
-                        </div>
-
-                        <div class="project-decision">
-                            <strong>Decision:</strong> Monitor shipment efficiency and vendor performance metrics.
-                        </div>
-
-                        <div class="project-tech-tags">
-                            <span class="tech-tag">SQL</span>
-                            <span class="tech-tag">Power BI</span>
-                            <span class="tech-tag">Data Modeling</span>
-                        </div>
-
-                        <a href="https://github.com/harshmeena9977-ops/Samsung-Supply-Chain-Analytics-Dashboard" target="_blank" rel="noopener" class="project-cta">
-                            View Repository
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M7 17L17 7M17 7H7M17 7V17"/>
-                            </svg>
-                        </a>
-                    </div>
-
-                    <!-- Project 6: MGH Hospital -->
-                    <div class="project-card">
-                        <div class="project-image-wrapper">
-                            <img class="project-image" src="https://raw.githubusercontent.com/harshmeena9977-ops/MGH-Hospital-Performance-Dashboard/6004fe204faf4c9869075fe3361002cc9734fd05/Encounters_Overview.png.png" alt="MGH Hospital Dashboard" loading="lazy">
-                        </div>
-                        <div class="project-badge">CASE 06 · HEALTHCARE</div>
-                        <h3 class="project-title">Hospital Performance</h3>
-                        <p class="project-question">What drives patient encounters?</p>
-                        
-                        <div class="project-info">
-                            <div class="info-block">
-                                <span class="info-label">Signal</span>
-                                <span class="info-value">Performance patterns</span>
-                            </div>
-                            <div class="info-block">
-                                <span class="info-label">Method</span>
-                                <span class="info-value">SQL → Power BI</span>
-                            </div>
-                        </div>
-
-                        <div class="project-decision">
-                            <strong>Decision:</strong> Optimize resource allocation based on encounter patterns.
-                        </div>
-
-                        <div class="project-tech-tags">
-                            <span class="tech-tag">SQL</span>
-                            <span class="tech-tag">Power BI</span>
-                            <span class="tech-tag">Healthcare Analytics</span>
-                        </div>
-
-                        <a href="https://github.com/harshmeena9977-ops/MGH-Hospital-Performance-Dashboard" target="_blank" rel="noopener" class="project-cta">
-                            View Repository
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M7 17L17 7M17 7H7M17 7V17"/>
-                            </svg>
-                        </a>
+        <!-- RECRUITER VIEW -->
+        <section class="recruiter-section" id="recruiter">
+            <div class="recruiter-container">
+                <div class="recruiter-header"><h2>Recruiter Fast-Scan</h2></div>
+                <div class="recruiter-card">
+                    <div class="recruiter-grid" id="recruiterGrid"></div>
+                    <div class="recruiter-summary">6 projects across telecom, HR, retail, hospitality, supply chain, and healthcare. 6 verified certifications. Public datasets. GitHub repositories. Production-ready analytics.</div>
+                    <div class="recruiter-actions">
+                        <a href="https://github.com/harshmeena9977-ops" target="_blank" rel="noopener" class="action-btn">GitHub <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-1.02-2.58c3.35-.37 6.87-1.65 6.87-7.45 0-1.64-.46-2.97-1.22-4.04.06-.22.48-1.06-.12-2.22 0 0-1-.32-3.3 1.23a11.5 11.5 0 0 0-6 1.66 11.6 11.6 0 0 0-6-1.66c-2.3-1.55-3.3-1.23-3.3-1.23-.6 1.16-.18 2 -.12 2.22-.76 1.07-1.22 2.4-1.22 4.04 0 5.78 3.52 7.08 6.87 7.45a3.37 3.37 0 0 0-1.02 2.58v3.87"/></svg></a>
+                        <a href="https://www.linkedin.com/in/harsh-meena-analyst/" target="_blank" rel="noopener" class="action-btn">LinkedIn <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg></a>
+                        <a href="mailto:harshmeena9977@gmail.com" class="action-btn">Email <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16v12H4z"/><path d="M4 8l8 6 8-6"/></svg></a>
+                        <a href="/resume.pdf" class="action-btn">Resume <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></a>
                     </div>
                 </div>
             </div>
@@ -1042,31 +279,17 @@
     </main>
 
     <script>
-        // Terminal typing animation
+        // TERMINAL ANIMATION
         const terminalSequence = [
-            {
-                command: "SELECT Contract, COUNT(*) FROM Customers WHERE Churn='Yes';",
-                output: "43% churn found in month-to-month contracts"
-            },
-            {
-                command: "model.fit(X, y)",
-                output: "Accuracy: 85.3% | Precision: 82.1%"
-            },
-            {
-                command: "power_bi.connect().dashboard.publish()",
-                output: "Dashboard live. Ready for business action."
-            }
+            { command: "SELECT Contract, COUNT(*) FROM Customers WHERE Churn='Yes';", output: "43% churn found in month-to-month contracts" },
+            { command: "model.fit(X, y)", output: "Accuracy: 85.3% | Precision: 82.1%" },
+            { command: "power_bi.connect().dashboard.publish()", output: "Dashboard live. Ready for business action." }
         ];
-
-        let sequenceIndex = 0;
-        let charIndex = 0;
-        let isTyping = true;
-
+        let sequenceIndex = 0, charIndex = 0, isTyping = true;
         function typeCommand() {
             const current = terminalSequence[sequenceIndex];
             const textEl = document.getElementById('terminalText');
             const outputEl = document.getElementById('terminalOutput');
-
             if (charIndex < current.command.length) {
                 textEl.textContent += current.command[charIndex];
                 charIndex++;
@@ -1086,11 +309,9 @@
                 }, 500);
             }
         }
-
-        // Start terminal animation after a delay
         setTimeout(typeCommand, 500);
 
-        // Metrics Ticker
+        // METRICS TICKER
         const metrics = [
             { value: '26.5%', label: 'Overall Churn Rate' },
             { value: '43%', label: 'Month-to-Month Churn' },
@@ -1101,31 +322,95 @@
             { value: '65%', label: 'Reporting Reduction' },
             { value: '2.5×', label: 'Engagement Gap' }
         ];
-
         const tickerEl = document.getElementById('metricsTicker');
-        const metricsHTML = metrics.map(m => `
-            <div class="metric-item">
-                <div class="metric-value">${m.value}</div>
-                <div class="metric-label">${m.label}</div>
+        const metricsHTML = metrics.map(m => `<div class="metric-item"><div class="metric-value">${m.value}</div><div class="metric-label">${m.label}</div></div>`).join('');
+        tickerEl.innerHTML = metricsHTML + metricsHTML;
+
+        // PROJECTS DATA
+        const projects = [
+            { badge: 'CASE 01 · TELECOM', title: 'Churn Analysis', question: 'Why are customers leaving?', signal: '43% month-to-month churn', method: 'SQL → Python → ML', decision: 'Target month-to-month and low-tenure customers with retention programs.', tags: ['SQL', 'Python', 'Power BI', 'ML'], image: 'https://raw.githubusercontent.com/harshmeena9977-ops/Telecom-Churn-Analysis/50bccc6207d9f3ac2be3361e91ff2a7900427967/outputs/executive_summary.png.png', repo: 'https://github.com/harshmeena9977-ops/Telecom-Churn-Analysis' },
+            { badge: 'CASE 02 · HR', title: 'Attrition Analysis', question: 'Where is attrition becoming expensive?', signal: '2.93× overtime risk', method: 'Power BI → DAX', decision: 'Focus retention on younger employees working overtime.', tags: ['Power BI', 'DAX', 'Excel'], image: 'https://raw.githubusercontent.com/harshmeena9977-ops/workforce-attrition-retention-analytics/89a5639d5ecc279f2c219a6e105715e92ff1cbbd/screenshots/executive-insights.png', repo: 'https://github.com/harshmeena9977-ops/workforce-attrition-retention-analytics' },
+            { badge: 'CASE 03 · RETAIL', title: 'Profitability Analysis', question: 'Where is revenue failing to become profit?', signal: '20% profitability drag', method: 'SQL → Excel → BI', decision: 'Investigate low-profit regional category combinations.', tags: ['SQL', 'Excel', 'Power BI'], image: 'https://raw.githubusercontent.com/harshmeena9977-ops/Global-Superstore-Sales-Analysis/c2950c8664245e1497b0c0bb4f06e06e5fdad5d2/outputs/Overview.png.png', repo: 'https://github.com/harshmeena9977-ops/Global-Superstore-Sales-Analysis' },
+            { badge: 'CASE 04 · HOSPITALITY', title: 'Engagement Analysis', question: 'What separates successful restaurants?', signal: '2.5× engagement gap', method: 'SQL → Python → Stats', decision: 'Engage high-influence reviewers and improve response rates.', tags: ['SQL', 'Python', 'Statistical Analysis'], repo: 'https://github.com/harshmeena9977-ops/Yelp-Data-Analysis', placeholder: true },
+            { badge: 'CASE 05 · SUPPLY CHAIN', title: 'Supply Chain Analytics', question: 'How efficient is the supply chain?', signal: 'Multiple KPIs tracked', method: 'SQL → Power BI', decision: 'Monitor shipment efficiency and vendor performance metrics.', tags: ['SQL', 'Power BI', 'Data Modeling'], image: 'https://raw.githubusercontent.com/harshmeena9977-ops/Samsung-Supply-Chain-Analytics-Dashboard/f9034558a96fc017853ae02bdbeb333d4dc6bbf3/Dashboard%20Images/Overview.png', repo: 'https://github.com/harshmeena9977-ops/Samsung-Supply-Chain-Analytics-Dashboard' },
+            { badge: 'CASE 06 · HEALTHCARE', title: 'Hospital Performance', question: 'What drives patient encounters?', signal: 'Performance patterns', method: 'SQL → Power BI', decision: 'Optimize resource allocation based on encounter patterns.', tags: ['SQL', 'Power BI', 'Healthcare Analytics'], image: 'https://raw.githubusercontent.com/harshmeena9977-ops/MGH-Hospital-Performance-Dashboard/6004fe204faf4c9869075fe3361002cc9734fd05/Encounters_Overview.png.png', repo: 'https://github.com/harshmeena9977-ops/MGH-Hospital-Performance-Dashboard' }
+        ];
+
+        const projectsGrid = document.getElementById('projectsGrid');
+        projectsGrid.innerHTML = projects.map(p => `
+            <div class="project-card">
+                <div class="project-image-wrapper">
+                    ${p.placeholder ? `<div class="project-placeholder">Dashboard Preview Coming<br>See Full Analysis in Repo</div>` : `<img class="project-image" src="${p.image}" alt="${p.title}" loading="lazy">`}
+                </div>
+                <div class="project-badge">${p.badge}</div>
+                <h3 class="project-title">${p.title}</h3>
+                <p class="project-question">${p.question}</p>
+                <div class="project-info">
+                    <div class="info-block"><span class="info-label">Signal</span><span class="info-value">${p.signal}</span></div>
+                    <div class="info-block"><span class="info-label">Method</span><span class="info-value">${p.method}</span></div>
+                </div>
+                <div class="project-decision"><strong>Decision:</strong> ${p.decision}</div>
+                <div class="project-tech-tags">${p.tags.map(t => `<span class="tech-tag">${t}</span>`).join('')}</div>
+                <a href="${p.repo}" target="_blank" rel="noopener" class="project-cta">View Repository <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg></a>
             </div>
         `).join('');
 
-        // Double the metrics for infinite scroll effect
-        tickerEl.innerHTML = metricsHTML + metricsHTML;
+        // STORYTELLING
+        const stories = [
+            { num: '1', label: 'Question', title: 'Telecom Churn', content: '<span class="story-highlight">43% churn in month-to-month contracts</span> — Why are customers leaving? The question defines the entire analysis.' },
+            { num: '2', label: 'Signal', title: 'HR Attrition', content: '<span class="story-highlight">2.93× overtime risk factor</span> — Attrition isn\'t uniform. It concentrates in specific segments.' },
+            { num: '3', label: 'Decision', title: 'Superstore Profit', content: '<span class="story-highlight">Target the 20% profit drag</span> — But only act on evidence, not hunches.' }
+        ];
+        document.getElementById('storytellingGrid').innerHTML = stories.map(s => `
+            <div class="story-card">
+                <div class="story-number">${s.num}</div>
+                <div class="story-label">${s.label}</div>
+                <h3 class="story-title">${s.title}</h3>
+                <div class="story-content">${s.content}</div>
+            </div>
+        `).join('');
 
-        // Project card hover spotlight effect
-        document.querySelectorAll('.project-card').forEach(card => {
-            card.addEventListener('mousemove', (e) => {
-                const rect = card.getBoundingClientRect();
-                const x = e.clientX - rect.left;
-                const y = e.clientY - rect.top;
-                
-                card.style.setProperty('--spotlight-x', x + 'px');
-                card.style.setProperty('--spotlight-y', y + 'px');
-            });
-        });
+        // PIPELINE
+        const pipeline = [
+            { num: '1', title: 'Question', description: 'Define the business problem clearly' },
+            { num: '2', title: 'Data', description: 'Source and validate the evidence' },
+            { num: '3', title: 'SQL', description: 'Query and aggregate from source' },
+            { num: '4', title: 'Python', description: 'Clean, explore, and model' },
+            { num: '5', title: 'Power BI', description: 'Visualize and communicate findings' },
+            { num: '6', title: 'Decision', description: 'Enable actionable business decisions' }
+        ];
+        document.getElementById('pipelineFlow').innerHTML = pipeline.map((p, i) => `
+            <div class="pipeline-node">
+                <div class="pipeline-node-number">Step ${p.num}</div>
+                <div class="pipeline-node-title">${p.title}</div>
+                <div class="pipeline-node-description">${p.description}</div>
+                ${i < pipeline.length - 1 ? '<div class="pipeline-arrow"></div>' : ''}
+            </div>
+        `).join('');
 
-        // Navigation active state
+        // SKILLS
+        const skills = [
+            { title: 'Data Engineering', items: ['SQL', 'PostgreSQL', 'BigQuery', 'Pandas', 'Python', 'ETL Pipelines'] },
+            { title: 'Business Intelligence', items: ['Power BI', 'DAX', 'Data Modeling', 'Dashboard Design', 'KPIs', 'Executive Reports'] },
+            { title: 'Analytics & Insights', items: ['EDA', 'Segmentation', 'Statistical Analysis', 'Forecasting', 'A/B Testing', 'Hypothesis Testing'] },
+            { title: 'Development & Tools', items: ['Git', 'GitHub', 'HTML', 'CSS', 'Tailwind', 'Documentation'] }
+        ];
+        document.getElementById('skillsGrid').innerHTML = skills.map(s => `
+            <div class="skill-card">
+                <h3 class="skill-card-title">${s.title}</h3>
+                <div class="skill-list">${s.items.map(item => `<span class="skill-item">${item}</span>`).join('')}</div>
+            </div>
+        `).join('');
+
+        // RECRUITER
+        document.getElementById('recruiterGrid').innerHTML = `
+            <div><h3>Role</h3><p>Data / Business / MIS Analyst</p></div>
+            <div><h3>Location</h3><p>Indore, India</p></div>
+            <div><h3>Availability</h3><p>Immediate Joiner</p></div>
+            <div><h3>Stack</h3><p>SQL, Python, Power BI, Excel</p></div>
+        `.split('</div>\n').map(d => `<div>${d}</div>`).slice(0, 4).join('').replace(/h3>/g, 'div class="recruiter-item"><h3>').replace(/\/p>/g, '/p></div>');
+
+        // NAV
         document.querySelectorAll('.nav-link').forEach(link => {
             link.addEventListener('click', () => {
                 document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
@@ -1133,18 +418,15 @@
             });
         });
 
-        // Scroll to section
         window.addEventListener('scroll', () => {
             const sections = document.querySelectorAll('section');
             let current = '';
-
             sections.forEach(section => {
                 const sectionTop = section.offsetTop;
                 if (pageYOffset >= sectionTop - 200) {
                     current = section.getAttribute('id');
                 }
             });
-
             document.querySelectorAll('.nav-link').forEach(link => {
                 link.classList.remove('active');
                 if (link.getAttribute('href') === '#' + current) {
@@ -1153,7 +435,6 @@
             });
         });
 
-        // Icon rendering
         lucide.createIcons();
     </script>
 </body>
