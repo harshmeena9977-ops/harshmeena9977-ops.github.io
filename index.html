@@ -411,6 +411,225 @@
             letter-spacing: 0.05em;
         }
 
+        /* Featured Projects Section */
+        .projects-section {
+            padding: 80px 0;
+            border-top: 1px solid rgba(148, 163, 184, 0.1);
+            background: linear-gradient(180deg, 
+                rgba(99, 102, 241, 0.02) 0%, 
+                transparent 100%);
+        }
+
+        .projects-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .projects-header {
+            margin-bottom: 60px;
+        }
+
+        .projects-header h2 {
+            margin-bottom: 16px;
+            background: linear-gradient(135deg, #f8fafc 0%, #cbd5e1 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .projects-header p {
+            color: var(--muted);
+            font-size: 1.05rem;
+            line-height: 1.7;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 32px;
+        }
+
+        .project-card {
+            position: relative;
+            background: rgba(17, 24, 39, 0.5);
+            border: 1px solid rgba(99, 102, 241, 0.2);
+            border-radius: 20px;
+            overflow: hidden;
+            padding: 24px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .project-card:hover {
+            border-color: rgba(99, 102, 241, 0.5);
+            transform: translateY(-6px);
+            box-shadow: 0 20px 40px rgba(99, 102, 241, 0.1);
+        }
+
+        /* Hover spotlight effect */
+        .project-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(99, 102, 241, 0.1) 0%, transparent 70%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            pointer-events: none;
+        }
+
+        .project-card:hover::before {
+            opacity: 1;
+        }
+
+        /* Project card content */
+        .project-image-wrapper {
+            position: relative;
+            height: 240px;
+            background: var(--card-secondary);
+            border: 1px solid rgba(148, 163, 184, 0.1);
+            border-radius: 12px;
+            overflow: hidden;
+            margin-bottom: 20px;
+            cursor: pointer;
+        }
+
+        .project-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+
+        .project-image-wrapper:hover .project-image {
+            transform: scale(1.05);
+        }
+
+        .project-placeholder {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.1) 0%, rgba(139, 92, 246, 0.1) 100%);
+            color: var(--muted);
+            font-size: 0.9rem;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .project-badge {
+            display: inline-block;
+            padding: 6px 12px;
+            background: rgba(99, 102, 241, 0.15);
+            border: 1px solid rgba(99, 102, 241, 0.3);
+            border-radius: 6px;
+            font-size: 0.75rem;
+            color: var(--indigo);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 16px;
+        }
+
+        .project-title {
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--text);
+        }
+
+        .project-question {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 16px;
+            background: linear-gradient(135deg, #22d3ee 0%, #6366f1 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .project-info {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin-bottom: 20px;
+            padding: 16px 0;
+            border-top: 1px solid rgba(148, 163, 184, 0.1);
+            border-bottom: 1px solid rgba(148, 163, 184, 0.1);
+        }
+
+        .info-block {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .info-label {
+            font-size: 0.8rem;
+            color: var(--muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .info-value {
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: var(--text);
+            line-height: 1.5;
+        }
+
+        .project-decision {
+            font-size: 0.95rem;
+            color: var(--muted);
+            margin-bottom: 16px;
+            padding: 12px;
+            background: rgba(99, 102, 241, 0.08);
+            border-left: 3px solid var(--indigo);
+            border-radius: 4px;
+        }
+
+        .project-tech-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 16px;
+        }
+
+        .tech-tag {
+            padding: 6px 12px;
+            background: rgba(148, 163, 184, 0.1);
+            border: 1px solid rgba(148, 163, 184, 0.2);
+            border-radius: 6px;
+            font-size: 0.8rem;
+            color: var(--text);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .project-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 16px;
+            background: rgba(99, 102, 241, 0.15);
+            border: 1px solid rgba(99, 102, 241, 0.3);
+            border-radius: 8px;
+            color: var(--indigo);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .project-cta:hover {
+            background: rgba(99, 102, 241, 0.25);
+            border-color: rgba(99, 102, 241, 0.5);
+            transform: translateX(4px);
+        }
+
         /* Responsive */
         @media (max-width: 768px) {
             .navbar {
@@ -451,6 +670,19 @@
 
             .metric-label {
                 font-size: 0.75rem;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+                gap: 24px;
+            }
+
+            .projects-section {
+                padding: 60px 0;
+            }
+
+            .project-info {
+                grid-template-columns: 1fr;
             }
         }
 
@@ -522,7 +754,7 @@
                         </div>
 
                         <div class="hero-ctas">
-                            <a href="#evidence" class="cta-btn">
+                            <a href="#projects" class="cta-btn">
                                 Explore Analytics
                                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                     <path d="M5 12h14M12 5l7 7-7 7"/>
@@ -562,6 +794,249 @@
         <section class="metrics-ticker-section">
             <div class="metrics-ticker" id="metricsTicker">
                 <!-- Will be populated by JavaScript -->
+            </div>
+        </section>
+
+        <!-- Featured Projects Section -->
+        <section class="projects-section" id="projects">
+            <div class="projects-container">
+                <div class="projects-header">
+                    <h2>Featured Projects</h2>
+                    <p>Six verified analytics investigations across real public datasets. Question → Signal → Decision.</p>
+                </div>
+
+                <div class="projects-grid">
+                    <!-- Project 1: Telecom Churn -->
+                    <div class="project-card">
+                        <div class="project-image-wrapper">
+                            <img class="project-image" src="https://raw.githubusercontent.com/harshmeena9977-ops/Telecom-Churn-Analysis/50bccc6207d9f3ac2be3361e91ff2a7900427967/outputs/executive_summary.png.png" alt="Telecom Churn Dashboard" loading="lazy">
+                        </div>
+                        <div class="project-badge">CASE 01 · TELECOM</div>
+                        <h3 class="project-title">Churn Analysis</h3>
+                        <p class="project-question">Why are customers leaving?</p>
+                        
+                        <div class="project-info">
+                            <div class="info-block">
+                                <span class="info-label">Signal</span>
+                                <span class="info-value">43% month-to-month churn</span>
+                            </div>
+                            <div class="info-block">
+                                <span class="info-label">Method</span>
+                                <span class="info-value">SQL → Python → ML</span>
+                            </div>
+                        </div>
+
+                        <div class="project-decision">
+                            <strong>Decision:</strong> Target month-to-month and low-tenure customers with retention programs.
+                        </div>
+
+                        <div class="project-tech-tags">
+                            <span class="tech-tag">SQL</span>
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Power BI</span>
+                            <span class="tech-tag">ML</span>
+                        </div>
+
+                        <a href="https://github.com/harshmeena9977-ops/Telecom-Churn-Analysis" target="_blank" rel="noopener" class="project-cta">
+                            View Repository
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M7 17L17 7M17 7H7M17 7V17"/>
+                            </svg>
+                        </a>
+                    </div>
+
+                    <!-- Project 2: Workforce Attrition -->
+                    <div class="project-card">
+                        <div class="project-image-wrapper">
+                            <img class="project-image" src="https://raw.githubusercontent.com/harshmeena9977-ops/workforce-attrition-retention-analytics/89a5639d5ecc279f2c219a6e105715e92ff1cbbd/screenshots/executive-insights.png" alt="Workforce Attrition Dashboard" loading="lazy">
+                        </div>
+                        <div class="project-badge">CASE 02 · HR</div>
+                        <h3 class="project-title">Attrition Analysis</h3>
+                        <p class="project-question">Where is attrition becoming expensive?</p>
+                        
+                        <div class="project-info">
+                            <div class="info-block">
+                                <span class="info-label">Signal</span>
+                                <span class="info-value">2.93× overtime risk</span>
+                            </div>
+                            <div class="info-block">
+                                <span class="info-label">Method</span>
+                                <span class="info-value">Power BI → DAX</span>
+                            </div>
+                        </div>
+
+                        <div class="project-decision">
+                            <strong>Decision:</strong> Focus retention on younger employees working overtime.
+                        </div>
+
+                        <div class="project-tech-tags">
+                            <span class="tech-tag">Power BI</span>
+                            <span class="tech-tag">DAX</span>
+                            <span class="tech-tag">Excel</span>
+                        </div>
+
+                        <a href="https://github.com/harshmeena9977-ops/workforce-attrition-retention-analytics" target="_blank" rel="noopener" class="project-cta">
+                            View Repository
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M7 17L17 7M17 7H7M17 7V17"/>
+                            </svg>
+                        </a>
+                    </div>
+
+                    <!-- Project 3: Global Superstore -->
+                    <div class="project-card">
+                        <div class="project-image-wrapper">
+                            <img class="project-image" src="https://raw.githubusercontent.com/harshmeena9977-ops/Global-Superstore-Sales-Analysis/c2950c8664245e1497b0c0bb4f06e06e5fdad5d2/outputs/Overview.png.png" alt="Global Superstore Dashboard" loading="lazy">
+                        </div>
+                        <div class="project-badge">CASE 03 · RETAIL</div>
+                        <h3 class="project-title">Profitability Analysis</h3>
+                        <p class="project-question">Where is revenue failing to become profit?</p>
+                        
+                        <div class="project-info">
+                            <div class="info-block">
+                                <span class="info-label">Signal</span>
+                                <span class="info-value">20% profitability drag</span>
+                            </div>
+                            <div class="info-block">
+                                <span class="info-label">Method</span>
+                                <span class="info-value">SQL → Excel → BI</span>
+                            </div>
+                        </div>
+
+                        <div class="project-decision">
+                            <strong>Decision:</strong> Investigate low-profit regional category combinations.
+                        </div>
+
+                        <div class="project-tech-tags">
+                            <span class="tech-tag">SQL</span>
+                            <span class="tech-tag">Excel</span>
+                            <span class="tech-tag">Power BI</span>
+                        </div>
+
+                        <a href="https://github.com/harshmeena9977-ops/Global-Superstore-Sales-Analysis" target="_blank" rel="noopener" class="project-cta">
+                            View Repository
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M7 17L17 7M17 7H7M17 7V17"/>
+                            </svg>
+                        </a>
+                    </div>
+
+                    <!-- Project 4: Yelp Analytics -->
+                    <div class="project-card">
+                        <div class="project-image-wrapper">
+                            <div class="project-placeholder">
+                                Dashboard Preview Coming<br>See Full Analysis in Repo
+                            </div>
+                        </div>
+                        <div class="project-badge">CASE 04 · HOSPITALITY</div>
+                        <h3 class="project-title">Engagement Analysis</h3>
+                        <p class="project-question">What separates successful restaurants?</p>
+                        
+                        <div class="project-info">
+                            <div class="info-block">
+                                <span class="info-label">Signal</span>
+                                <span class="info-value">2.5× engagement gap</span>
+                            </div>
+                            <div class="info-block">
+                                <span class="info-label">Method</span>
+                                <span class="info-value">SQL → Python → Stats</span>
+                            </div>
+                        </div>
+
+                        <div class="project-decision">
+                            <strong>Decision:</strong> Engage high-influence reviewers and improve response rates.
+                        </div>
+
+                        <div class="project-tech-tags">
+                            <span class="tech-tag">SQL</span>
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Statistical Analysis</span>
+                        </div>
+
+                        <a href="https://github.com/harshmeena9977-ops/Yelp-Data-Analysis" target="_blank" rel="noopener" class="project-cta">
+                            View Repository
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M7 17L17 7M17 7H7M17 7V17"/>
+                            </svg>
+                        </a>
+                    </div>
+
+                    <!-- Project 5: Samsung Supply Chain -->
+                    <div class="project-card">
+                        <div class="project-image-wrapper">
+                            <img class="project-image" src="https://raw.githubusercontent.com/harshmeena9977-ops/Samsung-Supply-Chain-Analytics-Dashboard/f9034558a96fc017853ae02bdbeb333d4dc6bbf3/Dashboard%20Images/Overview.png" alt="Samsung Supply Chain Dashboard" loading="lazy">
+                        </div>
+                        <div class="project-badge">CASE 05 · SUPPLY CHAIN</div>
+                        <h3 class="project-title">Supply Chain Analytics</h3>
+                        <p class="project-question">How efficient is the supply chain?</p>
+                        
+                        <div class="project-info">
+                            <div class="info-block">
+                                <span class="info-label">Signal</span>
+                                <span class="info-value">Multiple KPIs tracked</span>
+                            </div>
+                            <div class="info-block">
+                                <span class="info-label">Method</span>
+                                <span class="info-value">SQL → Power BI</span>
+                            </div>
+                        </div>
+
+                        <div class="project-decision">
+                            <strong>Decision:</strong> Monitor shipment efficiency and vendor performance metrics.
+                        </div>
+
+                        <div class="project-tech-tags">
+                            <span class="tech-tag">SQL</span>
+                            <span class="tech-tag">Power BI</span>
+                            <span class="tech-tag">Data Modeling</span>
+                        </div>
+
+                        <a href="https://github.com/harshmeena9977-ops/Samsung-Supply-Chain-Analytics-Dashboard" target="_blank" rel="noopener" class="project-cta">
+                            View Repository
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M7 17L17 7M17 7H7M17 7V17"/>
+                            </svg>
+                        </a>
+                    </div>
+
+                    <!-- Project 6: MGH Hospital -->
+                    <div class="project-card">
+                        <div class="project-image-wrapper">
+                            <img class="project-image" src="https://raw.githubusercontent.com/harshmeena9977-ops/MGH-Hospital-Performance-Dashboard/6004fe204faf4c9869075fe3361002cc9734fd05/Encounters_Overview.png.png" alt="MGH Hospital Dashboard" loading="lazy">
+                        </div>
+                        <div class="project-badge">CASE 06 · HEALTHCARE</div>
+                        <h3 class="project-title">Hospital Performance</h3>
+                        <p class="project-question">What drives patient encounters?</p>
+                        
+                        <div class="project-info">
+                            <div class="info-block">
+                                <span class="info-label">Signal</span>
+                                <span class="info-value">Performance patterns</span>
+                            </div>
+                            <div class="info-block">
+                                <span class="info-label">Method</span>
+                                <span class="info-value">SQL → Power BI</span>
+                            </div>
+                        </div>
+
+                        <div class="project-decision">
+                            <strong>Decision:</strong> Optimize resource allocation based on encounter patterns.
+                        </div>
+
+                        <div class="project-tech-tags">
+                            <span class="tech-tag">SQL</span>
+                            <span class="tech-tag">Power BI</span>
+                            <span class="tech-tag">Healthcare Analytics</span>
+                        </div>
+
+                        <a href="https://github.com/harshmeena9977-ops/MGH-Hospital-Performance-Dashboard" target="_blank" rel="noopener" class="project-cta">
+                            View Repository
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M7 17L17 7M17 7H7M17 7V17"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
             </div>
         </section>
     </main>
@@ -637,6 +1112,18 @@
 
         // Double the metrics for infinite scroll effect
         tickerEl.innerHTML = metricsHTML + metricsHTML;
+
+        // Project card hover spotlight effect
+        document.querySelectorAll('.project-card').forEach(card => {
+            card.addEventListener('mousemove', (e) => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                
+                card.style.setProperty('--spotlight-x', x + 'px');
+                card.style.setProperty('--spotlight-y', y + 'px');
+            });
+        });
 
         // Navigation active state
         document.querySelectorAll('.nav-link').forEach(link => {
