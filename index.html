@@ -1,866 +1,673 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
-
-<title>Harsh Meena — Data Analyst / Business Analyst / MIS Analyst</title>
-<meta name="description" content="Harsh Meena | Data Analyst, Business Analyst, MIS Analyst. SQL, Python, Power BI, Excel. Real public dataset projects, dashboards, analytics and verified certifications.">
-<meta property="og:title" content="Harsh Meena — Data Analyst / Business Analyst / MIS Analyst">
-<meta property="og:description" content="Evidence-first analytics portfolio featuring churn, attrition, profitability, restaurant behavior, healthcare and supply chain analysis.">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://harshmeena9977-ops.github.io">
-
-https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&family=Newsreader:opsz,wght@6..72,500;6..72,600&display=swap
-
-<style>
-:root{
---bg:#F6F2EA;
---panel:#EDE7D8;
---ink:#14181F;
---sec:#666C64;
---accent:#B8402A;
---green:#4F6B52;
---line:#DAD3C0;
-}
-
-*{margin:0;padding:0;box-sizing:border-box}
-
-html{
-scroll-behavior:smooth;
-}
-
-body{
-font-family:Inter,sans-serif;
-background:var(--bg);
-color:var(--ink);
-line-height:1.65;
-}
-
-a{
-color:inherit;
-text-decoration:none;
-}
-
-img{
-display:block;
-width:100%;
-}
-
-h1,h2,h3{
-font-family:Newsreader,serif;
-font-style:italic;
-font-weight:600;
-letter-spacing:-.03em;
-}
-
-.container{
-max-width:1240px;
-margin:auto;
-padding:0 24px;
-}
-
-section{
-padding:90px 0;
-border-top:1px solid var(--line);
-}
-
-.mono{
-font-family:"IBM Plex Mono",monospace;
-}
-
-.small{
-font-size:.82rem;
-}
-
-.muted{
-color:var(--sec);
-}
-
-.accent{
-color:var(--accent);
-}
-
-.tag{
-display:inline-block;
-padding:.35rem .7rem;
-border:1px solid var(--line);
-font-size:.75rem;
-font-family:"IBM Plex Mono",monospace;
-}
-
-:focus-visible{
-outline:2px solid var(--accent);
-outline-offset:3px;
-}
-
-nav{
-position:sticky;
-top:0;
-background:rgba(246,242,234,.95);
-backdrop-filter:blur(6px);
-border-bottom:1px solid var(--line);
-z-index:100;
-}
-
-.nav-wrap{
-height:72px;
-display:flex;
-align-items:center;
-justify-content:space-between;
-}
-
-.logo{
-display:flex;
-align-items:center;
-gap:10px;
-font-family:"IBM Plex Mono",monospace;
-font-size:.85rem;
-letter-spacing:.12em;
-}
-
-.dot{
-width:9px;
-height:9px;
-border-radius:50%;
-background:var(--green);
-animation:pulse 1.8s infinite;
-}
-
-@keyframes pulse{
-50%{opacity:.35}
-}
-
-.nav-links{
-display:flex;
-gap:28px;
-font-size:.9rem;
-}
-
-.hero{
-padding:80px 0 40px;
-border:none;
-}
-
-.hero-grid{
-display:grid;
-grid-template-columns:1.3fr .7fr;
-gap:60px;
-align-items:center;
-}
-
-.eyebrow{
-color:var(--green);
-font-family:"IBM Plex Mono",monospace;
-margin-bottom:22px;
-}
-
-.name-intro{
-font-family:"IBM Plex Mono",monospace;
-text-transform:uppercase;
-letter-spacing:.18em;
-font-size:.88rem;
-overflow:hidden;
-margin-bottom:24px;
-}
-
-.char{
-display:inline-block;
-opacity:0;
-transform:translateY(100%);
-}
-
-.char.show{
-opacity:1;
-transform:translateY(0);
-transition:
-transform .65s cubic-bezier(.2,.7,.2,1),
-opacity .65s cubic-bezier(.2,.7,.2,1);
-}
-
-.hero h1{
-font-size:clamp(3rem,6vw,6rem);
-line-height:.94;
-margin-bottom:18px;
-}
-
-.hero p{
-max-width:700px;
-color:var(--sec);
-}
-
-.meta{
-display:flex;
-gap:40px;
-margin-top:24px;
-font-family:"IBM Plex Mono",monospace;
-font-size:.82rem;
-}
-
-.ctas{
-display:flex;
-gap:14px;
-margin-top:28px;
-flex-wrap:wrap;
-}
-
-.btn{
-display:inline-flex;
-align-items:center;
-gap:10px;
-padding:12px 18px;
-border:1px solid var(--ink);
-transition:.25s;
-}
-
-.btn:hover{
-background:var(--ink);
-color:#fff;
-}
-
-.flow{
-border-left:1px solid var(--line);
-padding-left:32px;
-}
-
-.node{
-position:relative;
-padding:18px 0;
-font-family:"IBM Plex Mono",monospace;
-font-size:.82rem;
-}
-
-.node:before{
-content:"";
-position:absolute;
-left:-37px;
-top:24px;
-width:9px;
-height:9px;
-border-radius:50%;
-background:var(--line);
-}
-
-.node.active{
-color:var(--accent);
-}
-
-.node.active:before{
-background:var(--accent);
-}
-
-.tabs{
-display:flex;
-flex-wrap:wrap;
-gap:8px;
-margin-bottom:26px;
-}
-
-.tab{
-border:1px solid var(--line);
-background:none;
-padding:10px 14px;
-font-family:"IBM Plex Mono",monospace;
-cursor:pointer;
-}
-
-.tab.active{
-background:var(--ink);
-color:white;
-}
-
-.signal-box{
-padding:32px;
-border:1px solid var(--line);
-background:var(--panel);
-}
-
-.big-number{
-font-size:3rem;
-font-family:"IBM Plex Mono",monospace;
-color:var(--accent);
-margin:10px 0;
-}
-
-.cards{
-display:grid;
-grid-template-columns:repeat(2,1fr);
-gap:28px;
-}
-
-.card{
-border:1px solid var(--line);
-background:white;
-padding:22px;
-display:flex;
-flex-direction:column;
-gap:16px;
-}
-
-.thumb{
-position:relative;
-height:220px;
-overflow:hidden;
-border:1px solid var(--line);
-background:var(--panel);
---mx:50%;
---my:50%;
-cursor:pointer;
-}
-
-.thumb img{
-height:100%;
-object-fit:cover;
-clip-path:circle(0% at var(--mx) var(--my));
-transition:clip-path .55s ease;
-}
-
-.thumb:hover img,
-.thumb.tap img{
-clip-path:circle(85% at var(--mx) var(--my));
-}
-
-.placeholder{
-height:100%;
-display:grid;
-place-items:center;
-font-family:"IBM Plex Mono",monospace;
-font-size:.8rem;
-text-align:center;
-padding:12px;
-}
-
-.caption{
-position:absolute;
-bottom:0;
-left:0;
-right:0;
-padding:14px;
-font-size:.72rem;
-color:white;
-font-family:"IBM Plex Mono",monospace;
-background:linear-gradient(transparent,rgba(0,0,0,.75));
-}
-
-.question{
-font-size:1.7rem;
-}
-
-.chart{
-margin-top:8px;
-}
-
-.loop{
-display:grid;
-grid-template-columns:repeat(5,1fr);
-gap:18px;
-}
-
-.step{
-border:1px solid var(--line);
-padding:18px;
-}
-
-.skill{
-border-top:1px solid var(--line);
-}
-
-.skill-btn{
-width:100%;
-padding:18px 0;
-display:flex;
-justify-content:space-between;
-background:none;
-border:none;
-cursor:pointer;
-text-align:left;
-}
-
-.chev{
-transition:.3s;
-}
-
-.skill.open .chev{
-transform:rotate(90deg);
-}
-
-.deep{
-max-height:0;
-overflow:hidden;
-transition:max-height .4s ease;
-}
-
-.skill.open .deep{
-max-height:450px;
-padding-bottom:20px;
-}
-
-.recruiter{
-background:var(--panel);
-padding:30px;
-border:1px solid var(--line);
-}
-
-.grid4{
-display:grid;
-grid-template-columns:repeat(4,1fr);
-gap:14px;
-margin-bottom:20px;
-}
-
-.cred li{
-padding:14px 0;
-border-bottom:1px solid var(--line);
-list-style:none;
-}
-
-.chips{
-display:flex;
-flex-wrap:wrap;
-gap:10px;
-}
-
-.chip{
-padding:.55rem .85rem;
-border:1px solid var(--line);
-font-size:.85rem;
-}
-
-.contacts{
-display:flex;
-gap:12px;
-flex-wrap:wrap;
-}
-
-.contact-btn{
-display:inline-flex;
-align-items:center;
-gap:10px;
-padding:12px 16px;
-border-radius:999px;
-border:1px solid var(--ink);
-transition:.25s;
-font-size:.92rem;
-}
-
-.contact-btn svg{
-width:18px;
-height:18px;
-transition:.35s cubic-bezier(.34,1.56,.64,1);
-}
-
-.contact-btn:hover{
-color:white;
-transform:translateY(-2px);
-}
-
-.contact-btn:hover svg{
-transform:scale(1.2) rotate(8deg);
-}
-
-.email:hover{background:#B8402A}
-.whatsapp:hover{background:#25D366}
-.linkedin:hover{background:#0A66C2}
-.github:hover{background:#111315}
-
-footer{
-border-top:1px solid var(--line);
-padding:40px 24px;
-text-align:center;
-color:var(--sec);
-}
-
-@media(max-width:900px){
-.hero-grid,.cards,.grid4,.loop{
-grid-template-columns:1fr;
-}
-}
-
-@media(max-width:700px){
-.nav-links{
-display:none;
-}
-}
-
-@media(prefers-reduced-motion:reduce){
-*{
-animation:none!important;
-transition:none!important;
-scroll-behavior:auto!important;
-}
-.char{
-opacity:1!important;
-transform:none!important;
-}
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Harsh Meena — Data Analyst | Business Analyst | MIS Analyst</title>
+    <meta name="description" content="Premium Data Analyst Portfolio. SQL, Python, Power BI, Excel. Real datasets, verified projects, immediate joiner. Indore, India.">
+    <meta property="og:title" content="Harsh Meena — Data Analyst Portfolio">
+    <meta property="og:description" content="Turning messy data into decisions people can use.">
+    <meta property="og:image" content="https://harshmeena9977-ops.github.io/og-image.png">
+    <meta property="og:url" content="https://harshmeena9977-ops.github.io">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg: #07090e;
+            --card: #111827;
+            --card-secondary: #0f172a;
+            --text: #f8fafc;
+            --muted: #94a3b8;
+            --indigo: #6366f1;
+            --violet: #8b5cf6;
+            --cyan: #22d3ee;
+            --accent: #ec4899;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text);
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            overflow-x: hidden;
+        }
+
+        /* Premium grid background */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                radial-gradient(circle at 20% 50%, rgba(99, 102, 241, 0.08) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(139, 92, 246, 0.08) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        main {
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Typography */
+        h1, h2, h3 {
+            font-weight: 600;
+            letter-spacing: -0.02em;
+        }
+
+        h1 {
+            font-size: clamp(2.5rem, 8vw, 4rem);
+            line-height: 1.2;
+        }
+
+        h2 {
+            font-size: clamp(1.875rem, 5vw, 2.25rem);
+            line-height: 1.3;
+        }
+
+        /* Navbar styles */
+        .navbar {
+            position: fixed;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: calc(100% - 32px);
+            max-width: 1200px;
+            background: rgba(17, 24, 39, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(148, 163, 184, 0.1);
+            border-radius: 24px;
+            padding: 12px 28px;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-brand {
+            font-weight: 600;
+            font-size: 0.95rem;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .nav-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.4; }
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 8px;
+            list-style: none;
+        }
+
+        .nav-link {
+            padding: 8px 16px;
+            font-size: 0.85rem;
+            color: var(--muted);
+            text-decoration: none;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .nav-link:hover {
+            color: var(--text);
+            background: rgba(99, 102, 241, 0.1);
+        }
+
+        .nav-link.active {
+            color: var(--indigo);
+            background: rgba(99, 102, 241, 0.15);
+        }
+
+        /* Hero section */
+        .hero {
+            padding-top: 140px;
+            padding-bottom: 80px;
+            min-height: 100vh;
+        }
+
+        .hero-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .hero-content h1 {
+            margin-bottom: 24px;
+            background: linear-gradient(135deg, #f8fafc 0%, #cbd5e1 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            padding: 8px 16px;
+            background: rgba(99, 102, 241, 0.1);
+            border: 1px solid rgba(99, 102, 241, 0.3);
+            border-radius: 8px;
+            font-size: 0.85rem;
+            color: var(--indigo);
+            margin-bottom: 24px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .hero-subtitle {
+            font-size: 1.1rem;
+            color: var(--muted);
+            line-height: 1.8;
+            margin-bottom: 32px;
+        }
+
+        .hero-meta {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+            margin-bottom: 32px;
+            padding-bottom: 32px;
+            border-bottom: 1px solid rgba(148, 163, 184, 0.1);
+        }
+
+        .meta-item {
+            font-size: 0.9rem;
+        }
+
+        .meta-label {
+            color: var(--muted);
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 6px;
+        }
+
+        .meta-value {
+            font-weight: 600;
+            color: var(--text);
+        }
+
+        .hero-skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-bottom: 32px;
+        }
+
+        .skill-chip {
+            padding: 8px 14px;
+            background: rgba(148, 163, 184, 0.1);
+            border: 1px solid rgba(148, 163, 184, 0.2);
+            border-radius: 6px;
+            font-size: 0.85rem;
+            color: var(--text);
+            font-weight: 500;
+        }
+
+        .hero-ctas {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .cta-btn {
+            padding: 12px 24px;
+            background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+        }
+
+        .cta-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 24px rgba(99, 102, 241, 0.3);
+        }
+
+        .cta-btn:focus-visible {
+            outline: 2px solid var(--cyan);
+            outline-offset: 4px;
+        }
+
+        .cta-btn-secondary {
+            background: transparent;
+            border: 1px solid rgba(148, 163, 184, 0.3);
+            color: var(--text);
+        }
+
+        .cta-btn-secondary:hover {
+            background: rgba(99, 102, 241, 0.1);
+            border-color: rgba(99, 102, 241, 0.5);
+        }
+
+        /* Terminal */
+        .terminal {
+            background: var(--card-secondary);
+            border: 1px solid rgba(99, 102, 241, 0.2);
+            border-radius: 16px;
+            padding: 24px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+            overflow: hidden;
+            position: relative;
+            height: 320px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .terminal-header {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 16px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid rgba(148, 163, 184, 0.1);
+        }
+
+        .terminal-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+        }
+
+        .terminal-dot.red { background: #ff5f57; }
+        .terminal-dot.yellow { background: #febc2e; }
+        .terminal-dot.green { background: #28c840; }
+
+        .terminal-content {
+            flex: 1;
+            overflow-y: auto;
+            color: var(--cyan);
+        }
+
+        .terminal-line {
+            margin: 8px 0;
+            line-height: 1.6;
+        }
+
+        .terminal-prompt {
+            color: var(--indigo);
+        }
+
+        .terminal-output {
+            color: var(--text);
+            margin-top: 4px;
+        }
+
+        .cursor {
+            display: inline-block;
+            width: 2px;
+            height: 1em;
+            background: var(--cyan);
+            animation: blink 1s infinite;
+            margin-left: 4px;
+        }
+
+        @keyframes blink {
+            0%, 49% { opacity: 1; }
+            50%, 100% { opacity: 0; }
+        }
+
+        /* Metrics Ticker */
+        .metrics-ticker-section {
+            padding: 60px 0;
+            overflow: hidden;
+            background: linear-gradient(90deg, 
+                rgba(99, 102, 241, 0.05) 0%, 
+                rgba(139, 92, 246, 0.05) 50%, 
+                rgba(99, 102, 241, 0.05) 100%);
+            border-top: 1px solid rgba(148, 163, 184, 0.1);
+            border-bottom: 1px solid rgba(148, 163, 184, 0.1);
+        }
+
+        .metrics-ticker {
+            display: flex;
+            gap: 40px;
+            animation: scroll 30s linear infinite;
+            width: fit-content;
+            padding: 0 20px;
+        }
+
+        .metrics-ticker:hover {
+            animation-play-state: paused;
+        }
+
+        @keyframes scroll {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(calc(-50% - 20px));
+            }
+        }
+
+        .metric-item {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            min-width: max-content;
+            padding: 16px 24px;
+            background: rgba(17, 24, 39, 0.5);
+            border: 1px solid rgba(99, 102, 241, 0.2);
+            border-radius: 12px;
+        }
+
+        .metric-value {
+            font-size: 1.5rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .metric-label {
+            font-size: 0.85rem;
+            color: var(--muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .navbar {
+                top: 12px;
+                width: calc(100% - 16px);
+                padding: 10px 16px;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .hero-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .terminal {
+                height: 250px;
+            }
+
+            .hero {
+                padding-top: 100px;
+                padding-bottom: 60px;
+            }
+
+            .metrics-ticker {
+                gap: 20px;
+            }
+
+            .metric-item {
+                padding: 12px 16px;
+            }
+
+            .metric-value {
+                font-size: 1.2rem;
+            }
+
+            .metric-label {
+                font-size: 0.75rem;
+            }
+        }
+
+        /* Accessibility */
+        :focus-visible {
+            outline: 2px solid var(--indigo);
+            outline-offset: 4px;
+        }
+
+        /* Reduced motion */
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+    </style>
 </head>
-
 <body>
+    <!-- Navigation -->
+    <nav class="navbar" role="navigation" aria-label="Main navigation">
+        <div class="nav-brand">
+            <div class="nav-dot"></div>
+            <span>HARSH MEENA</span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#projects" class="nav-link">Projects</a></li>
+            <li><a href="#storytelling" class="nav-link">Storytelling</a></li>
+            <li><a href="#skills" class="nav-link">Skills</a></li>
+            <li><a href="#evidence" class="nav-link">Evidence</a></li>
+            <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+    </nav>
 
-<nav>
-<div class="container nav-wrap">
-<div class="logo">
-<div class="dot"></div>
-HARSH MEENA
-</div>
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-container">
+                <div class="hero-grid">
+                    <!-- Left Content -->
+                    <div>
+                        <div class="hero-badge">
+                            ● AVAILABLE FOR ANALYST ROLES
+                        </div>
+                        <h1>Turning messy data into decisions people can use.</h1>
+                        <p class="hero-subtitle">
+                            Entry-level Data / Business / MIS Analyst based in Indore, India. 
+                            I solve business problems using SQL, Python, Power BI, and Excel across real public datasets.
+                        </p>
 
-<div class="nav-links">
-#signalSignal</a>
-#evidenceEvidence</a>
-#methodMethod</a>
-#recruiterRecruiter View</a>
-#contactContact</a>
-</div>
-</div>
-</nav>
+                        <div class="hero-meta">
+                            <div class="meta-item">
+                                <div class="meta-label">Location</div>
+                                <div class="meta-value">Indore, India</div>
+                            </div>
+                            <div class="meta-item">
+                                <div class="meta-label">Availability</div>
+                                <div class="meta-value">Immediate Joiner</div>
+                            </div>
+                        </div>
 
-<section class="hero">
-<div class="container hero-grid">
+                        <div class="hero-skills">
+                            <div class="skill-chip">SQL</div>
+                            <div class="skill-chip">PYTHON</div>
+                            <div class="skill-chip">POWER BI</div>
+                            <div class="skill-chip">EXCEL</div>
+                            <div class="skill-chip">BUSINESS ANALYTICS</div>
+                        </div>
 
-<div>
-<div class="eyebrow">● Open to work — Immediate joiner</div>
+                        <div class="hero-ctas">
+                            <a href="#evidence" class="cta-btn">
+                                Explore Analytics
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M5 12h14M12 5l7 7-7 7"/>
+                                </svg>
+                            </a>
+                            <a href="/resume.pdf" class="cta-btn cta-btn-secondary">
+                                Download Resume
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
 
-<div id="animatedName" class="name-intro">
-HARSH MEENA — DATA / BUSINESS / MIS ANALYST
-</div>
+                    <!-- Right Terminal -->
+                    <div class="terminal">
+                        <div class="terminal-header">
+                            <div class="terminal-dot red"></div>
+                            <div class="terminal-dot yellow"></div>
+                            <div class="terminal-dot green"></div>
+                        </div>
+                        <div class="terminal-content" id="terminalContent">
+                            <div class="terminal-line">
+                                <span class="terminal-prompt">analyst@portfolio</span>
+                                <span class="terminal-prompt">:~$</span>
+                                <span id="terminalText"></span>
+                                <span class="cursor"></span>
+                            </div>
+                            <div id="terminalOutput"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-<h1>Data that answers business questions.</h1>
+        <!-- Metrics Ticker -->
+        <section class="metrics-ticker-section">
+            <div class="metrics-ticker" id="metricsTicker">
+                <!-- Will be populated by JavaScript -->
+            </div>
+        </section>
+    </main>
 
-<p>
-Entry-level Data / Business / MIS Analyst based in Indore, India.
-SQL, Python, Power BI and Excel across real public datasets, end to end.
-</p>
+    <script>
+        // Terminal typing animation
+        const terminalSequence = [
+            {
+                command: "SELECT Contract, COUNT(*) FROM Customers WHERE Churn='Yes';",
+                output: "43% churn found in month-to-month contracts"
+            },
+            {
+                command: "model.fit(X, y)",
+                output: "Accuracy: 85.3% | Precision: 82.1%"
+            },
+            {
+                command: "power_bi.connect().dashboard.publish()",
+                output: "Dashboard live. Ready for business action."
+            }
+        ];
 
-<div class="meta">
-<div>LOCATION<br><strong>Indore, India</strong></div>
-<div>AVAILABILITY<br><strong>Immediate Joiner</strong></div>
-</div>
+        let sequenceIndex = 0;
+        let charIndex = 0;
+        let isTyping = true;
 
-<div class="ctas">
-#evidenceView the evidence →</a>
+        function typeCommand() {
+            const current = terminalSequence[sequenceIndex];
+            const textEl = document.getElementById('terminalText');
+            const outputEl = document.getElementById('terminalOutput');
 
-<!-- Upload resume.pdf to repository root -->
-/resume.pdfDownload resume</a>
-</div>
-</div>
+            if (charIndex < current.command.length) {
+                textEl.textContent += current.command[charIndex];
+                charIndex++;
+                setTimeout(typeCommand, 30);
+            } else if (isTyping) {
+                isTyping = false;
+                setTimeout(() => {
+                    outputEl.innerHTML += `<div class="terminal-output">${current.output}</div>`;
+                    setTimeout(() => {
+                        sequenceIndex = (sequenceIndex + 1) % terminalSequence.length;
+                        charIndex = 0;
+                        textEl.textContent = '';
+                        outputEl.innerHTML = '';
+                        isTyping = true;
+                        setTimeout(typeCommand, 1000);
+                    }, 2000);
+                }, 500);
+            }
+        }
 
-<div class="flow">
-<div class="node active">QUESTION</div>
-<div class="node">DATA</div>
-<div class="node">ANALYSIS</div>
-<div class="node">INSIGHT</div>
-<div class="node">DECISION</div>
-</div>
+        // Start terminal animation after a delay
+        setTimeout(typeCommand, 500);
 
-</div>
-</section>
+        // Metrics Ticker
+        const metrics = [
+            { value: '26.5%', label: 'Overall Churn Rate' },
+            { value: '43%', label: 'Month-to-Month Churn' },
+            { value: '85.3%', label: 'Model Accuracy' },
+            { value: '82.1%', label: 'Precision Score' },
+            { value: '2.93×', label: 'Attrition Risk' },
+            { value: '20%', label: 'Profitability Drag' },
+            { value: '65%', label: 'Reporting Reduction' },
+            { value: '2.5×', label: 'Engagement Gap' }
+        ];
 
-<section id="signal">
-<div class="container">
-<h2>Signal Scanner</h2>
+        const tickerEl = document.getElementById('metricsTicker');
+        const metricsHTML = metrics.map(m => `
+            <div class="metric-item">
+                <div class="metric-value">${m.value}</div>
+                <div class="metric-label">${m.label}</div>
+            </div>
+        `).join('');
 
-<div class="tabs">
-<button class="tab active" data-tab="0">CHURN</button>
-<button class="tab" data-tab="1">ATTRITION</button>
-<button class="tab" data-tab="2">PROFIT</button>
-<button class="tab" data-tab="3">ENGAGEMENT</button>
-</div>
+        // Double the metrics for infinite scroll effect
+        tickerEl.innerHTML = metricsHTML + metricsHTML;
 
-<div class="signal-box">
-<div id="signalContent"></div>
-</div>
-</div>
-</section>
+        // Navigation active state
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
+                link.classList.add('active');
+            });
+        });
 
-<section id="evidence">
-<div class="container">
-<h2>Case Files</h2>
+        // Scroll to section
+        window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('section');
+            let current = '';
 
-<div class="cards">
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                if (pageYOffset >= sectionTop - 200) {
+                    current = section.getAttribute('id');
+                }
+            });
 
-<div class="card">
-<div class="thumb">
-<img loading="lazy" src="https://raw.githubusercontent.com/harshmeena9977-ops/Telecom-Churn-Analysis/50bccc6207d9f3ac2be3361e91ff2a7900427967/outputs/executive_summary.png.png">
-<div class="caption">Hover to preview the dashboard</div>
-</div>
-<div class="tag">CASE 01 · TELECOM</div>
-<h3 class="question">Why are customers leaving?</h3>
-<p><strong>Signal:</strong> Overall churn 26.5% vs month-to-month churn 43%.</p>
-<svg class="chart" width="220" height="90">
-<rect x="20" y="40" width="55" height="26" fill="#666"/>
-<rect x="110" y="23" width="55" height="43" fill="#B8402A"/>
-<text x="20" y="85">26.5%</text>
-<text x="110" y="85">43%</text>
-</svg>
-</div>
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === '#' + current) {
+                    link.classList.add('active');
+                }
+            });
+        });
 
-<div class="card">
-<div class="thumb">
-<img loading="lazy" src="https://raw.githubusercontent.com/harshmeena9977-ops/workforce-attrition-retention-analytics/89a5639d5ecc279f2c219a6e105715e92ff1cbbd/screenshots/executive-insights.png">
-<div class="caption">Hover to preview the dashboard</div>
-</div>
-<div class="tag">CASE 02 · HR</div>
-<h3 class="question">Where is attrition becoming expensive?</h3>
-<p>Overall attrition 16.12%. Overtime employees: 2.93× base rate.</p>
-</div>
-
-<div class="card">
-<div class="thumb">
-<img loading="lazy" src="https://raw.githubusercontent.com/harshmeena9977-ops/Global-Superstore-Sales-Analysis/c2950c8664245e1497b0c0bb4f06e06e5fdad5d2/outputs/Overview.png.png">
-<div class="caption">Hover to preview the dashboard</div>
-</div>
-<div class="tag">CASE 03 · RETAIL</div>
-<h3 class="question">Where is revenue failing to become profit?</h3>
-<p>3 low-profit segments responsible for a 20% drag on profitability.</p>
-</div>
-
-<div class="card">
-<div class="thumb">
-<div class="placeholder">
-DASHBOARD PREVIEW — SEE REPO
-</div>
-<div class="caption">Hover to preview the dashboard</div>
-</div>
-<div class="tag">CASE 04 · YELP</div>
-<h3 class="question">What separates successful restaurants?</h3>
-<p>Engagement gap between high and low rated restaurants: 2.5×.</p>
-</div>
-
-<div class="card">
-<div class="thumb">
-<img loading="lazy" src="https://raw.githubusercontent.com/harshmeena9977-ops/Samsung-Supply-Chain-Analytics-Dashboard/f9034558a96fc017853ae02bdbeb333d4dc6bbf3/Dashboard%20Images/Overview.png">
-<div class="caption">Hover to preview the dashboard</div>
-</div>
-<div class="tag">CASE 05 · SUPPLY CHAIN</div>
-<p>Detailed metrics are still being finalized for public verification.</p>
-</div>
-
-<div class="card">
-<div class="thumb">
-<img loading="lazy" src="https://raw.githubusercontent.com/harshmeena9977-ops/MGH-Hospital-Performance-Dashboard/6004fe204faf4c9869075fe3361002cc9734fd05/Encounters_Overview.png.png">
-<div class="caption">Hover to preview the dashboard</div>
-</div>
-<div class="tag">CASE 06 · HEALTHCARE</div>
-<p>Detailed metrics are still being finalized for public verification.</p>
-</div>
-
-</div>
-</div>
-</section>
-
-<section id="method">
-<div class="container">
-<h2>The Analyst Loop</h2>
-
-<div class="loop">
-<div class="step"><strong>01</strong><br>Frame the question</div>
-<div class="step"><strong>02</strong><br>Clean the evidence</div>
-<div class="step"><strong>03</strong><br>Explore the signal</div>
-<div class="step"><strong>04</strong><br>Test the finding</div>
-<div class="step"><strong>05</strong><br>Communicate the decision</div>
-</div>
-</div>
-</section>
-
-<section>
-<div class="container">
-<h2>Skills</h2>
-
-<div class="skill">
-<button class="skill-btn">
-<span><strong>SQL</strong> · Query → Join → Aggregate → Segment</span>
-<span class="chev">▶</span>
-</button>
-<div class="deep">
-<p>Every investigation starts here.</p>
-</div>
-</div>
-
-<div class="skill">
-<button class="skill-btn">
-<span><strong>PYTHON</strong> · Clean → Explore → Model → Validate</span>
-<span class="chev">▶</span>
-</button>
-<div class="deep">
-<p>Used when a question needs more than a query.</p>
-</div>
-</div>
-
-<div class="skill">
-<button class="skill-btn">
-<span><strong>POWER BI</strong> · Model → DAX → Visualize → Explain</span>
-<span class="chev">▶</span>
-</button>
-<div class="deep">
-<p>The last mile between analysis and action.</p>
-</div>
-</div>
-
-<div class="skill">
-<button class="skill-btn">
-<span><strong>EXCEL</strong> · Clean → Validate → Pivot → Report</span>
-<span class="chev">▶</span>
-</button>
-<div class="deep">
-<p>Fast validation before larger pipelines.</p>
-</div>
-</div>
-
-</div>
-</section>
-
-<section id="recruiter">
-<div class="container">
-
-<h2>Recruiter View</h2>
-
-<div class="recruiter">
-
-<div class="grid4">
-<div><strong>Role</strong><br>Data / Business / MIS Analyst</div>
-<div><strong>Location</strong><br>Indore, India</div>
-<div><strong>Availability</strong><br>Immediate Joiner</div>
-<div><strong>Tools</strong><br>SQL, Python, Power BI, Excel</div>
-</div>
-
-<p>
-Proof: 6 projects, public datasets, GitHub repositories, 6 verified certifications.
-</p>
-
-</div>
-
-</div>
-</section>
-
-<section id="contact">
-<div class="container">
-
-<h2>Looking for the next problem to solve.</h2>
-
-<p class="muted">
-Data Analyst • Business Analyst • MIS Analyst • Immediate Joiner
-</p>
-
-<br>
-
-<div class="contacts">
-
-<a class="contact-btn email" href="mailto:harshmeena9977@gmail.com">
-<svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-<path d="M4 6h16v12H4z"/><path d="M4 8l8 6 8-6"/>
-</svg>Email
-</a>
-
-<a class="contact-btn whatsapp" target="_blank" rel="noopener"
-href="https://wa.me/919977551380">
-<svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-<path d="M20 12a8 8 0 1 1-15 4l-1 4 4-1"/>
-</svg>WhatsApp
-</a>
-
-<a class="contact-btn linkedin" target="_blank" rel="noopener"
-href="https://www.linkedin.com/in/harsh-meena-analyst/">
-<svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-<rect x="4" y="4" width="16" height="16"/>
-</svg>LinkedIn
-</a>
-
-<a class="contact-btn github" target="_blank" rel="noopener"
-href="https://github.com/harshmeena9977-ops">
-<svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-<path d="M12 2a10 10 0 0 0-3 19"/>
-</svg>GitHub
-</a>
-
-</div>
-
-</div>
-</section>
-
-<footer>
-<p>© 2026 Harsh Meena</p>
-<p>Every number should survive a follow-up question.</p>
-</footer>
-
-<script>
-const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-const name = document.getElementById('animatedName');
-const text = name.textContent;
-name.textContent='';
-
-[...text].forEach((c,i)=>{
-const span=document.createElement('span');
-span.className='char';
-span.textContent=c;
-name.appendChild(span);
-
-if(!reduced){
-setTimeout(()=>span.classList.add('show'),i*24);
-}else{
-span.classList.add('show');
-}
-});
-
-const tabs=[{
-dataset:'IBM Telco Customer Dataset',
-method:'SQL → Python → ML → Power BI',
-signal:'43%',
-action:'Target month-to-month + low tenure customers first'
-},{
-dataset:'IBM HR Analytics Dataset',
-method:'Power BI → DAX → Key Influencers',
-signal:'2.93×',
-action:'Focus retention programs on overtime employees'
-},{
-dataset:'Global Superstore',
-method:'SQL → Excel → Power BI',
-signal:'20%',
-action:'Review low-profit region-category combinations'
-},{
-dataset:'Yelp Open Dataset',
-method:'SQL → Python',
-signal:'2.5×',
-action:'Engage high influence reviewers'
-}];
-
-const box=document.getElementById('signalContent');
-
-function render(i){
-box.innerHTML=`
-<p><strong>Dataset:</strong> ${tabs[i].dataset}</p>
-<p><strong>Method:</strong> ${tabs[i].method}</p>
-<div class="big-number">${tabs[i].signal}</div>
-<p>${tabs[i].action}</p>`;
-}
-render(0);
-
-document.querySelectorAll('.tab').forEach((tab,i)=>{
-tab.onclick=()=>{
-document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
-tab.classList.add('active');
-render(i);
-};
-});
-
-document.querySelectorAll('.skill-btn').forEach(btn=>{
-btn.addEventListener('click',()=>{
-btn.parentElement.classList.toggle('open');
-});
-});
-
-document.querySelectorAll('.thumb').forEach(el=>{
-el.addEventListener('mousemove',e=>{
-const r=el.getBoundingClientRect();
-el.style.setProperty('--mx',((e.clientX-r.left)/r.width)*100+'%');
-el.style.setProperty('--my',((e.clientY-r.top)/r.height)*100+'%');
-});
-el.addEventListener('click',()=>{
-el.classList.toggle('tap');
-});
-});
-</script>
-
+        // Icon rendering
+        lucide.createIcons();
+    </script>
 </body>
 </html>
